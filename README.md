@@ -2,7 +2,7 @@
 Interpreter for a flight simulator coding language, made with CPP. 
 
 Prerequisites
-Install git on your machine
+Install git on your machine - here: https://git-scm.com/download/
 Sign up to github
 Install
 Clone the project on your machine:
