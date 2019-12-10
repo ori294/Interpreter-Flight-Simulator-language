@@ -3,4 +3,4 @@ project(ex3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ex3 main.cpp)
+add_executable(ex3 main.cpp Lexer.cpp Lexer.h)

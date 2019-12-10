@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/gadi/Desktop/clion-2019.2.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /opt/clion-2019.2.5/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/gadi/Desktop/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /opt/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gadi/Interpreter-Flight-Simulator-language/ex3
+CMAKE_SOURCE_DIR = /home/ori294/Interpreter-Flight-Simulator-language/ex3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ex3.dir/depend.make
@@ -59,28 +59,43 @@ include CMakeFiles/ex3.dir/flags.make
 
 CMakeFiles/ex3.dir/main.cpp.o: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/main.cpp.o -c /home/gadi/Interpreter-Flight-Simulator-language/ex3/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/main.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp
 
 CMakeFiles/ex3.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gadi/Interpreter-Flight-Simulator-language/ex3/main.cpp > CMakeFiles/ex3.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp > CMakeFiles/ex3.dir/main.cpp.i
 
 CMakeFiles/ex3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gadi/Interpreter-Flight-Simulator-language/ex3/main.cpp -o CMakeFiles/ex3.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp -o CMakeFiles/ex3.dir/main.cpp.s
+
+CMakeFiles/ex3.dir/Lexer.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Lexer.cpp.o: ../Lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex3.dir/Lexer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Lexer.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp
+
+CMakeFiles/ex3.dir/Lexer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Lexer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp > CMakeFiles/ex3.dir/Lexer.cpp.i
+
+CMakeFiles/ex3.dir/Lexer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Lexer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp -o CMakeFiles/ex3.dir/Lexer.cpp.s
 
 # Object files for target ex3
 ex3_OBJECTS = \
-"CMakeFiles/ex3.dir/main.cpp.o"
+"CMakeFiles/ex3.dir/main.cpp.o" \
+"CMakeFiles/ex3.dir/Lexer.cpp.o"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
 
 ex3: CMakeFiles/ex3.dir/main.cpp.o
+ex3: CMakeFiles/ex3.dir/Lexer.cpp.o
 ex3: CMakeFiles/ex3.dir/build.make
 ex3: CMakeFiles/ex3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ex3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +108,6 @@ CMakeFiles/ex3.dir/clean:
 .PHONY : CMakeFiles/ex3.dir/clean
 
 CMakeFiles/ex3.dir/depend:
-	cd /home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gadi/Interpreter-Flight-Simulator-language/ex3 /home/gadi/Interpreter-Flight-Simulator-language/ex3 /home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug /home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug /home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ori294/Interpreter-Flight-Simulator-language/ex3 /home/ori294/Interpreter-Flight-Simulator-language/ex3 /home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug /home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug /home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ex3.dir/depend
 
