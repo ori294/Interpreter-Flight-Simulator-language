@@ -1,6 +1,10 @@
-#include <iostream>
+#include "Command.h"
+#include "OpenServerCommand.h"
+using namespace std;
 
 int main() {
-  std::cout << "Hello, World!" << std::endl;
+  Command *c = new OpenServerCommand();
+  list<string> l;
+  c->execute(l);
   return 0;
 }

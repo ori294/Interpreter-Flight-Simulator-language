@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language/ex3/Command.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language/ex3/OpenServerCommand.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language/ex3/main.cpp">
 			<Option target="ex3"/>
 		</Unit>
