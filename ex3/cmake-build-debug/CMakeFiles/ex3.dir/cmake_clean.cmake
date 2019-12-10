@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ex3.dir/Lexer.cpp.o"
   "CMakeFiles/ex3.dir/main.cpp.o"
   "ex3"
   "ex3.pdb"

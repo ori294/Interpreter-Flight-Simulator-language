@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp
+Lexer.h
+/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.h
+
+/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.h
+fstream
+-
+iostream
+-
+string
+-
+algorithm
+-
+string.h
+/home/ori294/Interpreter-Flight-Simulator-language/ex3/string.h
+stdio.h
+-
+regex
+-
+list
+-
+

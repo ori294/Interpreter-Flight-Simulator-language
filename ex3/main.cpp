@@ -1,6 +1,18 @@
 #include <iostream>
+#include <list>
+#include "Lexer.h"
 
 int main() {
-  std::cout << "Hello, World!" << std::endl;
+
+  Lexer lexer;
+
+  std::string fileName = "test.txt";
+  std::list<std::string> lexedList = lexer.readFile(fileName);
+  auto iter = lexedList.begin();
+
+  while (iter != lexedList.end()) {
+    std::cout << *iter << ", ";
+    iter++;
+  }
   return 0;
 }
