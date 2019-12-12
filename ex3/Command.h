@@ -14,7 +14,7 @@ using namespace std;
 class Command {
 
  public:
-  virtual int execute(list<string> L) = 0;
+  virtual int execute(list<string> L, list<string>::iterator indicator) = 0;
   virtual ~Command() {}
 };
 

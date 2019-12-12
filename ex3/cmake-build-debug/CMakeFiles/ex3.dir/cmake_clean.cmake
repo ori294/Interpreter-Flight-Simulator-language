@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ex3.dir/ConnectCommand.cpp.o"
+  "CMakeFiles/ex3.dir/OpenServerCommand.cpp.o"
   "CMakeFiles/ex3.dir/main.cpp.o"
   "ex3"
   "ex3.pdb"

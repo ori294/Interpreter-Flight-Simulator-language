@@ -123,6 +123,60 @@ ex3/fast:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
 
+ConnectCommand.o: ConnectCommand.cpp.o
+
+.PHONY : ConnectCommand.o
+
+# target to build an object file
+ConnectCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/ConnectCommand.cpp.o
+.PHONY : ConnectCommand.cpp.o
+
+ConnectCommand.i: ConnectCommand.cpp.i
+
+.PHONY : ConnectCommand.i
+
+# target to preprocess a source file
+ConnectCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/ConnectCommand.cpp.i
+.PHONY : ConnectCommand.cpp.i
+
+ConnectCommand.s: ConnectCommand.cpp.s
+
+.PHONY : ConnectCommand.s
+
+# target to generate assembly for a file
+ConnectCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/ConnectCommand.cpp.s
+.PHONY : ConnectCommand.cpp.s
+
+OpenServerCommand.o: OpenServerCommand.cpp.o
+
+.PHONY : OpenServerCommand.o
+
+# target to build an object file
+OpenServerCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/OpenServerCommand.cpp.o
+.PHONY : OpenServerCommand.cpp.o
+
+OpenServerCommand.i: OpenServerCommand.cpp.i
+
+.PHONY : OpenServerCommand.i
+
+# target to preprocess a source file
+OpenServerCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/OpenServerCommand.cpp.i
+.PHONY : OpenServerCommand.cpp.i
+
+OpenServerCommand.s: OpenServerCommand.cpp.s
+
+.PHONY : OpenServerCommand.s
+
+# target to generate assembly for a file
+OpenServerCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/OpenServerCommand.cpp.s
+.PHONY : OpenServerCommand.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex3"
 	@echo "... edit_cache"
+	@echo "... ConnectCommand.o"
+	@echo "... ConnectCommand.i"
+	@echo "... ConnectCommand.s"
+	@echo "... OpenServerCommand.o"
+	@echo "... OpenServerCommand.i"
+	@echo "... OpenServerCommand.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -6,3 +6,33 @@
 
 #IncludeRegexTransform: 
 
+/home/gadi/Interpreter-Flight-Simulator-language/ex3/Command.h
+string
+-
+list
+-
+
+/home/gadi/Interpreter-Flight-Simulator-language/ex3/ConnectCommand.cpp
+ConnectCommand.h
+/home/gadi/Interpreter-Flight-Simulator-language/ex3/ConnectCommand.h
+
+/home/gadi/Interpreter-Flight-Simulator-language/ex3/ConnectCommand.h
+thread
+-
+Command.h
+/home/gadi/Interpreter-Flight-Simulator-language/ex3/Command.h
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+string
+-
+iostream
+-
+cstring
+-
+arpa/inet.h
+-
+

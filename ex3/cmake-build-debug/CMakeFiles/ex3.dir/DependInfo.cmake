@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/gadi/Interpreter-Flight-Simulator-language/ex3/ConnectCommand.cpp" "/home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/ConnectCommand.cpp.o"
+  "/home/gadi/Interpreter-Flight-Simulator-language/ex3/OpenServerCommand.cpp" "/home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/OpenServerCommand.cpp.o"
   "/home/gadi/Interpreter-Flight-Simulator-language/ex3/main.cpp" "/home/gadi/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
