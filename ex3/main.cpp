@@ -11,7 +11,7 @@ int main() {
   auto iter = lexedList.begin();
 
   while (iter != lexedList.end()) {
-    std::cout << *iter << ", ";
+    std::cout << *iter << ";";
     iter++;
   }
   SimulatorManager *sim = SimulatorManager::getInstance();

@@ -6,22 +6,13 @@
 #include "ConnectCommand.h"
 
 int connectControlClient::execute(list<string> list_of_strings) {
-  char *port;
-  char *ip;
-  int _port;
-  char char_array[(*list_of_strings.begin()).length()];
-  std::strcpy(char_array, (*list_of_strings.begin()).c_str());
-  //strtok for delimiters - first time
-  char *token = strtok(char_array, ",");
-  if (token != nullptr) {
-    ip = token;
-  }
-  token = strtok(nullptr, ",");
-  if (token != nullptr) {
-    port = token;
-    _port = atoi(port);
-  }
-
+  list<string>::iterator it = list_of_strings.begin();
+  char ip[(*it).length()]; //copy to array for strtok function
+  std::strcpy(ip, (*it).c_str());
+  it++;
+  char port[(*it).length()]; //copy to array for strtok function
+  std::strcpy(ip, (*it).c_str());
+  int _port = atoi(port);
   //check if the iterator move by value or reference!!!
   int socket_client = socket(AF_INET, SOCK_STREAM, 0);
   if (socket_client == -1) {
@@ -40,7 +31,6 @@ int connectControlClient::execute(list<string> list_of_strings) {
     cerr << "Could not connect to host server" << endl;
     return -2;
   }
-
   /**
    * check the connect between client and simulator
    */
