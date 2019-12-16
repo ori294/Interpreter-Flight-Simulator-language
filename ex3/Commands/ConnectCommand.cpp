@@ -31,7 +31,6 @@ int connectControlClient::execute(list<string> list_of_strings) {
     cerr << "Could not connect to host server" << endl;
     return -2;
   }
-
   /**
    * check the connect between client and simulator
    */
