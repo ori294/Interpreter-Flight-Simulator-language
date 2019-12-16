@@ -83,19 +83,79 @@ CMakeFiles/ex3.dir/Lexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Lexer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp -o CMakeFiles/ex3.dir/Lexer.cpp.s
 
+CMakeFiles/ex3.dir/Parser.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Parser.cpp.o: ../Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ex3.dir/Parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Parser.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp
+
+CMakeFiles/ex3.dir/Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp > CMakeFiles/ex3.dir/Parser.cpp.i
+
+CMakeFiles/ex3.dir/Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp -o CMakeFiles/ex3.dir/Parser.cpp.s
+
+CMakeFiles/ex3.dir/SimulatorManager.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../SimulatorManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ex3.dir/SimulatorManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/SimulatorManager.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp
+
+CMakeFiles/ex3.dir/SimulatorManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/SimulatorManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp > CMakeFiles/ex3.dir/SimulatorManager.cpp.i
+
+CMakeFiles/ex3.dir/SimulatorManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/SimulatorManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp -o CMakeFiles/ex3.dir/SimulatorManager.cpp.s
+
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/ConnectCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp
+
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp > CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.i
+
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp -o CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s
+
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/OpenServerCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp
+
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp > CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.i
+
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp -o CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s
+
 # Object files for target ex3
 ex3_OBJECTS = \
 "CMakeFiles/ex3.dir/main.cpp.o" \
-"CMakeFiles/ex3.dir/Lexer.cpp.o"
+"CMakeFiles/ex3.dir/Lexer.cpp.o" \
+"CMakeFiles/ex3.dir/Parser.cpp.o" \
+"CMakeFiles/ex3.dir/SimulatorManager.cpp.o" \
+"CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o" \
+"CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
 
 ex3: CMakeFiles/ex3.dir/main.cpp.o
 ex3: CMakeFiles/ex3.dir/Lexer.cpp.o
+ex3: CMakeFiles/ex3.dir/Parser.cpp.o
+ex3: CMakeFiles/ex3.dir/SimulatorManager.cpp.o
+ex3: CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o
+ex3: CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o
 ex3: CMakeFiles/ex3.dir/build.make
 ex3: CMakeFiles/ex3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ex3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

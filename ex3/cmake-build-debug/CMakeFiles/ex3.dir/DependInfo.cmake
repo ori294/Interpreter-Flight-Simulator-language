@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o"
+  "/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o"
   "/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Lexer.cpp.o"
+  "/home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/Parser.cpp.o"
+  "/home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/SimulatorManager.cpp.o"
   "/home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp" "/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles/ex3.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
