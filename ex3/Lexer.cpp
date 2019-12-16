@@ -30,14 +30,14 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
       //strtok for delimiters - first time
       char *token = strtok(char_array, " ,(,)");
-      if (token != NULL) {
+      if (token != nullptr) {
         strList.push_back(token);
       }
 
       //strtok loop = keep cutting string until strtok gives null
-      while (token != NULL) {
-        token = strtok(NULL, " ,(,)");
-        if (token != NULL) {
+      while (token != nullptr) {
+        token = strtok(nullptr, " ,(,)");
+        if (token != nullptr) {
           strList.push_back(token);
         }
       }

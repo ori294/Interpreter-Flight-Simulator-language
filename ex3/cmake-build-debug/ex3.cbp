@@ -84,10 +84,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.h">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp">

@@ -123,6 +123,60 @@ ex3/fast:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
 
+Commands/ConnectCommand.o: Commands/ConnectCommand.cpp.o
+
+.PHONY : Commands/ConnectCommand.o
+
+# target to build an object file
+Commands/ConnectCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o
+.PHONY : Commands/ConnectCommand.cpp.o
+
+Commands/ConnectCommand.i: Commands/ConnectCommand.cpp.i
+
+.PHONY : Commands/ConnectCommand.i
+
+# target to preprocess a source file
+Commands/ConnectCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.i
+.PHONY : Commands/ConnectCommand.cpp.i
+
+Commands/ConnectCommand.s: Commands/ConnectCommand.cpp.s
+
+.PHONY : Commands/ConnectCommand.s
+
+# target to generate assembly for a file
+Commands/ConnectCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s
+.PHONY : Commands/ConnectCommand.cpp.s
+
+Commands/OpenServerCommand.o: Commands/OpenServerCommand.cpp.o
+
+.PHONY : Commands/OpenServerCommand.o
+
+# target to build an object file
+Commands/OpenServerCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o
+.PHONY : Commands/OpenServerCommand.cpp.o
+
+Commands/OpenServerCommand.i: Commands/OpenServerCommand.cpp.i
+
+.PHONY : Commands/OpenServerCommand.i
+
+# target to preprocess a source file
+Commands/OpenServerCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.i
+.PHONY : Commands/OpenServerCommand.cpp.i
+
+Commands/OpenServerCommand.s: Commands/OpenServerCommand.cpp.s
+
+.PHONY : Commands/OpenServerCommand.s
+
+# target to generate assembly for a file
+Commands/OpenServerCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s
+.PHONY : Commands/OpenServerCommand.cpp.s
+
 Lexer.o: Lexer.cpp.o
 
 .PHONY : Lexer.o
@@ -149,6 +203,60 @@ Lexer.s: Lexer.cpp.s
 Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
+
+Parser.o: Parser.cpp.o
+
+.PHONY : Parser.o
+
+# target to build an object file
+Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Parser.cpp.o
+.PHONY : Parser.cpp.o
+
+Parser.i: Parser.cpp.i
+
+.PHONY : Parser.i
+
+# target to preprocess a source file
+Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Parser.cpp.i
+.PHONY : Parser.cpp.i
+
+Parser.s: Parser.cpp.s
+
+.PHONY : Parser.s
+
+# target to generate assembly for a file
+Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Parser.cpp.s
+.PHONY : Parser.cpp.s
+
+SimulatorManager.o: SimulatorManager.cpp.o
+
+.PHONY : SimulatorManager.o
+
+# target to build an object file
+SimulatorManager.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SimulatorManager.cpp.o
+.PHONY : SimulatorManager.cpp.o
+
+SimulatorManager.i: SimulatorManager.cpp.i
+
+.PHONY : SimulatorManager.i
+
+# target to preprocess a source file
+SimulatorManager.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SimulatorManager.cpp.i
+.PHONY : SimulatorManager.cpp.i
+
+SimulatorManager.s: SimulatorManager.cpp.s
+
+.PHONY : SimulatorManager.s
+
+# target to generate assembly for a file
+SimulatorManager.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/SimulatorManager.cpp.s
+.PHONY : SimulatorManager.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +294,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex3"
 	@echo "... edit_cache"
+	@echo "... Commands/ConnectCommand.o"
+	@echo "... Commands/ConnectCommand.i"
+	@echo "... Commands/ConnectCommand.s"
+	@echo "... Commands/OpenServerCommand.o"
+	@echo "... Commands/OpenServerCommand.i"
+	@echo "... Commands/OpenServerCommand.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... Parser.o"
+	@echo "... Parser.i"
+	@echo "... Parser.s"
+	@echo "... SimulatorManager.o"
+	@echo "... SimulatorManager.i"
+	@echo "... SimulatorManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
