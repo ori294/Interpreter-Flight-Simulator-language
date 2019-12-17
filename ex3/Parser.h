@@ -13,10 +13,9 @@ class Parser {
   std::list<std::string>::iterator listIterator;
   std::unordered_map<std::string, Command*> commandMap;
 
+ public:
   std::pair<Command*,std::list<std::string>> getNextCommand();
   bool isEnded();
-
- public:
   Parser(std::list<std::string> strList);
   ~Parser() {
     //Before deleting the parser - delete commands in the parser;

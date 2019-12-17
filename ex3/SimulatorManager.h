@@ -21,6 +21,7 @@ class SimulatorManager {
   static SimulatorManager *instance;
   Parser *parser;
   std::map<std::string, SymbolTableValue*> symbolTable;
+  std::map<std::string, float> localSymbolTable;
   /* Private constructor to prevent instancing. */
   SimulatorManager();
 
@@ -34,9 +35,14 @@ class SimulatorManager {
   void set_client(connectControlClient *cli);
   OpenServerCommand *get_server();
   connectControlClient *get_client();
+
   std::map<std::string, SymbolTableValue *> *getSymbolMap() {
     return &symbolTable;
   }
+  std::map<std::string, float> *getLocalSymbolMap() {
+    return &localSymbolTable;
+  }
+
   ~SimulatorManager() {
     //Delete the parser
     delete this->parser;

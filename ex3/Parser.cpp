@@ -7,6 +7,7 @@
 #include "Commands/ConnectCommand.h"
 #include "Commands/VarAssignCommand.h"
 #include "Commands/DefineVarCommand.h"
+#include "Commands/DefineLocalVarCommand.h"
 
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
@@ -17,7 +18,9 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
     Command* tempCommand;
     std::list<std::string> tempList;
     auto mapIterator = commandMap.find(*listIterator); //find the right command
+    cout << "got here" << endl;
     if (mapIterator != commandMap.end()) {
+      cout << "got here 2" << endl;
       tempCommand = mapIterator->second; //save the command
         listIterator++;
       for (int i = 0; i < tempCommand->get_num_of_arg(); i++) { //get the arguments for the command
@@ -27,8 +30,8 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
       return tempPair;
     }
-    NullCommand* null_command;
-    std::pair<Command*,std::list<std::string>>(null_command, tempList);
+    //NullCommand* null_command;
+    //std::pair<Command*,std::list<std::string>>(null_command, tempList);
   }
 }
 
@@ -53,7 +56,7 @@ Parser::Parser(std::list<std::string> strList) {
 
   //Add open server command to the map
   OpenServerCommand *ops = new OpenServerCommand();
-  commandMap.insert({"OpenServerCommand", ops});
+  commandMap.insert({"openDataServer", ops});
 
   //Add open client command to the map
   connectControlClient* cnc = new connectControlClient();
@@ -66,6 +69,10 @@ Parser::Parser(std::list<std::string> strList) {
   //Add define var command to the map
   DefineVarCommand* dvc = new DefineVarCommand();
   commandMap.insert({"simvar", dvc});
+
+  //Add local var command to the map
+  DefineLocalVarCommand* dlvc = new DefineLocalVarCommand();
+  commandMap.insert({"var", dlvc});
 
   //Add print command to the map
   PrintCommand print;

@@ -16,7 +16,10 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
  * run the simulator.
  */
 void SimulatorManager::runSimulator() {
-
+  while (!parser->isEnded()) {
+    parser->getNextCommand().first->execute(parser->getNextCommand().second);
+    sleep(1);
+  }
 }
 /**
  * update the symbol table from outside the manager.

@@ -41,7 +41,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
     return -2;
   }
   this->get_info = thread(run_client_to_simulator, &this->commandsToSim, socket_client);
-
+  get_info.join();
   //close the socket in the end of the program!!
   return 0;
 }
