@@ -23,8 +23,7 @@ class OpenServerCommand : public Command {
   int numOfArg;
   map<int, pair<string, string>> data_about_airplane;
  public:
-  OpenServerCommand(int arg) {
-    this->numOfArg = arg;
+  OpenServerCommand() {
     data_about_airplane.insert(make_pair(0, make_pair("/instrumentation/airspeed-indicator/indicated-speed-kt", "0")));
     data_about_airplane.insert(make_pair(1,make_pair("/instrumentation/altimeter/indicated-altitude-ft", "0")));
     data_about_airplane.insert(make_pair(2,make_pair("/instrumentation/altimeter/pressure-alt-ft", "0")));
@@ -51,7 +50,7 @@ class OpenServerCommand : public Command {
     //add heading!!!!!!
   }
   int execute(list<string> list_of_strings) override;
-  int get_num_of_arg() override;
+  int get_num_of_arg() override {return 1;}
   static void get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data);
   static void split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data);
 

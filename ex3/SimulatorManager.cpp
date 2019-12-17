@@ -3,6 +3,7 @@
 //
 
 #include "SimulatorManager.h"
+#include "SymbolTableValue.h"
 
 void SimulatorManager::setStringList(std::list<std::string> strList) {
   parser = new Parser(strList);
@@ -13,8 +14,15 @@ void SimulatorManager::runSimulator() {
 }
 
 SimulatorManager::SimulatorManager() {
-  //Do nothing
+  //this->symbolTable = std::map<std::string, SymbolTableValue>();
 };
+
+void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirection, std::string simAddress) {
+  Expression* expression = new Value(0);
+  SymbolTableValue* sym = new SymbolTableValue(expression, simAddress, bindDirection);
+  symbolTable.insert({VarName, sym});
+}
+
 
 SimulatorManager* SimulatorManager::instance = nullptr;
 

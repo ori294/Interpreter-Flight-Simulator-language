@@ -19,15 +19,11 @@ using namespace std;
 
 class connectControlClient : public Command {
  private:
-  int numOfArg;
   thread get_info;
   unordered_map<string, string> data_about_airplane;
  public:
-  connectControlClient(int arg) {
-    this->numOfArg = arg;
-  }
   int execute(list<string> list_of_strings) override;
-  int get_num_of_arg() override;
+  int get_num_of_arg() override {return 2;}
 
 };
 
