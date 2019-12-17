@@ -9,6 +9,7 @@
  * @return 0
  */
 int DefineVarCommand::execute(list<string> list_of_strings) {
+
   list<string>::iterator it = list_of_strings.begin();
   string name_var = *it;
   bool arrow = false;
@@ -22,11 +23,4 @@ int DefineVarCommand::execute(list<string> list_of_strings) {
   path = *it;
   SimulatorManager::getInstance()->update_symbol_table(name_var, arrow, path);
   return 0;
-}
-/**
- * return the number of args in this command
- * @return number of arg
- */
-int DefineVarCommand::get_num_of_arg() {
-  return this->arg;
 }

@@ -5,6 +5,8 @@
 #include "Parser.h"
 #include "Commands/OpenServerCommand.h"
 #include "Commands/ConnectCommand.h"
+#include "Commands/VarAssignCommand.h"
+#include "Commands/DefineVarCommand.h"
 
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
@@ -53,9 +55,17 @@ Parser::Parser(std::list<std::string> strList) {
   OpenServerCommand *ops = new OpenServerCommand();
   commandMap.insert({"OpenServerCommand", ops});
 
-  //Add connect client command to the map
-  //ConnectCommand *cnc = new ConnectCommand();
-  //commandMap.insert({"ConnectCommand", cnc});
+  //Add open client command to the map
+  connectControlClient* cnc = new connectControlClient();
+  commandMap.insert({"connectControlClient", ops});
+
+  //Add assign var command to the map
+  VarAssignCommand* vac = new VarAssignCommand();
+  commandMap.insert({"=", vac});
+
+  //Add define var command to the map
+  DefineVarCommand* dvc = new DefineVarCommand();
+  commandMap.insert({"simvar", dvc});
 
   //Add print command to the map
   PrintCommand print;
