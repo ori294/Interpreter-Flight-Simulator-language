@@ -47,7 +47,7 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
     cerr << "can't open server" << endl;
     return -1;
   }
-  
+
   //create server socket
   sockaddr_in address;
   address.sin_family = AF_INET;
