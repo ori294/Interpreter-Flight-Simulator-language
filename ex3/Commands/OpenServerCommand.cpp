@@ -71,8 +71,4 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
   get_info.join();
   return this->numOfArg + 1;
 }
-
-int OpenServerCommand::get_num_of_arg() {
-  return this->numOfArg;
-}
 //‫‪--telnet=socket,in,10,127.0.0.1,5402,tcp ‬‬‬ ‪--generic=socket,out,10,192.168.1.15,5400,tcp,generic_small

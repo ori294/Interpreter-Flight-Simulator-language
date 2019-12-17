@@ -29,7 +29,13 @@ class SimulatorManager
   void runSimulator();
   void setStringList(std::list<std::string> strList);
   ~SimulatorManager() {
-    //delete parser
+    //Delete the parser
+    delete this->parser;
+    //Before closing the runner - delete symbols in symbol table.
+    auto iter = symbolTable.begin();
+    while (iter != symbolTable.end()) {
+      delete iter->second;
+    }
   }
 };
 

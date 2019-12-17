@@ -18,9 +18,7 @@ class PrintCommand: public Command {
 };
 
 class SleepCommand: public Command {
-
   int get_num_of_arg() override {return 1;}
-
   int execute(std::list<std::string> comList) override {
     char char_array[comList.begin()->length()]; //copy to array for atoi function
     strcpy(char_array, comList.begin()->c_str());
