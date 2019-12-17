@@ -14,6 +14,8 @@ int main() {
     std::cout << *iter << ";";
     iter++;
   }
+
+  cout << endl;
   SimulatorManager *sim = SimulatorManager::getInstance();
   sim->setStringList(lexedList);
   sim->runSimulator();

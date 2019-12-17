@@ -16,10 +16,8 @@ int VarAssignCommand::execute(std::list<std::string> list_of_strings) {
       auto iter2 = list_of_strings.begin();
       iter2++;
 
-      //SimulatorManager::getInstance()->add_commands_to_queue("set " + iter1->second->getSimAddress() +
-      //" " + *iter2 + "\r\n");
-    } else {
-      //it's server(left) bind - local variables
+      SimulatorManager::getInstance()->get_client()->add_commands_to_queue("set " +
+      iter1->second->getSimAddress() + " " + *iter2 + "\r\n");
     }
   }
 }
