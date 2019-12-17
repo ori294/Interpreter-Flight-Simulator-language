@@ -58,9 +58,5 @@ int connectControlClient::execute(list<string> list_of_strings) {
    */
 
   //close the socket in the end of the program
-  return this->numOfArg + 1;
-}
-
-int connectControlClient::get_num_of_arg() {
-  return this->numOfArg;
+  return 0;
 }

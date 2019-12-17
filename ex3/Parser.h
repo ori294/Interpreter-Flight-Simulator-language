@@ -12,12 +12,19 @@ class Parser {
   std::list<std::string> commandList;
   std::list<std::string>::iterator listIterator;
   std::unordered_map<std::string, Command*> commandMap;
+
   std::pair<Command*,std::list<std::string>> getNextCommand();
   bool isEnded();
 
  public:
   Parser(std::list<std::string> strList);
-  ~Parser();
+  ~Parser() {
+    //Before deleting the parser - delete commands in the parser;
+    auto iter = commandMap.begin();
+    while (iter != commandMap.end()) {
+      delete iter->second;
+    }
+  }
 };
 
 #endif //EX3__PARSER_H_
