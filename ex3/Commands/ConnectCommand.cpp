@@ -3,9 +3,18 @@
 //
 
 
+#include <mutex>
 #include "ConnectCommand.h"
 
+
+std::mutex mutex_lock;
+
+/**
+ * @param list_of_strings
+ * @return 0
+ */
 int connectControlClient::execute(list<string> list_of_strings) {
+  SimulatorManager::getInstance()->set_client(this);
   list<string>::iterator it = list_of_strings.begin();
   char ip[(*it).length()]; //copy to array for strtok function
   std::strcpy(ip, (*it).c_str());
@@ -31,32 +40,35 @@ int connectControlClient::execute(list<string> list_of_strings) {
     cerr << "Could not connect to host server" << endl;
     return -2;
   }
-  /**
-   * check the connect between client and simulator
-   */
-  char msg1[] = "set controls/flight/rudder -1\r\n";
-  char msg2[] = "set controls/flight/rudder 1\r\n";
-  int flag = 0;
-  for (int k = 0; k < 10; k++) {
-    if (flag) {
-      int is_send = send(socket_client, msg1, strlen(msg1), 0);
-      if (is_send == -1) {
-        cout << "Error sending msg" << endl;
-      }
-      flag = 0;
-    } else {
-      int is_send = send(socket_client, msg2, strlen(msg2), 0);
-      if (is_send == -1) {
-        cout << "Error sending msg" << endl;
-      }
-      flag = 1;
-    }
-    sleep(1);
-  }
-  /**
-   * end check.
-   */
+  this->get_info = thread(run_client_to_simulator, &this->commandsToSim, socket_client);
 
-  //close the socket in the end of the program
+  //close the socket in the end of the program!!
   return 0;
+}
+/**
+ * run in another thread until the program finish and send commands to simulator
+ * @param commandsForS queue member of client for sending to simulator
+ * @param socket_client
+ */
+void connectControlClient::run_client_to_simulator(queue<string> *commandsForS, int socket_client) {
+  //run looop until end the program!
+  while (!commandsForS->empty()) {
+    mutex_lock.lock();
+    const char *msg = commandsForS->front().c_str();
+    int is_send = send(socket_client, msg, strlen(msg), 0);
+    if (is_send == -1) {
+      cout << "Error sending msg" << endl;
+    }
+  }
+  mutex_lock.unlock();
+}
+/**
+ * add one command to the queue of the client
+ * @param s
+ */
+void connectControlClient::add_commands_to_queue(string s) {
+  //lock the queue for the main thread!
+  mutex_lock.lock();
+  this->commandsToSim.push(s);
+  mutex_lock.unlock();
 }

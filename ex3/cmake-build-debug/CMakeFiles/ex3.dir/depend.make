@@ -4,10 +4,19 @@
 CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/Command.h
 CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/ConnectCommand.cpp
 CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/ConnectCommand.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/OpenServerCommand.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Commands/SingleCommands.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Expressions/Expression.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Expressions/ExpressionKinds.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../Parser.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../SimulatorManager.h
+CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/ConnectCommand.h
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/DefineLocalVarCommand.cpp
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/DefineLocalVarCommand.h
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/OpenServerCommand.h
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/SingleCommands.h
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Expressions/Expression.h
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Expressions/ExpressionKinds.h
@@ -16,8 +25,10 @@ CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../SimulatorManager.h
 CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/ConnectCommand.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/DefineVarCommand.cpp
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/DefineVarCommand.h
+CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/OpenServerCommand.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Commands/SingleCommands.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Expressions/Expression.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../Expressions/ExpressionKinds.h
@@ -26,10 +37,19 @@ CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../SimulatorManager.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/ConnectCommand.h
 CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/OpenServerCommand.cpp
 CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/OpenServerCommand.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Commands/SingleCommands.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Expressions/Expression.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Expressions/ExpressionKinds.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../Parser.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../SimulatorManager.h
+CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/ConnectCommand.h
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/OpenServerCommand.h
 CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/SingleCommands.h
 CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/VarAssignCommand.cpp
 CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/VarAssignCommand.h
@@ -60,6 +80,8 @@ CMakeFiles/ex3.dir/Parser.cpp.o: ../SimulatorManager.h
 CMakeFiles/ex3.dir/Parser.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Commands/ConnectCommand.h
+CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Commands/OpenServerCommand.h
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Commands/SingleCommands.h
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Expressions/Expression.h
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../Expressions/ExpressionKinds.h
@@ -69,6 +91,8 @@ CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../SimulatorManager.h
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o: ../SymbolTableValue.h
 
 CMakeFiles/ex3.dir/main.cpp.o: ../Commands/Command.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Commands/ConnectCommand.h
+CMakeFiles/ex3.dir/main.cpp.o: ../Commands/OpenServerCommand.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Commands/SingleCommands.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Expressions/Expression.h
 CMakeFiles/ex3.dir/main.cpp.o: ../Expressions/ExpressionKinds.h

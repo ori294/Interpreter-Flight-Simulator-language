@@ -4,6 +4,7 @@
 
 #include "OpenServerCommand.h"
 
+
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
   int indicator = 0;
@@ -39,6 +40,7 @@ void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair
  * @return indicator for how many steps jump on the list
  */
 int OpenServerCommand::execute(list<string> list_of_strings) {
+  SimulatorManager::getInstance()->set_server(this);
   string number_port = *list_of_strings.begin();
   int port = atoi(number_port.c_str());
   int socket_Server = socket(AF_INET, SOCK_STREAM, 0);
@@ -69,6 +71,22 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
   //sending thread to the func "get_data_from_air_plane" and make multi-threads
   this->get_info = thread(get_data_from_air_plane, client_socket, &this->data_about_airplane);
   get_info.join();
+  //close socket!!!
   return this->numOfArg + 1;
 }
-//‫‪--telnet=socket,in,10,127.0.0.1,5402,tcp ‬‬‬ ‪--generic=socket,out,10,192.168.1.15,5400,tcp,generic_small
+/**
+ * getter value of specific variable in map of data_about_airplane
+ * @param s
+ * @return value
+ */
+float OpenServerCommand::get_value(string s) {
+  float value = 0;
+  auto it = this->data_about_airplane.begin();
+  while (it != this->data_about_airplane.end()) {
+    if (it->second.first == s) {
+      value = stof(it->second.second);
+      break;
+    }
+  }
+  return value;
+}
