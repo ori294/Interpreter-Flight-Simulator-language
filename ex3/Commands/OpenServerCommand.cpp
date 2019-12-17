@@ -9,7 +9,7 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
   int indicator = 0;
   tokens = strtok(buffer, ",");
   (*map_data)[indicator].second = tokens;
-  while (indicator < 22) {
+  while (indicator < 23) {
     indicator++;
     tokens = strtok(nullptr, ",");
     (*map_data)[indicator].second = tokens;
