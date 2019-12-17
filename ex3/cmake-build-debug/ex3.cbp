@@ -93,6 +93,12 @@
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.h">
 			<Option target="ex3"/>
 		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
@@ -106,6 +112,12 @@
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.h">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h">

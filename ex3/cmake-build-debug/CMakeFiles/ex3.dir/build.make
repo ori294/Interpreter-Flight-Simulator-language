@@ -161,6 +161,32 @@ CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.cpp -o CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.s
 
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o: ../Commands/VarAssignCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp
+
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp > CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.i
+
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp -o CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.s
+
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: CMakeFiles/ex3.dir/flags.make
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o: ../Commands/DefineLocalVarCommand.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o -c /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp
+
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp > CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.i
+
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp -o CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.s
+
 # Object files for target ex3
 ex3_OBJECTS = \
 "CMakeFiles/ex3.dir/main.cpp.o" \
@@ -170,7 +196,9 @@ ex3_OBJECTS = \
 "CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o" \
 "CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o" \
 "CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.o" \
-"CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o"
+"CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o" \
+"CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o" \
+"CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o"
 
 # External object files for target ex3
 ex3_EXTERNAL_OBJECTS =
@@ -183,9 +211,11 @@ ex3: CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o
 ex3: CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o
 ex3: CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.o
 ex3: CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o
+ex3: CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o
+ex3: CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o
 ex3: CMakeFiles/ex3.dir/build.make
 ex3: CMakeFiles/ex3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ex3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ex3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

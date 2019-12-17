@@ -150,6 +150,33 @@ Commands/ConnectCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s
 .PHONY : Commands/ConnectCommand.cpp.s
 
+Commands/DefineLocalVarCommand.o: Commands/DefineLocalVarCommand.cpp.o
+
+.PHONY : Commands/DefineLocalVarCommand.o
+
+# target to build an object file
+Commands/DefineLocalVarCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o
+.PHONY : Commands/DefineLocalVarCommand.cpp.o
+
+Commands/DefineLocalVarCommand.i: Commands/DefineLocalVarCommand.cpp.i
+
+.PHONY : Commands/DefineLocalVarCommand.i
+
+# target to preprocess a source file
+Commands/DefineLocalVarCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.i
+.PHONY : Commands/DefineLocalVarCommand.cpp.i
+
+Commands/DefineLocalVarCommand.s: Commands/DefineLocalVarCommand.cpp.s
+
+.PHONY : Commands/DefineLocalVarCommand.s
+
+# target to generate assembly for a file
+Commands/DefineLocalVarCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.s
+.PHONY : Commands/DefineLocalVarCommand.cpp.s
+
 Commands/DefineVarCommand.o: Commands/DefineVarCommand.cpp.o
 
 .PHONY : Commands/DefineVarCommand.o
@@ -203,6 +230,33 @@ Commands/OpenServerCommand.s: Commands/OpenServerCommand.cpp.s
 Commands/OpenServerCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s
 .PHONY : Commands/OpenServerCommand.cpp.s
+
+Commands/VarAssignCommand.o: Commands/VarAssignCommand.cpp.o
+
+.PHONY : Commands/VarAssignCommand.o
+
+# target to build an object file
+Commands/VarAssignCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o
+.PHONY : Commands/VarAssignCommand.cpp.o
+
+Commands/VarAssignCommand.i: Commands/VarAssignCommand.cpp.i
+
+.PHONY : Commands/VarAssignCommand.i
+
+# target to preprocess a source file
+Commands/VarAssignCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.i
+.PHONY : Commands/VarAssignCommand.cpp.i
+
+Commands/VarAssignCommand.s: Commands/VarAssignCommand.cpp.s
+
+.PHONY : Commands/VarAssignCommand.s
+
+# target to generate assembly for a file
+Commands/VarAssignCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.s
+.PHONY : Commands/VarAssignCommand.cpp.s
 
 Expressions/ExpressionKinds.o: Expressions/ExpressionKinds.cpp.o
 
@@ -351,12 +405,18 @@ help:
 	@echo "... Commands/ConnectCommand.o"
 	@echo "... Commands/ConnectCommand.i"
 	@echo "... Commands/ConnectCommand.s"
+	@echo "... Commands/DefineLocalVarCommand.o"
+	@echo "... Commands/DefineLocalVarCommand.i"
+	@echo "... Commands/DefineLocalVarCommand.s"
 	@echo "... Commands/DefineVarCommand.o"
 	@echo "... Commands/DefineVarCommand.i"
 	@echo "... Commands/DefineVarCommand.s"
 	@echo "... Commands/OpenServerCommand.o"
 	@echo "... Commands/OpenServerCommand.i"
 	@echo "... Commands/OpenServerCommand.s"
+	@echo "... Commands/VarAssignCommand.o"
+	@echo "... Commands/VarAssignCommand.i"
+	@echo "... Commands/VarAssignCommand.s"
 	@echo "... Expressions/ExpressionKinds.o"
 	@echo "... Expressions/ExpressionKinds.i"
 	@echo "... Expressions/ExpressionKinds.s"

@@ -5,6 +5,16 @@ CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.h
+CMakeFiles/ex3.dir/Commands/DefineLocalVarCommand.cpp.o
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SymbolTableValue.h
 CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.cpp
@@ -19,6 +29,16 @@ CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.h
+CMakeFiles/ex3.dir/Commands/VarAssignCommand.cpp.o
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SymbolTableValue.h
 CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.cpp
@@ -29,10 +49,16 @@ CMakeFiles/ex3.dir/Lexer.cpp.o
 CMakeFiles/ex3.dir/Parser.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.h
+ /home/ori294/Interpreter-Flight-Simulator-language/ex3/SymbolTableValue.h
 CMakeFiles/ex3.dir/SimulatorManager.cpp.o
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h
  /home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h

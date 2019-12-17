@@ -18,6 +18,7 @@ class SimulatorManager
   static SimulatorManager* instance;
   Parser *parser;
   std::map<std::string, SymbolTableValue*> symbolTable;
+  //another symboltable here (local variables)
   //members: Srv client, st
   /* Private constructor to prevent instancing. */
   SimulatorManager();
@@ -28,6 +29,9 @@ class SimulatorManager
   void update_symbol_table(std::string VarName, bool bindDirction, std::string simAddress);
   void runSimulator();
   void setStringList(std::list<std::string> strList);
+  std::map<std::string, SymbolTableValue*>* getSymbolMap() {
+    return &symbolTable;
+  }
   ~SimulatorManager() {
     //Delete the parser
     delete this->parser;
