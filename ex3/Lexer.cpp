@@ -31,12 +31,9 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       //strtok for delimiters - first time
       char *token = strtok(char_array, " ,(,)");
       if (token != nullptr) {
-        if (std::regex_search(line, std::regex("sim"))) {
-          strList.push_back("simvar");
-        } else {
-          strList.push_back("var");
-        }
+        strList.push_back(token);
       }
+
       //strtok loop = keep cutting string until strtok gives null
       while (token != nullptr) {
         token = strtok(nullptr, " ,(,)");
@@ -44,6 +41,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
           strList.push_back(token);
         }
       }
+
       //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
     } else if (std::regex_search(line, std::regex(" = "))){
       char char_array[line.length()]; //copy to array for strtok function
@@ -68,40 +66,20 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
       //handle while statements
     } else if (std::regex_search(line, std::regex("while "))) {
-      char char_array[line.length()]; //copy to array for strtok function
-      std::strcpy(char_array, line.c_str());
+      std::string condition = line.substr(6, -1);
+      condition = removeBrackets(condition); //remove { in order to insert it in a different string
       strList.push_back("while");
+      strList.push_back(condition);
+      strList.push_back("{");
 
-      //strtok for delimiters - first time
-      char *token = strtok(char_array, " ");
-      if (token != nullptr) {
-        //strList.push_back(token);
-      }
-      //strtok loop = keep cutting string until strtok gives null
-      while (token != nullptr) {
-        token = strtok(nullptr, " ");
-        if (token != nullptr) {
-          strList.push_back(token);
-        }
-      }
       //handle if statements
     } else if (std::regex_search(line, std::regex("if "))) {
-      char char_array[line.length()]; //copy to array for strtok function
-      std::strcpy(char_array, line.c_str());
+      std::string condition = line.substr(3, -1);
+      condition = removeBrackets(condition); //remove { in order to insert it in a different string
       strList.push_back("if");
+      strList.push_back(condition);
+      strList.push_back("{");
 
-      //strtok for delimiters - first time
-      char *token = strtok(char_array, " ");
-      if (token != nullptr) {
-        //strList.push_back(token);
-      }
-      //strtok loop = keep cutting string until strtok gives null
-      while (token != nullptr) {
-        token = strtok(nullptr, " ");
-        if (token != nullptr) {
-          strList.push_back(token);
-        }
-      }
       //handles single scope closer
     } else if (std::regex_search(line, std::regex("\\}"))) {
       strList.push_back("}");

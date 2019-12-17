@@ -10,26 +10,31 @@
 #include "SymbolTableValue.h"
 #include "Expressions/Expression.h"
 #include "Expressions/ExpressionKinds.h"
+#include "Commands/OpenServerCommand.h"
+#include "Commands/ConnectCommand.h"
 
-class SimulatorManager
-{
+class SimulatorManager {
  private:
   /* Here will be the instance stored. */
-  static SimulatorManager* instance;
+  OpenServerCommand *server;
+  connectControlClient *client;
+  static SimulatorManager *instance;
   Parser *parser;
-  std::map<std::string, SymbolTableValue*> symbolTable;
-  //another symboltable here (local variables)
-  //members: Srv client, st
+  std::map<std::string, SymbolTableValue *> symbolTable;
   /* Private constructor to prevent instancing. */
   SimulatorManager();
 
  public:
   /* Static access method. */
-  static SimulatorManager* getInstance();
+  static SimulatorManager *getInstance();
   void update_symbol_table(std::string VarName, bool bindDirction, std::string simAddress);
   void runSimulator();
   void setStringList(std::list<std::string> strList);
-  std::map<std::string, SymbolTableValue*>* getSymbolMap() {
+  void set_server(OpenServerCommand *ser);
+  void set_client(connectControlClient *cli);
+  OpenServerCommand *get_server();
+  connectControlClient *get_client();
+  std::map<std::string, SymbolTableValue *> *getSymbolMap() {
     return &symbolTable;
   }
   ~SimulatorManager() {

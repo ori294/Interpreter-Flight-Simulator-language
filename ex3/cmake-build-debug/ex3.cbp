@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug"/>
+				<Option working_dir="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug"/>
+				<Option working_dir="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex3">
-				<Option output="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug"/>
+				<Option output="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ex3/fast">
-				<Option output="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug"/>
+				<Option output="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/ex3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,93 +67,81 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex3/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug"/>
+				<Option working_dir="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ori294/Interpreter-Flight-Simulator-language/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/Command.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/ConnectCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/ConnectCommand.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/DefineVarCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineLocalVarCommand.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/DefineVarCommand.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/OpenServerCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/OpenServerCommand.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Commands/SingleCommands.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Expressions/Expression.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Expressions/ExpressionKinds.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Expressions/ExpressionKinds.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/VarAssignCommand.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Lexer.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Expression.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Lexer.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Parser.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/Parser.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/SimulatorManager.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/SimulatorManager.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.cpp">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/SymbolTableValue.h">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Parser.h">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/main.cpp">
 			<Option target="ex3"/>
 		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.cpp">
-			<Option target="ex3"/>
-		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/SimulatorManager.h">
-			<Option target="ex3"/>
-		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/SymbolTableValue.h">
-			<Option target="ex3"/>
-		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/main.cpp">
-			<Option target="ex3"/>
-		</Unit>
-		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/CMakeLists.txt">
+		<Unit filename="/home/gadi/Interpreter-Flight-Simulator-language-ori/ex3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

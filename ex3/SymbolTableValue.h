@@ -46,14 +46,13 @@ class SymbolTableValue {
       this->exp = new Value(value);
     }
   }
-  std::string getSimAddress() {return this->simAdress;}
-
-  bool getBind() {return this->RightBinded;}
 
   /**
    * symbol value DTOR.
    */
-  ~SymbolTableValue() {delete this->exp;}
+  ~SymbolTableValue() {
+    delete this->exp;
+  }
 };
 
 #endif //EX3__SYMBOLTABLEVALUE_H_

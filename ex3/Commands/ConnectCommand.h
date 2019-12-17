@@ -6,6 +6,7 @@
 #define EX3_EX3_CONNECTCOMMAND_H_
 
 #include <thread>
+#include <queue>
 #include "Command.h"
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -20,11 +21,12 @@ using namespace std;
 class connectControlClient : public Command {
  private:
   thread get_info;
-  unordered_map<string, string> data_about_airplane;
+  queue<string> commandsToSim;
  public:
   int execute(list<string> list_of_strings) override;
-  int get_num_of_arg() override {return 2;}
-
+  int get_num_of_arg() override { return 2; }
+  void add_commands_to_queue(string s);
+  static void run_client_to_simulator(queue<string> *commandsForS, int socket_client);
 };
 
 #endif //EX3_EX3_CONNECTCOMMAND_H_

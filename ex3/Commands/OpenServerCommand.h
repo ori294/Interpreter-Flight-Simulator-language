@@ -55,9 +55,10 @@ class OpenServerCommand : public Command {
 
   }
   int execute(list<string> list_of_strings) override;
-  int get_num_of_arg() override {return 1;}
+  int get_num_of_arg() override { return 1; }
   static void get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data);
   static void split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data);
+  float get_value(string s);
 
 };
 
