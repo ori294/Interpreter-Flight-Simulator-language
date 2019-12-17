@@ -3,6 +3,8 @@
 //
 
 #include "Parser.h"
+#include "Commands/OpenServerCommand.h"
+#include "Commands/ConnectCommand.h"
 
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
@@ -28,14 +30,10 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
   }
 }
 
-std::string Parser::getString(int inc) {
-  for (int i = 0; i < inc; i++) {
-    std::string tempStr = *listIterator;
-    listIterator++;
-    return tempStr;
-  }
-}
-
+/**
+ * check if there're more commands to perform
+ * @return
+ */
 bool Parser::isEnded() {
   if (listIterator == commandList.end()) {
     return true;
@@ -43,9 +41,21 @@ bool Parser::isEnded() {
     return false;
   }
 }
+/**
+ * Parser constructor
+ * @param strList
+ */
 Parser::Parser(std::list<std::string> strList) {
   commandList = strList;
   listIterator = commandList.begin();
+
+  //Add open server command to the map
+  OpenServerCommand *ops = new OpenServerCommand();
+  commandMap.insert({"OpenServerCommand", ops});
+
+  //Add connect client command to the map
+  //ConnectCommand *cnc = new ConnectCommand();
+  //commandMap.insert({"ConnectCommand", cnc});
 
   //Add print command to the map
   PrintCommand print;
@@ -53,6 +63,6 @@ Parser::Parser(std::list<std::string> strList) {
 
   //Add sleep command to the map
   SleepCommand sleep;
-  commandMap.insert({"Print", &sleep});
+  commandMap.insert({"Sleep", &sleep});
 
 }

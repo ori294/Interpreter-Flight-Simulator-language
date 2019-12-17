@@ -6,6 +6,10 @@
 #define EX3__SIMULATORMANAGER_H_
 #include "Parser.h"
 #include <iostream>
+#include <map>
+#include "SymbolTableValue.h"
+#include "Expressions/Expression.h"
+#include "Expressions/ExpressionKinds.h"
 
 class SimulatorManager
 {
@@ -13,6 +17,7 @@ class SimulatorManager
   /* Here will be the instance stored. */
   static SimulatorManager* instance;
   Parser *parser;
+  std::map<std::string, SymbolTableValue*> symbolTable;
   //members: Srv client, st
   /* Private constructor to prevent instancing. */
   SimulatorManager();
@@ -20,6 +25,7 @@ class SimulatorManager
  public:
   /* Static access method. */
   static SimulatorManager* getInstance();
+  void update_symbol_table(std::string VarName, bool bindDirction, std::string simAddress);
   void runSimulator();
   void setStringList(std::list<std::string> strList);
   ~SimulatorManager() {

@@ -150,6 +150,33 @@ Commands/ConnectCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConnectCommand.cpp.s
 .PHONY : Commands/ConnectCommand.cpp.s
 
+Commands/DefineVarCommand.o: Commands/DefineVarCommand.cpp.o
+
+.PHONY : Commands/DefineVarCommand.o
+
+# target to build an object file
+Commands/DefineVarCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.o
+.PHONY : Commands/DefineVarCommand.cpp.o
+
+Commands/DefineVarCommand.i: Commands/DefineVarCommand.cpp.i
+
+.PHONY : Commands/DefineVarCommand.i
+
+# target to preprocess a source file
+Commands/DefineVarCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.i
+.PHONY : Commands/DefineVarCommand.cpp.i
+
+Commands/DefineVarCommand.s: Commands/DefineVarCommand.cpp.s
+
+.PHONY : Commands/DefineVarCommand.s
+
+# target to generate assembly for a file
+Commands/DefineVarCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.s
+.PHONY : Commands/DefineVarCommand.cpp.s
+
 Commands/OpenServerCommand.o: Commands/OpenServerCommand.cpp.o
 
 .PHONY : Commands/OpenServerCommand.o
@@ -176,6 +203,33 @@ Commands/OpenServerCommand.s: Commands/OpenServerCommand.cpp.s
 Commands/OpenServerCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s
 .PHONY : Commands/OpenServerCommand.cpp.s
+
+Expressions/ExpressionKinds.o: Expressions/ExpressionKinds.cpp.o
+
+.PHONY : Expressions/ExpressionKinds.o
+
+# target to build an object file
+Expressions/ExpressionKinds.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.o
+.PHONY : Expressions/ExpressionKinds.cpp.o
+
+Expressions/ExpressionKinds.i: Expressions/ExpressionKinds.cpp.i
+
+.PHONY : Expressions/ExpressionKinds.i
+
+# target to preprocess a source file
+Expressions/ExpressionKinds.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.i
+.PHONY : Expressions/ExpressionKinds.cpp.i
+
+Expressions/ExpressionKinds.s: Expressions/ExpressionKinds.cpp.s
+
+.PHONY : Expressions/ExpressionKinds.s
+
+# target to generate assembly for a file
+Expressions/ExpressionKinds.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.s
+.PHONY : Expressions/ExpressionKinds.cpp.s
 
 Lexer.o: Lexer.cpp.o
 
@@ -297,9 +351,15 @@ help:
 	@echo "... Commands/ConnectCommand.o"
 	@echo "... Commands/ConnectCommand.i"
 	@echo "... Commands/ConnectCommand.s"
+	@echo "... Commands/DefineVarCommand.o"
+	@echo "... Commands/DefineVarCommand.i"
+	@echo "... Commands/DefineVarCommand.s"
 	@echo "... Commands/OpenServerCommand.o"
 	@echo "... Commands/OpenServerCommand.i"
 	@echo "... Commands/OpenServerCommand.s"
+	@echo "... Expressions/ExpressionKinds.o"
+	@echo "... Expressions/ExpressionKinds.i"
+	@echo "... Expressions/ExpressionKinds.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
