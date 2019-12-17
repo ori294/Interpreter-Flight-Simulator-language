@@ -10,8 +10,8 @@
 
 
 class PrintCommand: public Command {
-  int get_num_of_arg() {return 1;}
-  int execute(std::list<std::string> comList) {
+  int get_num_of_arg() override {return 1;}
+  int execute(std::list<std::string> comList) override {
     std::cout << *comList.begin() << std::endl;
     return 1;
   }
@@ -19,14 +19,21 @@ class PrintCommand: public Command {
 
 class SleepCommand: public Command {
 
-  int get_num_of_arg() {return 1;}
+  int get_num_of_arg() override {return 1;}
 
-  int execute(std::list<std::string> comList) {
+  int execute(std::list<std::string> comList) override {
     char char_array[comList.begin()->length()]; //copy to array for atoi function
     strcpy(char_array, comList.begin()->c_str());
     int sleepDuration = std::atoi(char_array);
     std::this_thread::sleep_for(std::chrono::milliseconds(sleepDuration));
     return 1;
+  }
+};
+
+class NullCommand: public Command {
+  int get_num_of_arg() override {return -1;}
+  int execute(std::list<std::string> comList) override {
+    //do nothing
   }
 };
 

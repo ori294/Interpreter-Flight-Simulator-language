@@ -12,7 +12,7 @@ class Parser {
   std::list<std::string> commandList;
   std::list<std::string>::iterator listIterator;
   std::unordered_map<std::string, Command*> commandMap;
-  Command* getNextCommand();
+  std::pair<Command*,std::list<std::string>> getNextCommand();
   std::string getString(int inc);
   bool isEnded();
 

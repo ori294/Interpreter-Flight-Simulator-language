@@ -4,15 +4,28 @@
 
 #include "Parser.h"
 
-Command* Parser::getNextCommand() {
-  if (!isEnded()) {
-    auto mapIterator = commandMap.find(*listIterator);
+/**
+ * get the next command and returns a pair containing the command and the list of args for it.
+ * @return pair with command and list of args (as strings).
+ */
+std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
+  if (!isEnded()) { //check that there're more commands in the queue
+    Command* tempCommand;
+    std::list<std::string> tempList;
+    auto mapIterator = commandMap.find(*listIterator); //find the right command
     if (mapIterator != commandMap.end()) {
-      listIterator++;
-      return mapIterator->second;
+      tempCommand = mapIterator->second; //save the command
+        listIterator++;
+      for (int i = 0; i < tempCommand->get_num_of_arg(); i++) { //get the arguments for the command
+        tempList.emplace_back(*listIterator);
+        listIterator++;
+      }
+      std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
+      return tempPair;
     }
+    NullCommand* null_command;
+    std::pair<Command*,std::list<std::string>>(null_command, tempList);
   }
-  //TO DO: return some kind of null command!
 }
 
 std::string Parser::getString(int inc) {
