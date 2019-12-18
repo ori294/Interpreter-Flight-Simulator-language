@@ -20,10 +20,10 @@ using namespace std;
 
 class OpenServerCommand : public Command {
  private:
-  thread get_info;
   int numOfArg;
   map<int, pair<string, string>> data_about_airplane;
  public:
+  thread get_info;
   OpenServerCommand() {
     data_about_airplane.insert(make_pair(0, make_pair("/instrumentation/airspeed-indicator/indicated-speed-kt", "0")));
     data_about_airplane.insert(make_pair(1, make_pair("/instrumentation/heading-indicator/offset-deg", "0")));

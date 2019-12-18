@@ -18,8 +18,10 @@ void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
     tempPair.first->execute(tempPair.second);
-    sleep(1);
+    sleep(5);
   }
+  this->server->get_info.join();
+  this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.

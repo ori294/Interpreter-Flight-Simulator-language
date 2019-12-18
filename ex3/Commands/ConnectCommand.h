@@ -22,13 +22,14 @@ using namespace std;
 
 class connectControlClient : public Command {
  private:
-  thread get_info;
   queue<string> commandsToSim;
  public:
+  thread get_info;
   int execute(list<string> list_of_strings) override;
   int get_num_of_arg() override;
   void add_commands_to_queue(string s);
   static void run_client_to_simulator(queue<string> *commandsForS, int socket_client);
+  string removeSpaces(string str);
 };
 
 #endif //EX3_EX3_CONNECTCOMMAND_H_
