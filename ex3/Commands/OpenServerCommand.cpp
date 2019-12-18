@@ -2,19 +2,24 @@
 // Created by gadi on 12/12/2019.
 //
 
+
 #include "OpenServerCommand.h"
 
+std::mutex mutex_lock3;
+std::mutex mutex_lock4;
 
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
   int indicator = 0;
   tokens = strtok(buffer, ",");
+  mutex_lock4.lock();
   (*map_data)[indicator].second = tokens;
   while (indicator < 23) {
     indicator++;
     tokens = strtok(nullptr, ",");
     (*map_data)[indicator].second = tokens;
   }
+  mutex_lock4.unlock();
 }
 
 /**
@@ -88,6 +93,7 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
  * @return value
  */
 float OpenServerCommand::get_value(string s) {
+  mutex_lock3.lock();
   float value = 0;
   auto it = this->data_about_airplane.begin();
   while (it != this->data_about_airplane.end()) {
@@ -96,5 +102,6 @@ float OpenServerCommand::get_value(string s) {
       break;
     }
   }
+  mutex_lock3.lock();
   return value;
 }

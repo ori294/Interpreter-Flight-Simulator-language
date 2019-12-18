@@ -8,6 +8,7 @@
 #include "Command.h"
 #include "ConditionParser.h"
 #include "../SimulatorManager.h"
+#include "../SymbolTableValue.h"
 
 class LoopCommand: public Command {
 
