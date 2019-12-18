@@ -79,8 +79,7 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
   }
   //sending thread to the func "get_data_from_air_plane" and make multi-threads
   this->get_info = thread(get_data_from_air_plane, client_socket, &this->data_about_airplane);
-  get_info.join();
-  //close socket!!!
+  //close(socket_Server);
   return this->numOfArg + 1;
 }
 /**

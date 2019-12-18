@@ -20,7 +20,18 @@ int DefineVarCommand::execute(list<string> list_of_strings) {
   }
   it++;
   it++;
-  path = *it;
+  path = removeSpaces(*it);
+  cout << path << endl;
   SimulatorManager::getInstance()->update_symbol_table(name_var, arrow, path);
   return 0;
+}
+
+/**
+ * removeSpaces: Get a string and remove all blank spaces
+ * @param str a string
+ * @return the trimmed string
+ */
+std::string DefineVarCommand::removeSpaces(std::string str) {
+  str.erase(remove(str.begin(), str.end(), '"'), str.end());
+  return str;
 }
