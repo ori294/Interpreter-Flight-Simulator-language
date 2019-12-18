@@ -17,7 +17,8 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
  */
 void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
-    parser->getNextCommand().first->execute(parser->getNextCommand().second);
+    auto tempPair = parser->getNextCommand();
+    tempPair.first->execute(tempPair.second);
     sleep(1);
   }
 }
