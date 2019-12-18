@@ -3,7 +3,6 @@
 //
 
 #include "SimulatorManager.h"
-#include "SymbolTableValue.h"
 
 /**
  * Set the list of strings for the parser.
@@ -18,7 +17,7 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
 void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
-    //tempPair.first->execute(tempPair.second);
+    tempPair.first->execute(tempPair.second);
     sleep(1);
   }
 }

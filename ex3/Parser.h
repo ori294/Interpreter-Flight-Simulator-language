@@ -7,6 +7,12 @@
 #include "Commands/Command.h"
 #include "Commands/SingleCommands.h"
 #include <unordered_map>
+#include "Commands/OpenServerCommand.h"
+#include "Commands/ConnectCommand.h"
+#include "Commands/VarAssignCommand.h"
+#include "Commands/DefineVarCommand.h"
+#include "Commands/DefineLocalVarCommand.h"
+#include "Commands/LoopCommand.h"
 
 class Parser {
   std::list<std::string> commandList;

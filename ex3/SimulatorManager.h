@@ -19,7 +19,7 @@ class SimulatorManager {
   class OpenServerCommand *server;
   class connectControlClient *client;
   static SimulatorManager *instance;
-  Parser *parser;
+  class Parser *parser;
   std::map<std::string, SymbolTableValue*> symbolTable;
   std::map<std::string, float> localSymbolTable;
   /* Private constructor to prevent instancing. */
