@@ -40,6 +40,15 @@ void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair
  * @return indicator for how many steps jump on the list
  */
 int OpenServerCommand::execute(list<string> list_of_strings) {
+
+  auto tempIter = list_of_strings.begin();
+
+  while (tempIter != list_of_strings.end()) {
+    cout << *tempIter << endl;
+    tempIter++;
+  }
+
+
   SimulatorManager::getInstance()->set_server(this);
   string number_port = *list_of_strings.begin();
   int port = atoi(number_port.c_str());

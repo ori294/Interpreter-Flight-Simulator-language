@@ -72,3 +72,5 @@ void connectControlClient::add_commands_to_queue(string s) {
   this->commandsToSim.push(s);
   mutex_lock.unlock();
 }
+
+int connectControlClient::get_num_of_arg() {return 2;}

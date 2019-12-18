@@ -18,21 +18,25 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
     Command* tempCommand;
     std::list<std::string> tempList;
     auto mapIterator = commandMap.find(*listIterator); //find the right command
-    cout << "got here" << endl;
     if (mapIterator != commandMap.end()) {
-      cout << "got here 2" << endl;
+      cout << "found " << *listIterator << endl;
       tempCommand = mapIterator->second; //save the command
         listIterator++;
+        cout << "number of arguments: " << tempCommand->get_num_of_arg() << " for " << mapIterator->first  << endl;
       for (int i = 0; i < tempCommand->get_num_of_arg(); i++) { //get the arguments for the command
         tempList.emplace_back(*listIterator);
+        cout << "argumnet " << i+1 << " " << *listIterator << endl;
         listIterator++;
       }
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
       return tempPair;
     }
-    //NullCommand* null_command;
-    //std::pair<Command*,std::list<std::string>>(null_command, tempList);
+    cout << "null command: " << *listIterator << endl;
+    listIterator++;
+    NullCommand* null_command;
+    return std::pair<Command*,std::list<std::string>>(null_command, tempList);
   }
+
 }
 
 /**
@@ -60,7 +64,7 @@ Parser::Parser(std::list<std::string> strList) {
 
   //Add open client command to the map
   connectControlClient* cnc = new connectControlClient();
-  commandMap.insert({"connectControlClient", ops});
+  commandMap.insert({"connectControlClient", cnc});
 
   //Add assign var command to the map
   VarAssignCommand* vac = new VarAssignCommand();

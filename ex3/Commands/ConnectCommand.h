@@ -26,7 +26,7 @@ class connectControlClient : public Command {
   queue<string> commandsToSim;
  public:
   int execute(list<string> list_of_strings) override;
-  int get_num_of_arg() override { return 2; }
+  int get_num_of_arg() override;
   void add_commands_to_queue(string s);
   static void run_client_to_simulator(queue<string> *commandsForS, int socket_client);
 };
