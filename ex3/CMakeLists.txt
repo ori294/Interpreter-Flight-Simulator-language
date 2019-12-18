@@ -8,4 +8,4 @@ add_executable(ex3 main.cpp Lexer.cpp Lexer.h Parser.cpp Parser.h SimulatorManag
         Commands/Command.h Commands/SingleCommands.h Commands/ConnectCommand.cpp Commands/ConnectCommand.h
         Commands/OpenServerCommand.cpp Commands/OpenServerCommand.h Expressions/Expression.h
         Expressions/ExpressionKinds.cpp Expressions/ExpressionKinds.h SymbolTableValue.h
-        Commands/DefineVarCommand.cpp Commands/DefineVarCommand.h Commands/VarAssignCommand.cpp Commands/VarAssignCommand.h Commands/DefineLocalVarCommand.cpp Commands/DefineLocalVarCommand.h)
+        Commands/DefineVarCommand.cpp Commands/DefineVarCommand.h Commands/VarAssignCommand.cpp Commands/VarAssignCommand.h Commands/DefineLocalVarCommand.cpp Commands/DefineLocalVarCommand.h Commands/ConditionParser.h Commands/SingleCommands.cpp Commands/LoopCommand.cpp Commands/LoopCommand.h)
