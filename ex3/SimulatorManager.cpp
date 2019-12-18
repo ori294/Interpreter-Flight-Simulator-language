@@ -3,7 +3,6 @@
 //
 
 #include "SimulatorManager.h"
-#include "SymbolTableValue.h"
 
 /**
  * Set the list of strings for the parser.

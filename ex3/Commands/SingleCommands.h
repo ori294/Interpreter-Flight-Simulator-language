@@ -5,6 +5,7 @@
 #ifndef EX3_COMMANDS_SINGLECOMMANDS_H_
 #define EX3_COMMANDS_SINGLECOMMANDS_H_
 #include "Command.h"
+#include "../SimulatorManager.h"
 #include <chrono>
 #include <thread>
 #include <string>
@@ -12,10 +13,7 @@
 
 class PrintCommand: public Command {
   int get_num_of_arg() override {return 1;}
-  int execute(std::list<std::string> comList) override {
-    std::cout << *comList.begin() << std::endl;
-    return 1;
-  }
+  int execute(std::list<std::string> comList) override;
 };
 
 class SleepCommand: public Command {

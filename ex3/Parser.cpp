@@ -3,11 +3,7 @@
 //
 
 #include "Parser.h"
-#include "Commands/OpenServerCommand.h"
-#include "Commands/ConnectCommand.h"
-#include "Commands/VarAssignCommand.h"
-#include "Commands/DefineVarCommand.h"
-#include "Commands/DefineLocalVarCommand.h"
+
 
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
@@ -30,6 +26,31 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       }
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
       return tempPair;
+
+    } else if (*listIterator == "while") {
+
+      while (*listIterator != "{") {
+        listIterator++;
+        tempList.emplace_back(*listIterator);
+      }
+      tempList.emplace_back(*listIterator);
+      listIterator++;
+      int numberOfLeftBrackets = 1;
+      int numberOfRightBrackets = 0;
+      while (numberOfLeftBrackets != numberOfRightBrackets) {
+        tempList.emplace_back(*listIterator);
+        listIterator++;
+        if (*listIterator == "}") {
+          numberOfRightBrackets++;
+        } else if (*listIterator == "{"){
+          numberOfLeftBrackets++;
+        }
+      }
+      LoopCommand* loop_command = new LoopCommand();
+      return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
+
+    } else if (*listIterator == "if") {
+
     }
     cout << "null command: " << *listIterator << endl;
     listIterator++;
@@ -79,11 +100,11 @@ Parser::Parser(std::list<std::string> strList) {
   commandMap.insert({"var", dlvc});
 
   //Add print command to the map
-  PrintCommand print;
-  commandMap.insert({"Print", &print});
+  PrintCommand *print = new PrintCommand();
+  commandMap.insert({"Print", print});
 
   //Add sleep command to the map
-  SleepCommand sleep;
-  commandMap.insert({"Sleep", &sleep});
+  SleepCommand *sleep = new SleepCommand();
+  commandMap.insert({"Sleep", sleep});
 
 }
