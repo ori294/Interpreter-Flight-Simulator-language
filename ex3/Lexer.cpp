@@ -23,8 +23,14 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     std::getline(readFile, line);
     line = removeTabs(line);
 
-    //Handle var declarations
-    if (std::regex_search(line, std::regex("var"))) {
+    //Handle arithmetic var declarations
+    if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("/-+*"))) {
+
+    } //Handle arithmetic commands
+    else if (std::regex_search(line, std::regex("=")) && std::regex_search(line, std::regex("/-+*"))) {
+
+    } //Handle var declarations
+    else if (std::regex_search(line, std::regex("var"))) {
       char char_array[line.length()]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
@@ -151,7 +157,6 @@ std::string Lexer::removeSpaces(std::string str) {
   str.erase(remove(str.begin(), str.end(), ' '), str.end());
   return str;
 }
-
 /**
  * removeSpaces: Get a string and remove all brackets from it
  * @return the trimmed string
@@ -161,6 +166,3 @@ std::string Lexer::removeBrackets(std::string str) {
   str.erase(remove(str.begin(), str.end(), '('), str.end());
   return str;
 }
-
-
-//openDataServer;5400;connectControlClient;"127.0.0.1";5402;simvar;warp;->;sim;"/sim/time/warp";simvar;magnetos;->;sim;"/controls/switches/magnetos";simvar;throttle;->;sim;"/controls/engines/current-engine/throttle";simvar;mixture;->;sim;"/controls/engines/current-engine/mixture";simvar;masterbat;->;sim;"/controls/switches/master-bat";simvar;masterlat;->;sim;"/controls/switches/master-alt";simvar;masteravionics;->;sim;"/controls/switches/master-avionics";simvar;brakeparking;->;sim;"/sim/model/c172p/brake-parking";simvar;primer;->;sim;"/controls/engines/engine/primer";simvar;starter;->;sim;"/controls/switches/starter";simvar;autostart;->;sim;"/engines/active-engine/auto-start";simvar;breaks;->;sim;"/controls/flight/speedbrake";simvar;heading;<-;sim;"/instrumentation/heading-indicator/offset-deg";simvar;airspeed;<-;sim;"/instrumentation/airspeed-indicator/indicated-speed-kt";simvar;roll;<-;sim;"/instrumentation/attitude-indicator/indicated-roll-deg";simvar;pitch;<-;sim;"/instrumentation/attitude-indicator/internal-pitch-deg";simvar;rudder;->;sim;"/controls/flight/rudder";simvar;aileron;->;sim;"/controls/flight/aileron";simvar;elevator;->;sim;"/controls/flight/elevator";simvar;alt;<-;sim;"/instrumentation/altimeter/indicated-altitude-ft";simvar;rpm;<-;sim;"/engines/engine/rpm";Print;"waiting 2 minutes for gui");Sleep;120000;Print;"let's start");=;warp; 32000;Sleep;1000;=;magnetos; 3;=;throttle; 0.2;=;mixture; 0.949;=;masterbat; 1;=;masterlat; 1;=;masteravionics; 1;=;brakeparking; 0;=;primer; 3;=;starter; 1;=;autostart; 1;Print;"engine is warming...");Print;rpm);while;rpm;<=;750;{;Print;rpm);};Sleep;5000;Print;"let's fly");var;h0;=;heading;=;breaks; 0;=;throttle; 1;

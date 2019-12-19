@@ -131,6 +131,36 @@ Div::~Div() {
   //delete this;
 }
 
+//BooleanOperator methods
+//Constructor - assign left and right Expressions.
+BooleanOperator::BooleanOperator(Expression &left,std::string con , Expression &right)
+: left(&left), right(&right) {
+  this->Condition = con;
+}
+//Calculate
+double BooleanOperator::calculate() {
+  double leftVal = left->calculate();
+  double rightVal = right->calculate();
+
+  if (this->Condition == "==") {
+    leftVal == rightVal ? 1 : 0;
+  } else if (this->Condition == "!=") {
+    leftVal != rightVal ? 1 : 0;
+  } else if (this->Condition == ">") {
+    leftVal > rightVal ? 1 : 0;
+  } else if (this->Condition == "<") {
+    leftVal < rightVal ? 1 : 0;
+  } else if (this->Condition == "<=") {
+    leftVal <= rightVal ? 1 : 0;
+  } else if (this->Condition == ">=") {
+    leftVal >= rightVal ? 1 : 0;
+  }
+}
+//Destructor - delete left and right Expressions.
+BooleanOperator::~BooleanOperator() {
+  delete(left);
+  delete(right);
+}
 
 //UnaryOperator methods
 //Constructor
@@ -150,7 +180,6 @@ UPlus::~UPlus() {
   delete(expression);
   //delete this;
 }
-
 
 //UMinus methods
 //Constructor

@@ -4,7 +4,6 @@
 
 #include "Parser.h"
 
-
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
  * @return pair with command and list of args (as strings).
@@ -106,5 +105,4 @@ Parser::Parser(std::list<std::string> strList) {
   //Add sleep command to the map
   SleepCommand *sleep = new SleepCommand();
   commandMap.insert({"Sleep", sleep});
-
 }
