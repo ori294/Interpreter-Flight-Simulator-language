@@ -64,7 +64,7 @@ class OpenServerCommand : public Command {
   int get_num_of_arg() override { return 1; }
   static void get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data);
   static void split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data);
-  float get_value(string s);
+  float get_value(const string& s);
 };
 
 #endif //INTERPRETER_FLIGHT_SIMULATOR_LANGUAGE_EX3_OPENSERVERCOMMAND_H_
