@@ -22,7 +22,7 @@ int PrintCommand::execute(std::list<std::string> comList) {
     if (iter->second->getBind()) { //bind right
       std::cout << iter->second->getExpression()->calculate() << std::endl;
     } else { //bind left
-      auto value = SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
+      float value = SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
       std::cout << value << std::endl;
     }
   } else if (localIter != localMap->end()) { //else: check if its the local map

@@ -16,11 +16,12 @@ int DefineLocalVarCommand::execute(list<string> list_of_strings) {
   auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
   list<string>::iterator it = list_of_strings.begin();
   string name_var = *it;
-  it++; it++;
+  it++;
+  it++;
 
   auto iter = symbolMap->find(*it);
   if (iter != symbolMap->end()) {
-    float value =  SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
+    float value = SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
     localMap->insert({name_var, value});
   } else if (std::regex_match(*it, std::regex("[-0-9.]+"))) {
     localMap->insert({name_var, stof(*it)});

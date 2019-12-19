@@ -18,7 +18,7 @@ void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
     tempPair.first->execute(tempPair.second);
-    sleep(5);
+    sleep(1);
   }
   this->server->get_info.join();
   this->client->get_info.join();
