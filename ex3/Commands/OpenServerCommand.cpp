@@ -12,14 +12,14 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
   char *tokens;
   int indicator = 0;
   tokens = strtok(buffer, ",");
-  mutex_lock4.lock();
+  mutex_lock3.lock();
   (*map_data)[indicator].second = tokens;
   while (indicator < 23) {
     indicator++;
     tokens = strtok(nullptr, ",");
     (*map_data)[indicator].second = tokens;
   }
-  mutex_lock4.unlock();
+  mutex_lock3.unlock();
 }
 
 /**
@@ -52,7 +52,6 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
     cout << *tempIter << endl;
     tempIter++;
   }
-
 
   SimulatorManager::getInstance()->set_server(this);
   string number_port = *list_of_strings.begin();
@@ -93,15 +92,17 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
  * @return value
  */
 float OpenServerCommand::get_value(string s) {
-  mutex_lock3.lock();
+  cout << "aaaaaaaaaaaaaaaaa " + s << endl;
+  int i = 0;
   float value = 0;
-  auto it = this->data_about_airplane.begin();
-  while (it != this->data_about_airplane.end()) {
-    if (it->second.first == s) {
-      value = stof(it->second.second);
+  mutex_lock3.lock();
+  while (i < 23) {
+    if (this->data_about_airplane[i].first == s) {
+      value = stof(this->data_about_airplane[i].second);
+      mutex_lock3.lock();
       break;
     }
+    i++;
   }
-  mutex_lock3.lock();
   return value;
 }
