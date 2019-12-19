@@ -13,10 +13,13 @@
 
 class LoopCommand: public Command {
 
+ public:
+  Expression* updateCondition(std::list<std::string> L);
+
  private:
   std::map<std::string, SymbolTableValue*> LoopSymbolTable;
   std::map<std::string, float> LoopLocalSymbolTable;
-  ConditionParser* parser;
+  class ConditionParser* parser;
   int execute(std::list<std::string> L) override;
   int get_num_of_arg() override {return 1;}
 
