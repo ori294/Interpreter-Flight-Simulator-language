@@ -133,8 +133,8 @@ Div::~Div() {
 
 //BooleanOperator methods
 //Constructor - assign left and right Expressions.
-BooleanOperator::BooleanOperator(Expression &left,std::string con , Expression &right)
-: left(&left), right(&right) {
+BooleanOperator::BooleanOperator(Expression *left,std::string con , Expression *right)
+: left(left), right(right) {
   this->Condition = con;
 }
 //Calculate

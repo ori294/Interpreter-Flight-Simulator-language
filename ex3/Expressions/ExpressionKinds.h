@@ -103,7 +103,7 @@ class BooleanOperator : virtual public Expression {
   std::string Condition;
 
  public:
-  BooleanOperator(Expression &left,std::string Condition, Expression &right);
+  BooleanOperator(Expression *left,std::string Condition, Expression *right);
   double calculate () override;
   void setValue(double val);
   virtual ~BooleanOperator();
