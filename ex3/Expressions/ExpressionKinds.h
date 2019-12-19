@@ -95,6 +95,19 @@ class Div : virtual public BinaryOperator {
   ~Div();
 };
 
+//Boolean class
+class BooleanOperator : virtual public Expression {
+ protected:
+  Expression *left;
+  Expression *right;
+  std::string Condition;
+
+ public:
+  BooleanOperator(Expression &left,std::string Condition, Expression &right);
+  double calculate () override;
+  void setValue(double val);
+  virtual ~BooleanOperator();
+};
 
 //UnaryOperator class
 class UnaryOperator : virtual public Expression {

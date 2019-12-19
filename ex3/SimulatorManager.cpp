@@ -17,11 +17,13 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
 void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
-    tempPair.first->execute(tempPair.second);
-    sleep(5);
+    if (tempPair.first->get_num_of_arg() != -1) {
+      tempPair.first->execute(tempPair.second);
+    }
+    sleep(0.5);
   }
-  this->server->get_info.join();
-  this->client->get_info.join();
+  //this->server->get_info.join();
+  //this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.

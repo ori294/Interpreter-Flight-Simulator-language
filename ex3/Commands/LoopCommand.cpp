@@ -6,8 +6,6 @@
 
 int LoopCommand::execute(std::list<std::string> L) {
   this->parser = new ConditionParser();
-
-
 }
 
 /**

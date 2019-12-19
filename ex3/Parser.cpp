@@ -106,5 +106,4 @@ Parser::Parser(std::list<std::string> strList) {
   //Add sleep command to the map
   SleepCommand *sleep = new SleepCommand();
   commandMap.insert({"Sleep", sleep});
-
 }
