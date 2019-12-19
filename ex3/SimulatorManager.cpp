@@ -20,7 +20,7 @@ void SimulatorManager::runSimulator() {
     if (tempPair.first->get_num_of_arg() != -1) {
       tempPair.first->execute(tempPair.second);
     }
-    sleep(0.5);
+    sleep(1);
   }
   //this->server->get_info.join();
   //this->client->get_info.join();

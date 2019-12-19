@@ -7,6 +7,8 @@
 #include "ConnectCommand.h"
 
 std::mutex mutex_lock;
+std::mutex mutex_lock2;
+
 
 /**
  * removeSpaces: Get a string and remove all blank spaces
@@ -28,7 +30,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
   string _ip_ = removeSpaces(*list_of_strings.begin());
   char ip[(_ip_).length()]; //copy to array for strtok function
   std::strcpy(ip, (_ip_).c_str());
-  const char * my_ip = ip;
+  const char *my_ip = ip;
   it++;
   char port[(*it).length()]; //copy to array for strtok function
   std::strcpy(port, (*it).c_str());
@@ -51,7 +53,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
   }
   this->get_info = thread(run_client_to_simulator, &this->commandsToSim, socket_client);
   //close the socket in the end of the program!!
-  close(socket_client);
+  //close(socket_client);
   return 0;
 }
 /**
@@ -60,7 +62,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
  * @param socket_client
  */
 void connectControlClient::run_client_to_simulator(queue<string> *commandsForS, int socket_client) {
-  while (true){
+  while (true) {
     while (!commandsForS->empty()) {
       mutex_lock.lock();
       const char *msg = commandsForS->front().c_str();
@@ -68,8 +70,9 @@ void connectControlClient::run_client_to_simulator(queue<string> *commandsForS, 
       if (is_send == -1) {
         cout << "Error sending msg" << endl;
       }
+      commandsForS->pop();
+      mutex_lock.unlock();
     }
-    mutex_lock.unlock();
   }
 }
 /**
@@ -78,7 +81,6 @@ void connectControlClient::run_client_to_simulator(queue<string> *commandsForS, 
  */
 void connectControlClient::add_commands_to_queue(string s) {
   //lock the queue for the main thread!
-  cout << s << endl;
   mutex_lock.lock();
   this->commandsToSim.push(s);
   mutex_lock.unlock();
