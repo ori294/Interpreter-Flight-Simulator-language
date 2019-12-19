@@ -4,7 +4,6 @@
 
 #include "Parser.h"
 
-
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
  * @return pair with command and list of args (as strings).

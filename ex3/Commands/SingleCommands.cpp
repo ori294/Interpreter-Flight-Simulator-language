@@ -10,7 +10,6 @@
  * @return return an integer type
  */
 int PrintCommand::execute(std::list<std::string> comList) {
-
   //get localMap and symbolMap
   auto symbolMap = SimulatorManager::getInstance()->getSymbolMap();
   auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();

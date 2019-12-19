@@ -119,7 +119,6 @@ class UnaryOperator : virtual public Expression {
   double calculate () override;
   virtual ~UnaryOperator();
 };
-
 //UPlus class
 class UPlus : virtual public UnaryOperator {
 

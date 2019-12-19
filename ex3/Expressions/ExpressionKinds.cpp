@@ -181,7 +181,6 @@ UPlus::~UPlus() {
   //delete this;
 }
 
-
 //UMinus methods
 //Constructor
 UMinus::UMinus(Expression *expression) : UnaryOperator(*expression) {}

@@ -157,7 +157,6 @@ std::string Lexer::removeSpaces(std::string str) {
   str.erase(remove(str.begin(), str.end(), ' '), str.end());
   return str;
 }
-
 /**
  * removeSpaces: Get a string and remove all brackets from it
  * @return the trimmed string
