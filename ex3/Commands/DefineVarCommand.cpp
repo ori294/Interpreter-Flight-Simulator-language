@@ -9,7 +9,6 @@
  * @return 0
  */
 int DefineVarCommand::execute(list<string> list_of_strings) {
-
   list<string>::iterator it = list_of_strings.begin();
   string name_var = *it;
   bool arrow = false;

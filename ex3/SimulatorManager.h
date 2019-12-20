@@ -20,8 +20,9 @@ class SimulatorManager {
   class connectControlClient *client;
   static SimulatorManager *instance;
   class Parser *parser;
-  std::map<std::string, SymbolTableValue*> symbolTable;
+  std::map<std::string, SymbolTableValue *> symbolTable;
   std::map<std::string, float> localSymbolTable;
+  bool is_end = false;
   /* Private constructor to prevent instancing. */
   SimulatorManager();
 
@@ -30,6 +31,8 @@ class SimulatorManager {
   static SimulatorManager *getInstance();
   void update_symbol_table(std::string VarName, bool bindDirction, std::string simAddress);
   void runSimulator();
+  bool check_end();
+  void finish();
   void setStringList(std::list<std::string> strList);
   void set_server(OpenServerCommand *ser);
   void set_client(connectControlClient *cli);

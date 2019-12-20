@@ -62,7 +62,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
  * @param socket_client
  */
 void connectControlClient::run_client_to_simulator(queue<string> *commandsForS, int socket_client) {
-  while (true) {
+  while (!SimulatorManager::getInstance()->check_end()) {
     while (!commandsForS->empty()) {
       mutex_lock.lock();
       const char *msg = commandsForS->front().c_str();

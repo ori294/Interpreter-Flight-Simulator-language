@@ -22,8 +22,9 @@ void SimulatorManager::runSimulator() {
     }
     sleep(1);
   }
-  //this->server->get_info.join();
-  //this->client->get_info.join();
+  finish();
+  this->server->get_info.join();
+  this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.
@@ -35,6 +36,7 @@ void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirecti
   Expression *expression = new Value(0);
   SymbolTableValue *sym = new SymbolTableValue(expression, simAddress, bindDirection);
   symbolTable.insert({VarName, sym});
+  cout<<"successes"<<endl;
 }
 /**
  * Singleton class.
@@ -83,4 +85,11 @@ OpenServerCommand *SimulatorManager::get_server() {
  */
 connectControlClient *SimulatorManager::get_client() {
   return this->client;
+}
+bool SimulatorManager::check_end() {
+  return this->is_end;
+};
+
+void SimulatorManager::finish() {
+  this->is_end = true;
 };
