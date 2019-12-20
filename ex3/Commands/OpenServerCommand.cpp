@@ -47,7 +47,7 @@ void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair
   char buffer[1024] = {0};
   int data = read(client_socket, buffer, 1024);
   split_and_update_data(buffer, map_data);
-  while (data != -1) {
+  while (!SimulatorManager::getInstance()->check_end()) {
     data = read(client_socket, buffer, 1024);
     split_and_update_data(buffer, map_data);
   }

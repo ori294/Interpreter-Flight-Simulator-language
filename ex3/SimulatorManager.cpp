@@ -20,6 +20,7 @@ void SimulatorManager::runSimulator() {
     tempPair.first->execute(tempPair.second);
     sleep(1);
   }
+  finish();
   this->server->get_info.join();
   this->client->get_info.join();
 }
@@ -82,4 +83,11 @@ OpenServerCommand *SimulatorManager::get_server() {
  */
 connectControlClient *SimulatorManager::get_client() {
   return this->client;
+}
+bool SimulatorManager::check_end() {
+  return this->is_end;
+};
+
+void SimulatorManager::finish() {
+  this->is_end = true;
 };
