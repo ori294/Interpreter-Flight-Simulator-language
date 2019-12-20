@@ -10,7 +10,6 @@
 #include <thread>
 #include <string>
 
-
 class PrintCommand: public Command {
   int get_num_of_arg() override {return 1;}
   int execute(std::list<std::string> comList) override;

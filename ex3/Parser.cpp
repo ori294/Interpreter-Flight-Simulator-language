@@ -4,7 +4,6 @@
 
 #include "Parser.h"
 
-
 /**
  * get the next command and returns a pair containing the command and the list of args for it.
  * @return pair with command and list of args (as strings).
@@ -28,25 +27,41 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       return tempPair;
 
     } else if (*listIterator == "while") {
-
+      cout << "Found while case: " << endl;
       while (*listIterator != "{") {
-        listIterator++;
         tempList.emplace_back(*listIterator);
+        listIterator++;
       }
       tempList.emplace_back(*listIterator);
       listIterator++;
       int numberOfLeftBrackets = 1;
       int numberOfRightBrackets = 0;
-      while (numberOfLeftBrackets != numberOfRightBrackets) {
-        tempList.emplace_back(*listIterator);
-        listIterator++;
+      while (numberOfLeftBrackets > numberOfRightBrackets) {
+        cout << "emplacing " << *listIterator << endl;
+
         if (*listIterator == "}") {
           numberOfRightBrackets++;
+          cout << "found right bracket" << endl;
+          tempList.emplace_back(*listIterator);
         } else if (*listIterator == "{"){
           numberOfLeftBrackets++;
+          cout << "found left bracket" << endl;
+          tempList.emplace_back(*listIterator);
+        } else {
+          tempList.emplace_back(*listIterator);
         }
+        listIterator++;
+
       }
+      cout << "Debug loop command: " << endl;
       LoopCommand* loop_command = new LoopCommand();
+
+
+      auto debugIter = tempList.begin();
+      while (debugIter != tempList.end()) {
+        cout << *debugIter << ";";
+        debugIter++;
+      }
       return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
 
     } else if (*listIterator == "if") {
@@ -106,5 +121,4 @@ Parser::Parser(std::list<std::string> strList) {
   //Add sleep command to the map
   SleepCommand *sleep = new SleepCommand();
   commandMap.insert({"Sleep", sleep});
-
 }
