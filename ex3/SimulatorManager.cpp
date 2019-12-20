@@ -33,6 +33,7 @@ void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirecti
   Expression *expression = new Value(0);
   SymbolTableValue *sym = new SymbolTableValue(expression, simAddress, bindDirection);
   symbolTable.insert({VarName, sym});
+  cout<<"successes"<<endl;
 }
 /**
  * Singleton class.
