@@ -18,6 +18,7 @@
 
 class Parser {
  protected:
+  std::list<Command*> conditionalCommands;
   std::list<std::string> commandList;
   std::list<std::string>::iterator listIterator;
   std::unordered_map<std::string, Command*> commandMap;
@@ -25,13 +26,23 @@ class Parser {
  public:
   std::pair<Command*,std::list<std::string>> getNextCommand();
   bool isEnded();
-  void startOver() {this->listIterator = this->commandList.begin();}
+  void startOver(int k) {
+    this->listIterator = this->commandList.begin();
+    for (int i = 0; i < k; i++) {
+      this->listIterator++;
+    }
+  }
   Parser(std::list<std::string> strList);
   ~Parser() {
     //Before deleting the parser - delete commands in the parser;
     auto iter = commandMap.begin();
     while (iter != commandMap.end()) {
       delete iter->second;
+    }
+    //Before deleting the parser - delete while and if commands that were used in the parser;
+    auto iter2 = conditionalCommands.begin();
+    while (iter2 != conditionalCommands.end()) {
+      delete *iter2;
     }
   }
 };

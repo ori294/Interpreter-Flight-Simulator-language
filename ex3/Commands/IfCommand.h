@@ -15,6 +15,7 @@ class IfCommand : public  ConditionParser {
 
  public:
   IfCommand(std::list<std::string>* L);
+  //~IfCommand(); //Delete father
 };
 
 #endif //EX3_COMMANDS_IFCOMMAND_H_

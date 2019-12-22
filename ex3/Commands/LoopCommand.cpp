@@ -12,7 +12,7 @@ int LoopCommand::execute(std::list<std::string> commands) {
   while (isConditionSatisfied()) {
     cout << "execute conditional code:" << endl;
     ConditionParser::execute(std::list<std::string>());
-    ConditionParser::startOver();
+    ConditionParser::startOver(4);
   }
 }
 
@@ -21,7 +21,12 @@ int LoopCommand::execute(std::list<std::string> commands) {
  * it copies the symbol tables from the main loop of the code.
  */
 LoopCommand::LoopCommand(std::list<std::string>* commands) : ConditionParser(commands) {
-
+  //do nothing
 }
 
+/**
+ * returns the number of aruments for this conditional command
+ * @return the length of the aruments list.
+ */
 int LoopCommand::get_num_of_arg() {return listLength;}
+
