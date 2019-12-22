@@ -30,7 +30,7 @@ class ConditionParser: public Command {
 
   ~ConditionParser();
   int execute(std::list<std::string> L) override;
-  void startOver();
+  void startOver(int i);
   int get_num_of_arg() override;
 };
 

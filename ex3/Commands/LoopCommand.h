@@ -16,6 +16,7 @@
 
  public:
   LoopCommand(std::list<std::string>* L);
+  //~LoopCommand(); //Delete father
 };
 
 #endif //EX3_COMMANDS_LOOPCOMMAND_H_

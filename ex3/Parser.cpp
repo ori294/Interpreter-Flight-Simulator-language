@@ -65,16 +65,18 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
 
       if (loopType == "while") {
         LoopCommand* loop_command = new LoopCommand(&tempList);
+        conditionalCommands.emplace_back(loop_command);
         return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
       } else {
         IfCommand* if_command = new IfCommand(&tempList);
+        conditionalCommands.emplace_back(if_command);
         return std::pair<Command*,std::list<std::string>>(if_command, tempList);
       }
     }
     cout << "null command: " << *listIterator << endl;
-    listIterator++;
     NullCommand* null_command;
-    return std::pair<Command*,std::list<std::string>>(null_command, tempList);
+    listIterator++;
+    return std::pair<Command*,std::list<std::string>>(null_command, std::list<std::string>());
   }
 
 }
