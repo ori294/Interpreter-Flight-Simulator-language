@@ -22,6 +22,7 @@ void SimulatorManager::runSimulator() {
     }
     sleep(1);
   }
+  std::this_thread::sleep_for(2s);
   finish();
   this->server->get_info.join();
   this->client->get_info.join();
@@ -36,7 +37,6 @@ void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirecti
   Expression *expression = new Value(0);
   SymbolTableValue *sym = new SymbolTableValue(expression, simAddress, bindDirection);
   symbolTable.insert({VarName, sym});
-  cout<<"successes"<<endl;
 }
 /**
  * Singleton class.
