@@ -23,14 +23,8 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     std::getline(readFile, line);
     line = removeTabs(line);
 
-    //Handle arithmetic var declarations
-    if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("/-+*"))) {
-
-    } //Handle arithmetic commands
-    else if (std::regex_search(line, std::regex("=")) && std::regex_search(line, std::regex("/-+*"))) {
-
-    } //Handle var declarations
-    else if (std::regex_search(line, std::regex("var"))) {
+    //Handle var declarations
+    if (std::regex_search(line, std::regex("var"))) {
       char char_array[line.length()]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
