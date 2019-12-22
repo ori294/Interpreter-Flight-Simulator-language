@@ -7,11 +7,10 @@
 #include "Parser.h"
 #include <iostream>
 #include <map>
+#include "Commands/ConditionParser.h"
 #include "SymbolTableValue.h"
 #include "Expressions/Expression.h"
 #include "Expressions/ExpressionKinds.h"
-#include "Commands/OpenServerCommand.h"
-#include "Commands/ConnectCommand.h"
 
 class SimulatorManager {
  private:

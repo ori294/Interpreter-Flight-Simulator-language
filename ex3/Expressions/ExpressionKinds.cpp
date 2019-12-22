@@ -142,19 +142,26 @@ double BooleanOperator::calculate() {
   double leftVal = left->calculate();
   double rightVal = right->calculate();
 
+  cout << "left is "<< left->calculate() << endl;
+  cout << "right is " << right->calculate() << endl;
+  cout << "condition is " << this->Condition << endl;
+
+  double value = 0;
   if (this->Condition == "==") {
-    leftVal == rightVal ? 1 : 0;
+    leftVal == rightVal ? value = 1 : value = 0;
   } else if (this->Condition == "!=") {
-    leftVal != rightVal ? 1 : 0;
+    leftVal != rightVal ? value = 1 : value = 0;
   } else if (this->Condition == ">") {
-    leftVal > rightVal ? 1 : 0;
+    leftVal > rightVal ? value = 1 : value = 0;
   } else if (this->Condition == "<") {
-    leftVal < rightVal ? 1 : 0;
+    leftVal < rightVal ? value = 1 : value = 0;
   } else if (this->Condition == "<=") {
-    leftVal <= rightVal ? 1 : 0;
+    cout << "got <= " << endl;
+    leftVal <= rightVal ? value = 1 : value = 0;
   } else if (this->Condition == ">=") {
-    leftVal >= rightVal ? 1 : 0;
+    leftVal >= rightVal ? value = 1 : value = 0;
   }
+  return value;
 }
 //Destructor - delete left and right Expressions.
 BooleanOperator::~BooleanOperator() {

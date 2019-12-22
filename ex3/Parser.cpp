@@ -26,8 +26,10 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
       return tempPair;
 
-    } else if (*listIterator == "while") {
-      cout << "Found while case: " << endl;
+    } else if (*listIterator == "while" || *listIterator == "if") {
+      std::string loopType = *listIterator;
+      cout << "Found while of if case: " << endl;
+      listIterator++;
       while (*listIterator != "{") {
         tempList.emplace_back(*listIterator);
         listIterator++;
@@ -51,21 +53,23 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
           tempList.emplace_back(*listIterator);
         }
         listIterator++;
-
       }
-      cout << "Debug loop command: " << endl;
-      LoopCommand* loop_command = new LoopCommand();
 
-
-      auto debugIter = tempList.begin();
-      while (debugIter != tempList.end()) {
-        cout << *debugIter << ";";
-        debugIter++;
+      cout << "debug while and if commands:" << endl;
+      auto iterate = tempList.begin();
+      while (iterate != tempList.end()) {
+        cout << *iterate << ";";
+        iterate++;
       }
-      return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
+      cout << endl;
 
-    } else if (*listIterator == "if") {
-
+      if (loopType == "while") {
+        LoopCommand* loop_command = new LoopCommand(&tempList);
+        return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
+      } else {
+        IfCommand* if_command = new IfCommand(&tempList);
+        return std::pair<Command*,std::list<std::string>>(if_command, tempList);
+      }
     }
     cout << "null command: " << *listIterator << endl;
     listIterator++;

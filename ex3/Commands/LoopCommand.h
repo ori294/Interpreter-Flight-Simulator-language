@@ -6,25 +6,16 @@
 #define EX3_COMMANDS_LOOPCOMMAND_H_
 
 #include "Command.h"
-#include "ConditionParser.h"
-#include "../SymbolTableValue.h"
 #include "../SimulatorManager.h"
-#include "../SymbolTableValue.h"
+#include "ConditionParser.h"
 
-class LoopCommand: public Command {
+ class LoopCommand: public ConditionParser {
 
- public:
-  Expression* updateCondition(std::list<std::string> L);
-
- private:
-  std::map<std::string, SymbolTableValue*> LoopSymbolTable;
-  std::map<std::string, float> LoopLocalSymbolTable;
-  class ConditionParser* parser;
-  int execute(std::list<std::string> L) override;
-  int get_num_of_arg() override {return 1;}
+  int execute(std::list<std::string> L);
+  int get_num_of_arg();
 
  public:
-  LoopCommand();
+  LoopCommand(std::list<std::string>* L);
 };
 
 #endif //EX3_COMMANDS_LOOPCOMMAND_H_

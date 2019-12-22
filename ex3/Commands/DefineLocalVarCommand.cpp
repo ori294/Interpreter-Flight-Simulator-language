@@ -2,7 +2,7 @@
 // Created by ori294 on 12/17/19.
 //
 
-#include "DefineLocalVarCommand.h"
+#include "SimulatorManager.h"
 #include <bits/stdc++.h>
 
 /**
