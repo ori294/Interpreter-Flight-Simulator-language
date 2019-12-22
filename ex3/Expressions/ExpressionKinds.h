@@ -5,6 +5,7 @@
 #ifndef EX3_EXPRESSIONS_EXPRESSIONKINDS_H_
 #define EX3_EXPRESSIONS_EXPRESSIONKINDS_H_
 #include "Expression.h"
+#include <iostream>
 #include "stdio.h"
 #include "string"
 

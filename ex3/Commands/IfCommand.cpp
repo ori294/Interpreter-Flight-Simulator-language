@@ -1,18 +1,18 @@
 //
-// Created by ori294 on 12/18/19.
+// Created by ori294 on 12/22/19.
 //
-#include "LoopCommand.h"
+
+#include "IfCommand.h"
 
 /**
  * Executes the loop command
  * @param commands list of commands as strings
  * @return an integer type
  */
-int LoopCommand::execute(std::list<std::string> commands) {
-  while (isConditionSatisfied()) {
+int IfCommand::execute(std::list<std::string> commands) {
+  if (isConditionSatisfied()) {
     cout << "execute conditional code:" << endl;
     ConditionParser::execute(std::list<std::string>());
-    ConditionParser::startOver();
   }
 }
 
@@ -20,8 +20,8 @@ int LoopCommand::execute(std::list<std::string> commands) {
  * CTOR: Init local symbol table.
  * it copies the symbol tables from the main loop of the code.
  */
-LoopCommand::LoopCommand(std::list<std::string>* commands) : ConditionParser(commands) {
+IfCommand::IfCommand(std::list<std::string>* commands) : ConditionParser(commands) {
 
 }
 
-int LoopCommand::get_num_of_arg() {return listLength;}
+int IfCommand::get_num_of_arg() {return listLength;}

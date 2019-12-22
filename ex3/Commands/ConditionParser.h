@@ -5,32 +5,33 @@
 #ifndef EX3_COMMANDS_CONDITIONPARSER_H_
 #define EX3_COMMANDS_CONDITIONPARSER_H_
 
+#include "SymbolTableValue.h"
 #include "Command.h"
-#include "VarAssignCommand.h"
+#include "Expressions/Interpreter.h"
+#include "../SimulatorManager.h"
+#include "ExpressionKinds.h"
+#include "Expression.h"
 
 class ConditionParser: public Command {
 
-  std::list<std::string> commandList;
-  std::list<std::string>::iterator listIterator;
-  std::unordered_map<std::string, Command*> commandMap;
+ protected:
+  int listLength;
+
+ private:
+  Expression* condition;
+  class Parser* parser;
+  Expression* updateCondition(std::list<std::string>* L);
+  std::map<std::string, SymbolTableValue*> LoopSymbolTable;
+  std::map<std::string, float> LoopLocalSymbolTable;
 
  public:
-  std::pair<Command*,std::list<std::string>> getNextCommand();
-  bool isEnded();
-  ConditionParser(std::list<std::string> strList);
-  ~ConditionParser() {
-    //Before deleting the ConditionParser - delete commands in the parser;
-    auto iter = commandMap.begin();
-    while (iter != commandMap.end()) {
-      delete iter->second;
-    }
-  }
+  explicit ConditionParser(std::list<std::string>* strList);
+  double isConditionSatisfied();
 
-  int execute(std::list<std::string> L) override {
-  }
-  int get_num_of_arg() override {
-
-  }
+  ~ConditionParser();
+  int execute(std::list<std::string> L) override;
+  void startOver();
+  int get_num_of_arg() override;
 };
 
 #endif //EX3_COMMANDS_CONDITIONPARSER_H_

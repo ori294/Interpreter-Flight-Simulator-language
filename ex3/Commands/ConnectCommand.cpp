@@ -4,7 +4,7 @@
 
 
 #include <mutex>
-#include "ConnectCommand.h"
+#include "SimulatorManager.h"
 
 std::mutex mutex_lock;
 std::mutex mutex_lock2;
