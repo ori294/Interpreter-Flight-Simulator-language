@@ -156,7 +156,6 @@ double BooleanOperator::calculate() {
   } else if (this->Condition == "<") {
     leftVal < rightVal ? value = 1 : value = 0;
   } else if (this->Condition == "<=") {
-    cout << "got <= " << endl;
     leftVal <= rightVal ? value = 1 : value = 0;
   } else if (this->Condition == ">=") {
     leftVal >= rightVal ? value = 1 : value = 0;

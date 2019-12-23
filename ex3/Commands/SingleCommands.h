@@ -23,6 +23,7 @@ class SleepCommand: public Command {
     char char_array[comList.begin()->length()]; //copy to array for atoi function
     strcpy(char_array, comList.begin()->c_str());
     int sleepDuration = std::atoi(char_array);
+    std::cout << "sleeping for " << sleepDuration << " ms" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(sleepDuration));
     return 1;
   }

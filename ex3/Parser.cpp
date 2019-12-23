@@ -12,6 +12,15 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
   if (!isEnded()) { //check that there're more commands in the queue
     Command* tempCommand;
     std::list<std::string> tempList;
+
+    if (*listIterator == "funcdef") {
+      int steps = DefineFunction(listIterator);
+      for (int i = 0; i < steps; i++) {
+        listIterator++;
+      }
+    }
+
+
     auto mapIterator = commandMap.find(*listIterator); //find the right command
     if (mapIterator != commandMap.end()) {
       cout << "found " << *listIterator << endl;
@@ -67,7 +76,7 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
         LoopCommand* loop_command = new LoopCommand(&tempList);
         conditionalCommands.emplace_back(loop_command);
         return std::pair<Command*,std::list<std::string>>(loop_command, tempList);
-      } else {
+      } else if (loopType == "if") {
         IfCommand* if_command = new IfCommand(&tempList);
         conditionalCommands.emplace_back(if_command);
         return std::pair<Command*,std::list<std::string>>(if_command, tempList);
@@ -79,6 +88,40 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
     return std::pair<Command*,std::list<std::string>>(null_command, std::list<std::string>());
   }
 
+}
+
+int Parser::DefineFunction(std::list<std::string>::iterator iter) {
+  std::list<std::string> tempList;
+  int steps = 0;
+  iter++; steps++;
+  std::string funcName = *iter;
+  while (*iter != "{") {
+    tempList.emplace_back(*iter);
+    iter++; steps++;
+  }
+  tempList.emplace_back(*iter);
+  iter++; steps++;
+  int numberOfLeftBrackets = 1;
+  int numberOfRightBrackets = 0;
+  while (numberOfLeftBrackets > numberOfRightBrackets) {
+    cout << "emplacing " << *iter << endl;
+
+    if (*iter == "}") {
+      numberOfRightBrackets++;
+      cout << "found right bracket" << endl;
+      tempList.emplace_back(*iter);
+    } else if (*iter == "{"){
+      numberOfLeftBrackets++;
+      cout << "found left bracket" << endl;
+      tempList.emplace_back(*iter);
+    } else {
+      tempList.emplace_back(*iter);
+    }
+    iter++; steps++;
+  }
+  FunctionCommand* function_command = new FunctionCommand(tempList);
+  commandMap.insert({funcName, function_command});
+  return steps;
 }
 
 /**

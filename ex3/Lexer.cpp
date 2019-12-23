@@ -23,8 +23,27 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     std::getline(readFile, line);
     line = removeTabs(line);
 
+    if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))) {
+      std::cout << "found a func" << std::endl;
+      char char_array[line.length()]; //copy to array for strtok function
+      std::strcpy(char_array, line.c_str());
+      strList.push_back("funcdef");
+
+      //strtok for delimiters - first time
+      char *token = strtok(char_array, " ,(,)");
+      if (token != nullptr) {
+        strList.push_back(token);
+      }
+      //strtok loop = keep cutting string until strtok gives null
+      while (token != nullptr) {
+        token = strtok(nullptr, " ");
+        if (token != nullptr) {
+          strList.push_back(removeBrackets(token));
+        }
+      }
+    }
     //Handle var declarations
-    if (std::regex_search(line, std::regex("var"))) {
+    else if (std::regex_search(line, std::regex("var"))) {
       char char_array[line.length()]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
@@ -105,12 +124,6 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       //handles single scope closer
     } else if (std::regex_search(line, std::regex("\\}"))) {
       strList.push_back("}");
-      //handle all other cases, like function and expression
-    } else if (std::regex_search(line, std::regex("Print"))) {
-      strList.push_back("Print");
-      std::string text = line.substr(6, line.length());
-      text = removeBrackets(text);
-      strList.push_back(text);
     } else {
       char char_array[line.length()]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
