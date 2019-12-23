@@ -27,6 +27,7 @@ class SimulatorManager {
 
  public:
   /* Static access method. */
+  std::mutex mutex_lock3;
   static SimulatorManager *getInstance();
   void update_symbol_table(std::string VarName, bool bindDirction, std::string simAddress);
   void runSimulator();

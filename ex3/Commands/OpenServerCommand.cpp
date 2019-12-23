@@ -5,8 +5,7 @@
 
 #include "OpenServerCommand.h"
 
-std::mutex mutex_lock3;
-std::mutex mutex_lock4;
+
 
 /**
  * remove \n: Get a string and remove all blank spaces
@@ -24,7 +23,7 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
   char *tokens;
   int indicator = 0;
   tokens = strtok(buffer, ",");
-  //mutex_lock3.lock();
+  SimulatorManager::getInstance()->mutex_lock3.try_lock();
   (*map_data)[indicator].second = tokens;
   while (indicator < 36) {
     indicator++;
@@ -36,7 +35,7 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
     }
     (*map_data)[indicator].second = tokens;
   }
-  //mutex_lock3.unlock();
+  SimulatorManager::getInstance()->mutex_lock3.unlock();
 }
 
 /**
@@ -111,11 +110,11 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
 float OpenServerCommand::get_value(const string &s) {
   int i = 0;
   float value = 0;
-  //mutex_lock3.lock();
+  SimulatorManager::getInstance()->mutex_lock3.try_lock();
   while (i < 36) {
     if (this->data_about_airplane[i].first == s) {
       value = stof(this->data_about_airplane[i].second);
-      //mutex_lock3.lock();
+      SimulatorManager::getInstance()->mutex_lock3.unlock();
       break;
     }
     i++;
