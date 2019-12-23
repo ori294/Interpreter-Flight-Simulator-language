@@ -2,10 +2,7 @@
 // Created by gadi on 12/12/2019.
 //
 
-
 #include "OpenServerCommand.h"
-
-
 
 /**
  * remove \n: Get a string and remove all blank spaces
@@ -16,8 +13,6 @@ std::string OpenServerCommand::removeSpaces(std::string str) {
   str.erase(remove(str.begin(), str.end(), '\n'), str.end());
   return str;
 }
-
-
 
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
