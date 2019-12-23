@@ -22,12 +22,17 @@ Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
 
   float value;
   if (localSTIter != LoopLocalSymbolTable.end()) {
+    cout << "getting from LST" << endl;
     value = localSTIter->second;
   } else if (STIter != LoopSymbolTable.end()) {
     if (STIter->second->getBind()) {
+      cout << "getting from ST" << endl;
       value = STIter->second->getExpression()->calculate();
     } else { //value is requested from the server
+      cout << "getting from server" << endl;
+      SimulatorManager::getInstance()->mutex_lock3.try_lock();
       value = SimulatorManager::getInstance()->get_server()->get_value(STIter->second->getSimAddress());
+      SimulatorManager::getInstance()->mutex_lock3.unlock();
     }
   } else if (Interpreter::isDouble(*iterator)) {
     value = stod(*iterator);
@@ -46,7 +51,9 @@ Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
     if (STIter->second->getBind()) {
       secondValue = STIter->second->getExpression()->calculate();
     } else { //value is requested from the server
+      SimulatorManager::getInstance()->mutex_lock3.try_lock();
       secondValue = SimulatorManager::getInstance()->get_server()->get_value(STIter->second->getSimAddress());
+      SimulatorManager::getInstance()->mutex_lock3.unlock();
     }
   } else if (Interpreter::isDouble(*iterator)) {
     secondValue = stod(*iterator);

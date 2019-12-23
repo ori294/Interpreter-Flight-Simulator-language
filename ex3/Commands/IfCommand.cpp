@@ -13,7 +13,7 @@ int IfCommand::execute(std::list<std::string> commands) {
   if (isConditionSatisfied()) {
     ConditionParser::startOver(4);
     cout << "execute conditional code:" << endl;
-    ConditionParser::execute(std::list<std::string>());
+    ConditionParser::execute(std::list<std::string>(commands));
   }
   return 0;
 }
