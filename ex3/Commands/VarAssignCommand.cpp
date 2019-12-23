@@ -32,14 +32,16 @@ int VarAssignCommand::execute(std::list<std::string> list_of_strings) {
         float value =
             SimulatorManager::getInstance()->get_server()->get_value(find_match_iterator->second->getSimAddress());
         numb = to_string(value);
+        cout << "value in ariplane map: " + numb << endl;
         str = std::regex_replace(str, std::regex(find_match_iterator->first), "(" + numb + ")");
       }
       find_match_iterator++;
     }
     while (iter3 != map_local_var->end()) {
       if (std::regex_search(str, std::regex(iter3->first))) {
-        float value = iter3->second;
-        str = std::regex_replace(str, std::regex(iter3->first), "(" + numb + ")");
+        float val = iter3->second;
+        cout << "value in map: " + to_string(val) << endl;
+        str = std::regex_replace(str, std::regex(iter3->first), "(" + to_string(val) + ")");
       }
       iter3++;
     }

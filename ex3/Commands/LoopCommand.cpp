@@ -14,6 +14,7 @@ int LoopCommand::execute(std::list<std::string> commands) {
     ConditionParser::execute(std::list<std::string>());
     ConditionParser::startOver(4);
   }
+  return 0;
 }
 
 /**
