@@ -23,7 +23,8 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     std::getline(readFile, line);
     line = removeTabs(line);
 
-    if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))) {
+    if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))
+      && !std::regex_search(line, std::regex("sim")) && !std::regex_search(line, std::regex("="))) {
       std::cout << "found a func" << std::endl;
       char char_array[line.length()]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
