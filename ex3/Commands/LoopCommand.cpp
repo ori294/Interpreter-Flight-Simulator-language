@@ -11,9 +11,10 @@
 int LoopCommand::execute(std::list<std::string> commands) {
   while (isConditionSatisfied()) {
     cout << "execute conditional code:" << endl;
-    ConditionParser::execute(std::list<std::string>());
+    ConditionParser::execute(std::list<std::string>(commands));
     ConditionParser::startOver(4);
   }
+  return 0;
 }
 
 /**

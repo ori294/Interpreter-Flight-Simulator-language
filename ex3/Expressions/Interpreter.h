@@ -18,15 +18,20 @@ using namespace std;
 class Interpreter {
  private:
   map<string, double> variableMap;
-  Expression* getPolishNotation(queue<string> RPN);
 
  public:
-  Expression* interpret(string str);
-  void setVariables(string str);
+
 
   //useful methods, will be accessible without an instance of interpreter.
   static bool isDouble(string s);
   static bool isNegativeDouble(string s);
+  Expression *shuntingCalculate(queue<string> expression);
+  queue<string> ShuntingYard(vector<string> splitStr);
+  vector<string> splitToArray(string str);
+  void addOrNot(string checkStr);
+  bool isWeakOperand(string op, stack<string> operators);
+  void setVariables(string str);
+  Expression *interpret(string str);
 };
 
 #endif //EX3_EXPRESSIONS_INTERPRETER_H_

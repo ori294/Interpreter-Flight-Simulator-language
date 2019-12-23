@@ -19,6 +19,7 @@ std::string OpenServerCommand::removeSpaces(std::string str) {
 }
 
 
+
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
   int indicator = 0;
@@ -44,11 +45,11 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
  */
 
 void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data) {
-  char buffer[1024] = {0};
-  int data = read(client_socket, buffer, 1024);
+  char buffer[500] = {0};
+  int data = read(client_socket, buffer, 500);
   split_and_update_data(buffer, map_data);
   while (!SimulatorManager::getInstance()->check_end()) {
-    data = read(client_socket, buffer, 1024);
+    data = read(client_socket, buffer, 500);
     split_and_update_data(buffer, map_data);
   }
 }

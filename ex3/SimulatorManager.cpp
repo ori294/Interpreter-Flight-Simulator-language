@@ -40,6 +40,7 @@ void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirecti
   symbolTable.insert({VarName, sym});
   cout<<"successes"<<endl;
 }
+
 /**
  * Singleton class.
  */
