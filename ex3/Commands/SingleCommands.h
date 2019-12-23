@@ -7,6 +7,8 @@
 #include "Command.h"
 #include "../SimulatorManager.h"
 #include <chrono>
+#include <unistd.h>
+#include <iostream>
 #include <thread>
 #include <string>
 
@@ -22,9 +24,9 @@ class SleepCommand: public Command {
   int execute(std::list<std::string> comList) override {
     char char_array[comList.begin()->length()]; //copy to array for atoi function
     strcpy(char_array, comList.begin()->c_str());
-    int sleepDuration = std::atoi(char_array);
-    std::cout << "sleeping for " << sleepDuration << " ms" << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(sleepDuration));
+    int sleepDuration = (std::atoi(char_array)/1000);
+    std::cout << "sleeping for " << sleepDuration << " s" << std::endl;
+    sleep(sleepDuration);
     return 1;
   }
 };

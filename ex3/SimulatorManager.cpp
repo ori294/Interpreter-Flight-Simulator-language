@@ -25,8 +25,8 @@ void SimulatorManager::runSimulator() {
     sleep(1);
   }
   finish();
-  //this->server->get_info.join();
-  //this->client->get_info.join();
+  this->server->get_info.join();
+  this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.
