@@ -81,7 +81,7 @@ int ConditionParser::execute(std::list<std::string> commands) {
     } else {
       return -1;
     }
-    sleep(1);
+    //sleep(1);
   }
   this->condition = updateCondition(&commands);
   return 0;

@@ -19,6 +19,7 @@ std::string OpenServerCommand::removeSpaces(std::string str) {
 }
 
 
+
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
   int indicator = 0;

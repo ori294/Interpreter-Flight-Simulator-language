@@ -322,6 +322,7 @@ bool Interpreter::isDouble(string s) {
   return std::regex_match(s, std::regex("[0-9.]+"));
 }
 
+
 /*
  * isNegativeDouble: given a string, check if it's a negative double.
  */
