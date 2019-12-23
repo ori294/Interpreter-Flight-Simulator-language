@@ -14,6 +14,7 @@
 #include "Commands/DefineLocalVarCommand.h"
 #include "Commands/LoopCommand.h"
 #include "Commands/IfCommand.h"
+#include "Commands/FunctionCommand.h"
 #include "Commands/ConditionParser.h"
 
 class Parser {
@@ -25,6 +26,7 @@ class Parser {
 
  public:
   std::pair<Command*,std::list<std::string>> getNextCommand();
+  int DefineFunction(std::list<std::string>::iterator);
   bool isEnded();
   void startOver(int k) {
     this->listIterator = this->commandList.begin();
