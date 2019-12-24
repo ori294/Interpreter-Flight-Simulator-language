@@ -4,7 +4,7 @@
 #include "SimulatorManager.h"
 
 int main() {
-
+  
   Lexer lexer;
   std::string fileName = "fly.txt";
   std::list<std::string> lexedList = lexer.readFile(fileName);

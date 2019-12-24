@@ -58,15 +58,10 @@ void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair
 int OpenServerCommand::execute(list<string> list_of_strings) {
 
   auto tempIter = list_of_strings.begin();
-
-  while (tempIter != list_of_strings.end()) {
-    cout << *tempIter << endl;
-    tempIter++;
-  }
-
   SimulatorManager::getInstance()->set_server(this);
-  string number_port = *list_of_strings.begin();
-  int port = atoi(number_port.c_str());
+  string my_port = to_string(SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(
+      *tempIter)->calculate());
+  int port = atoi(my_port.c_str());
   int socket_Server = socket(AF_INET, SOCK_STREAM, 0);
   if (socket_Server == -1) {
 

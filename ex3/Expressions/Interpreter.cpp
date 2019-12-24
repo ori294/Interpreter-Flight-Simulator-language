@@ -2,7 +2,50 @@
 // Created by ori294 on 05/11/2019.
 //
 
+
 #include "Interpreter.h"
+
+/**
+ * get string and chenge the variable name to his value for every var from local map and SymbolMap
+ * @param check_exp
+ * @return exp
+ */
+
+Expression *Interpreter::change_var_to_value(string check_exp) {
+
+  /**
+ * map and iterator for local var of airplane
+ */
+  auto localMap_from_server = SimulatorManager::getInstance()->getSymbolMap();
+  auto find_match_iterator1 = localMap_from_server->begin();
+
+  /**
+* map and iterator for local var!
+*/
+  auto localMap_var = SimulatorManager::getInstance()->getLocalSymbolMap();
+  auto find_match_iterator2 = localMap_var->begin();
+  string numb;
+  std::string &str(check_exp);
+  while (find_match_iterator1 != localMap_from_server->end()) {
+    if (std::regex_search(str, std::regex(find_match_iterator1->first))) {
+      float value =
+          SimulatorManager::getInstance()->get_server()->get_value(find_match_iterator1->second->getSimAddress());
+      numb = to_string(value);
+      str = std::regex_replace(str, std::regex(find_match_iterator1->first), "(" + numb + ")");
+    }
+    find_match_iterator1++;
+  }
+  while (find_match_iterator2 != localMap_var->end()) {
+    if (std::regex_search(str, std::regex(find_match_iterator2->first))) {
+      float value = find_match_iterator2->second;
+      numb = to_string(value);
+      str = std::regex_replace(str, std::regex(find_match_iterator2->first), "(" + numb + ")");
+    }
+    find_match_iterator2++;
+  }
+  Expression *exp = interpret(str);
+  return exp;
+}
 
 void Interpreter::setVariables(string str) {
   string s = str;
@@ -321,7 +364,6 @@ Expression *Interpreter::shuntingCalculate(queue<string> expression) { //make th
 bool Interpreter::isDouble(string s) {
   return std::regex_match(s, std::regex("[0-9.]+"));
 }
-
 
 /*
  * isNegativeDouble: given a string, check if it's a negative double.
