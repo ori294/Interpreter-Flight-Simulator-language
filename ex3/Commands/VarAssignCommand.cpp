@@ -20,7 +20,7 @@ int VarAssignCommand::execute(std::list<std::string> list_of_strings) {
   auto iterator2 = list_of_strings.begin();
   iterator2++;
   string check_expression = *iterator2;
-  std::regex pattern("(\\+|-|\\*|\\/)");
+  std::regex pattern("([*+/-]+)");
 
   //check if there are operators in the expression
   if (std::regex_search(check_expression, pattern)) {

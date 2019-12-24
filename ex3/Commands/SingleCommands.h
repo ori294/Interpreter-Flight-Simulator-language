@@ -22,11 +22,9 @@ class SleepCommand: public Command {
   int get_num_of_arg() override {return 1;}
 
   int execute(std::list<std::string> comList) override {
-    char char_array[comList.begin()->length()]; //copy to array for atoi function
-    strcpy(char_array, comList.begin()->c_str());
-    int sleepDuration = (std::atoi(char_array)/1000);
-    std::cout << "sleeping for " << sleepDuration << " s" << std::endl;
-    sleep(sleepDuration);
+    //Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin())
+    //int sleepDuration = (tempEx->calculate());
+    //sleep(sleepDuration/1000);
     return 1;
   }
 };

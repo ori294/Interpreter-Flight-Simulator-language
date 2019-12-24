@@ -11,58 +11,24 @@
  * @return a new boolean type expression.
  */
 Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
-
-  cout << "updating condition..." << endl;
-  //iterator init
+/*
   auto iterator = commands->begin();
-
-  //find the first variable in the local and global maps
-  auto localSTIter = LoopLocalSymbolTable.find(*iterator);
-  auto STIter = LoopSymbolTable.find(*iterator);
-
-  float value;
-  if (localSTIter != LoopLocalSymbolTable.end()) {
-    cout << "getting from LST" << endl;
-    value = localSTIter->second;
-  } else if (STIter != LoopSymbolTable.end()) {
-    if (STIter->second->getBind()) {
-      cout << "getting from ST" << endl;
-      value = STIter->second->getExpression()->calculate();
-    } else { //value is requested from the server
-      cout << "getting from server" << endl;
-      SimulatorManager::getInstance()->mutex_lock3.try_lock();
-      value = SimulatorManager::getInstance()->get_server()->get_value(STIter->second->getSimAddress());
-      SimulatorManager::getInstance()->mutex_lock3.unlock();
-    }
-  } else if (Interpreter::isDouble(*iterator)) {
-    value = stod(*iterator);
-  }
-
-  iterator++; //getting the condition symbol (equals, not equals, greater etc...)
+  Expression* left = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
+  iterator++;
   std::string conSymbol = *iterator;
+  iterator++;
+  Expression* right = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
 
-  iterator++; //find the second variable in the local and global maps
-  localSTIter = LoopLocalSymbolTable.find(*iterator);
-  STIter = LoopSymbolTable.find(*iterator);
-  float secondValue;
-  if (localSTIter != LoopLocalSymbolTable.end()) {
-    secondValue = localSTIter->second;
-  } else if (STIter != LoopSymbolTable.end()) {
-    if (STIter->second->getBind()) {
-      secondValue = STIter->second->getExpression()->calculate();
-    } else { //value is requested from the server
-      SimulatorManager::getInstance()->mutex_lock3.try_lock();
-      secondValue = SimulatorManager::getInstance()->get_server()->get_value(STIter->second->getSimAddress());
-      SimulatorManager::getInstance()->mutex_lock3.unlock();
-    }
-  } else if (Interpreter::isDouble(*iterator)) {
-    secondValue = stod(*iterator);
+  Expression* condition = new BooleanOperator(left, conSymbol, right);
+
+  if (left != nullptr) {
+    delete left;
   }
-
-  cout << "finished updating condition..." << endl;
-  //return the new boolean expression
-  Expression* condition = new BooleanOperator(new Value(value), conSymbol, new Value(secondValue));
+  if (right != nullptr) {
+    delete right;
+  }
   return condition;
+*/
 }
 
 /**
@@ -96,24 +62,6 @@ int ConditionParser::execute(std::list<std::string> commands) {
  * @param strList list of commands.
  */
 ConditionParser::ConditionParser(std::list<std::string>* strList) {
-  //Get maps and iterators from the main scope.
-  auto symbolMap = SimulatorManager::getInstance()->getSymbolMap();
-  auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
-  auto symbolIterator = symbolMap->begin();
-  auto localIterator = localMap->begin();
-
-  //Copy the symbol map from the greater scope
-  while (symbolIterator != symbolMap->end()) {
-    this->LoopSymbolTable.insert({symbolIterator->first, symbolIterator->second});
-    cout << "added " << symbolIterator->first << " to the ST..." << endl;
-    symbolIterator++;
-  }
-  //Copy the local symbol map from the greater scope
-  while (localIterator != localMap->end()) {
-    this->LoopLocalSymbolTable.insert({localIterator->first, localIterator->second});
-    cout << "added " << localIterator->first << " to the Local ST..." << endl;
-    localIterator++;
-  }
   condition = updateCondition(strList);
   parser = new Parser(*strList);
   listLength = strList->size();

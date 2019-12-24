@@ -20,8 +20,6 @@ class Interpreter {
   map<string, double> variableMap;
 
  public:
-
-
   //useful methods, will be accessible without an instance of interpreter.
   static bool isDouble(string s);
   static bool isNegativeDouble(string s);
