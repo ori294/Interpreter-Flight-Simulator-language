@@ -85,10 +85,7 @@ int ConditionParser::execute(std::list<std::string> commands) {
     auto tempPair = parser->getNextCommand();
     if (tempPair.first != nullptr && tempPair.first->get_num_of_arg() != -1) {
       tempPair.first->execute(tempPair.second);
-    } else {
-      return -1;
     }
-    //sleep(1);
   }
   this->condition = updateCondition(&commands);
   return 0;

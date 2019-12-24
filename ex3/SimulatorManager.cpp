@@ -24,7 +24,10 @@ void SimulatorManager::runSimulator() {
     }
     sleep(1);
   }
+  //make finish the threads and close socket
   finish();
+  close(this->server->client_socket);
+  close(this->client->socket_client);
   this->server->get_info.join();
   this->client->get_info.join();
 }
@@ -59,7 +62,7 @@ SimulatorManager *SimulatorManager::getInstance() {
  * Simulator manager CTOR.
  */
 SimulatorManager::SimulatorManager() {
-  //this->symbolTable = std::map<std::string, SymbolTableValue>();
+  this->interpreter = new Interpreter();
 }
 /**
  * set server member
