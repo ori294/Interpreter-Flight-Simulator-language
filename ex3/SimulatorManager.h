@@ -12,9 +12,10 @@
 #include "Expressions/Expression.h"
 #include "Expressions/ExpressionKinds.h"
 
+
 class SimulatorManager {
  private:
-  Interpreter * interpreter;
+  class Interpreter * interpreter;
   /* Here will be the instance stored. */
   class OpenServerCommand *server;
   class connectControlClient *client;
@@ -39,6 +40,7 @@ class SimulatorManager {
   void set_client(connectControlClient *cli);
   OpenServerCommand *get_server();
   connectControlClient *get_client();
+  Interpreter * get_interpreter();
 
   std::map<std::string, SymbolTableValue *> *getSymbolMap() {
     return &symbolTable;
