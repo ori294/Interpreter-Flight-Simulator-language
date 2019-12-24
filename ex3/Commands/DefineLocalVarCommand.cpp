@@ -18,28 +18,11 @@ int DefineLocalVarCommand::execute(list<string> list_of_strings) {
   iterator++;
   iterator++;
 
-  //Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
+  Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
 
-  //localMap->insert({name_var, tempEX->calculate()});
-  //if (left != nullptr) {
-  //  delete left;
-  //}
-
-  /*
-  auto symbolMap = SimulatorManager::getInstance()->getSymbolMap();
-  auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
-  list<string>::iterator it = list_of_strings.begin();
-  string name_var = *it;
-  it++;
-  it++;
-
-  auto iter = symbolMap->find(*it);
-  if (iter != symbolMap->end()) {
-    float value = SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
-    localMap->insert({name_var, value});
-  } else if (std::regex_match(*it, std::regex("[-0-9.]+"))) {
-    localMap->insert({name_var, stof(*it)});
+  localMap->insert({name_var, tempEx->calculate()});
+  if (left != nullptr) {
+    delete tempEx;
   }
-  return 0;
-   */
+  return 1;
 }

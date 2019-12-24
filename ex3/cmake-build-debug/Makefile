@@ -123,6 +123,33 @@ ex3/fast:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/build
 .PHONY : ex3/fast
 
+Commands/ConditionParser.o: Commands/ConditionParser.cpp.o
+
+.PHONY : Commands/ConditionParser.o
+
+# target to build an object file
+Commands/ConditionParser.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConditionParser.cpp.o
+.PHONY : Commands/ConditionParser.cpp.o
+
+Commands/ConditionParser.i: Commands/ConditionParser.cpp.i
+
+.PHONY : Commands/ConditionParser.i
+
+# target to preprocess a source file
+Commands/ConditionParser.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConditionParser.cpp.i
+.PHONY : Commands/ConditionParser.cpp.i
+
+Commands/ConditionParser.s: Commands/ConditionParser.cpp.s
+
+.PHONY : Commands/ConditionParser.s
+
+# target to generate assembly for a file
+Commands/ConditionParser.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/ConditionParser.cpp.s
+.PHONY : Commands/ConditionParser.cpp.s
+
 Commands/ConnectCommand.o: Commands/ConnectCommand.cpp.o
 
 .PHONY : Commands/ConnectCommand.o
@@ -204,6 +231,87 @@ Commands/DefineVarCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/DefineVarCommand.cpp.s
 .PHONY : Commands/DefineVarCommand.cpp.s
 
+Commands/FunctionCommand.o: Commands/FunctionCommand.cpp.o
+
+.PHONY : Commands/FunctionCommand.o
+
+# target to build an object file
+Commands/FunctionCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/FunctionCommand.cpp.o
+.PHONY : Commands/FunctionCommand.cpp.o
+
+Commands/FunctionCommand.i: Commands/FunctionCommand.cpp.i
+
+.PHONY : Commands/FunctionCommand.i
+
+# target to preprocess a source file
+Commands/FunctionCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/FunctionCommand.cpp.i
+.PHONY : Commands/FunctionCommand.cpp.i
+
+Commands/FunctionCommand.s: Commands/FunctionCommand.cpp.s
+
+.PHONY : Commands/FunctionCommand.s
+
+# target to generate assembly for a file
+Commands/FunctionCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/FunctionCommand.cpp.s
+.PHONY : Commands/FunctionCommand.cpp.s
+
+Commands/IfCommand.o: Commands/IfCommand.cpp.o
+
+.PHONY : Commands/IfCommand.o
+
+# target to build an object file
+Commands/IfCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/IfCommand.cpp.o
+.PHONY : Commands/IfCommand.cpp.o
+
+Commands/IfCommand.i: Commands/IfCommand.cpp.i
+
+.PHONY : Commands/IfCommand.i
+
+# target to preprocess a source file
+Commands/IfCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/IfCommand.cpp.i
+.PHONY : Commands/IfCommand.cpp.i
+
+Commands/IfCommand.s: Commands/IfCommand.cpp.s
+
+.PHONY : Commands/IfCommand.s
+
+# target to generate assembly for a file
+Commands/IfCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/IfCommand.cpp.s
+.PHONY : Commands/IfCommand.cpp.s
+
+Commands/LoopCommand.o: Commands/LoopCommand.cpp.o
+
+.PHONY : Commands/LoopCommand.o
+
+# target to build an object file
+Commands/LoopCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/LoopCommand.cpp.o
+.PHONY : Commands/LoopCommand.cpp.o
+
+Commands/LoopCommand.i: Commands/LoopCommand.cpp.i
+
+.PHONY : Commands/LoopCommand.i
+
+# target to preprocess a source file
+Commands/LoopCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/LoopCommand.cpp.i
+.PHONY : Commands/LoopCommand.cpp.i
+
+Commands/LoopCommand.s: Commands/LoopCommand.cpp.s
+
+.PHONY : Commands/LoopCommand.s
+
+# target to generate assembly for a file
+Commands/LoopCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/LoopCommand.cpp.s
+.PHONY : Commands/LoopCommand.cpp.s
+
 Commands/OpenServerCommand.o: Commands/OpenServerCommand.cpp.o
 
 .PHONY : Commands/OpenServerCommand.o
@@ -230,6 +338,33 @@ Commands/OpenServerCommand.s: Commands/OpenServerCommand.cpp.s
 Commands/OpenServerCommand.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/OpenServerCommand.cpp.s
 .PHONY : Commands/OpenServerCommand.cpp.s
+
+Commands/SingleCommands.o: Commands/SingleCommands.cpp.o
+
+.PHONY : Commands/SingleCommands.o
+
+# target to build an object file
+Commands/SingleCommands.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/SingleCommands.cpp.o
+.PHONY : Commands/SingleCommands.cpp.o
+
+Commands/SingleCommands.i: Commands/SingleCommands.cpp.i
+
+.PHONY : Commands/SingleCommands.i
+
+# target to preprocess a source file
+Commands/SingleCommands.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/SingleCommands.cpp.i
+.PHONY : Commands/SingleCommands.cpp.i
+
+Commands/SingleCommands.s: Commands/SingleCommands.cpp.s
+
+.PHONY : Commands/SingleCommands.s
+
+# target to generate assembly for a file
+Commands/SingleCommands.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Commands/SingleCommands.cpp.s
+.PHONY : Commands/SingleCommands.cpp.s
 
 Commands/VarAssignCommand.o: Commands/VarAssignCommand.cpp.o
 
@@ -284,6 +419,33 @@ Expressions/ExpressionKinds.s: Expressions/ExpressionKinds.cpp.s
 Expressions/ExpressionKinds.cpp.s:
 	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/ExpressionKinds.cpp.s
 .PHONY : Expressions/ExpressionKinds.cpp.s
+
+Expressions/Interpreter.o: Expressions/Interpreter.cpp.o
+
+.PHONY : Expressions/Interpreter.o
+
+# target to build an object file
+Expressions/Interpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/Interpreter.cpp.o
+.PHONY : Expressions/Interpreter.cpp.o
+
+Expressions/Interpreter.i: Expressions/Interpreter.cpp.i
+
+.PHONY : Expressions/Interpreter.i
+
+# target to preprocess a source file
+Expressions/Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/Interpreter.cpp.i
+.PHONY : Expressions/Interpreter.cpp.i
+
+Expressions/Interpreter.s: Expressions/Interpreter.cpp.s
+
+.PHONY : Expressions/Interpreter.s
+
+# target to generate assembly for a file
+Expressions/Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/ex3.dir/build.make CMakeFiles/ex3.dir/Expressions/Interpreter.cpp.s
+.PHONY : Expressions/Interpreter.cpp.s
 
 Lexer.o: Lexer.cpp.o
 
@@ -402,6 +564,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex3"
 	@echo "... edit_cache"
+	@echo "... Commands/ConditionParser.o"
+	@echo "... Commands/ConditionParser.i"
+	@echo "... Commands/ConditionParser.s"
 	@echo "... Commands/ConnectCommand.o"
 	@echo "... Commands/ConnectCommand.i"
 	@echo "... Commands/ConnectCommand.s"
@@ -411,15 +576,30 @@ help:
 	@echo "... Commands/DefineVarCommand.o"
 	@echo "... Commands/DefineVarCommand.i"
 	@echo "... Commands/DefineVarCommand.s"
+	@echo "... Commands/FunctionCommand.o"
+	@echo "... Commands/FunctionCommand.i"
+	@echo "... Commands/FunctionCommand.s"
+	@echo "... Commands/IfCommand.o"
+	@echo "... Commands/IfCommand.i"
+	@echo "... Commands/IfCommand.s"
+	@echo "... Commands/LoopCommand.o"
+	@echo "... Commands/LoopCommand.i"
+	@echo "... Commands/LoopCommand.s"
 	@echo "... Commands/OpenServerCommand.o"
 	@echo "... Commands/OpenServerCommand.i"
 	@echo "... Commands/OpenServerCommand.s"
+	@echo "... Commands/SingleCommands.o"
+	@echo "... Commands/SingleCommands.i"
+	@echo "... Commands/SingleCommands.s"
 	@echo "... Commands/VarAssignCommand.o"
 	@echo "... Commands/VarAssignCommand.i"
 	@echo "... Commands/VarAssignCommand.s"
 	@echo "... Expressions/ExpressionKinds.o"
 	@echo "... Expressions/ExpressionKinds.i"
 	@echo "... Expressions/ExpressionKinds.s"
+	@echo "... Expressions/Interpreter.o"
+	@echo "... Expressions/Interpreter.i"
+	@echo "... Expressions/Interpreter.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"

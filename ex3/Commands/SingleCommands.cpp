@@ -10,26 +10,32 @@
  * @return return an integer type
  */
 int PrintCommand::execute(std::list<std::string> comList) {
-  //get localMap and symbolMap
-  auto symbolMap = SimulatorManager::getInstance()->getSymbolMap();
-  auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
 
-  //find the argument in the maps
-  auto iter = symbolMap->find(*comList.begin());
-  auto localIter = localMap->find(*comList.begin());
-  if (iter != symbolMap->end()) {// if found
-    if (iter->second->getBind()) { //bind right
-      std::cout << iter->second->getExpression()->calculate() << std::endl;
-    } else { //bind left
-      float value = SimulatorManager::getInstance()->get_server()->get_value(iter->second->getSimAddress());
-      std::cout << value << std::endl;
-    }
-  } else if (localIter != localMap->end()) { //else: check if its the local map
-    auto value = localIter->second;
-    std::cout << value << std::endl;
-  } else { //else:
+  if (std::regex_search(*comList.begin(), std::regex("[\"]"))) {
     std::cout << *comList.begin() << std::endl;
+  } else {
+    Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin());
+    std::cout << tempEx->calculate() << std::endl;
+
+    if (tempEx != nullptr) {
+      delete tempEx;
+    }
   }
-  return 1;
 }
 
+/**
+ * Execute the sleep command
+ * @param comList list of arguments
+ * @return return an integer type
+ */
+int SleepCommand::execute(std::list<std::string> comList) {
+  Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin());
+  double sleepDuration = (tempEx->calculate());
+  sleep(sleepDuration/1000);
+
+  if (tempEx != nullptr) {
+    delete tempEx;
+  }
+
+  return 1;
+}

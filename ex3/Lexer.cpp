@@ -33,7 +33,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       //strtok for delimiters - first time
       char *token = strtok(char_array, " ,(,)");
       if (token != nullptr) {
-        strList.push_back(token);
+        strList.push_back(removeSpaces(token));
       }
       //strtok loop = keep cutting string until strtok gives null
       while (token != nullptr) {
@@ -101,7 +101,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       while (token != nullptr) {
         token = strtok(nullptr, " ");
         if (token != nullptr) {
-          strList.push_back(token);
+          strList.push_back(removeSpaces(token));
         }
       }
       //handle if statements
@@ -119,7 +119,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       while (token != nullptr) {
         token = strtok(nullptr, " ");
         if (token != nullptr) {
-          strList.push_back(token);
+          strList.push_back(removeSpaces(token));
         }
       }
       //handles single scope closer
@@ -128,20 +128,19 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     } else if (std::regex_search(line, std::regex("Print"))) {
       strList.push_back("Print");
       std::string text = line.substr(6, line.length());
-      text = removeBrackets(text);
-      strList.push_back(text);
+      strList.push_back(removeBrackets(text));
     } else {
       char char_array[line.length()]; //copy to array for strtok function
-      std::strcpy(char_array, line.c_str());
+      std::strcpy(char_array, removeSpaces(line).c_str());
       char *token = strtok(char_array, " ,(,)");
       if (token != nullptr) {
-        strList.push_back(token);
+        strList.push_back(removeSpaces(token));
       }
       //strtok loop = keep cutting string until strtok gives null
       while (token != nullptr) {
         token = strtok(nullptr, " ,(,)");
         if (token != nullptr) {
-          strList.push_back(token);
+          strList.push_back(removeSpaces(token));
         }
       }
     }
