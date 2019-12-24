@@ -87,14 +87,13 @@ int OpenServerCommand::execute(list<string> list_of_strings) {
     cerr << "can't listen server" << endl;
     return -3;
   }
-  int client_socket = accept(socket_Server, (struct sockaddr *) &address, (socklen_t *) &address);
+  client_socket = accept(socket_Server, (struct sockaddr *) &address, (socklen_t *) &address);
   if (client_socket == -1) {
     cerr << "can't accept client" << endl;
     return -3;
   }
   //sending thread to the func "get_data_from_air_plane" and make multi-threads
   this->get_info = thread(get_data_from_air_plane, client_socket, &this->data_about_airplane);
-  //this->get_info.join();
   return this->numOfArg + 1;
 }
 /**

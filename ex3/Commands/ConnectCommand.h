@@ -24,6 +24,7 @@ class connectControlClient : public Command {
  private:
   queue<string> commandsToSim;
  public:
+  int socket_client;
   thread get_info;
   int execute(list<string> list_of_strings) override;
   int get_num_of_arg() override;

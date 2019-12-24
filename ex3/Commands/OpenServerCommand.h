@@ -25,6 +25,7 @@ class OpenServerCommand : public Command {
   int numOfArg;
   map<int, pair<string, string>> data_about_airplane;
  public:
+  int client_socket;
   thread get_info;
   OpenServerCommand() {
     data_about_airplane.insert(make_pair(0,

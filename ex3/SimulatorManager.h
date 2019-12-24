@@ -14,6 +14,7 @@
 
 class SimulatorManager {
  private:
+  Interpreter * interpreter;
   /* Here will be the instance stored. */
   class OpenServerCommand *server;
   class connectControlClient *client;

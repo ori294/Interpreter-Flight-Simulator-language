@@ -7,8 +7,6 @@
 #include "SimulatorManager.h"
 
 std::mutex mutex_lock;
-std::mutex mutex_lock2;
-
 
 /**
  * removeSpaces: Get a string and remove all blank spaces
@@ -36,7 +34,7 @@ int connectControlClient::execute(list<string> list_of_strings) {
   std::strcpy(port, (*it).c_str());
   int _port = atoi(port);
   //check if the iterator move by value or reference!!!
-  int socket_client = socket(AF_INET, SOCK_STREAM, 0);
+  socket_client = socket(AF_INET, SOCK_STREAM, 0);
   if (socket_client == -1) {
     cerr << "can not create a client socket" << endl;
     return -1;
@@ -52,8 +50,6 @@ int connectControlClient::execute(list<string> list_of_strings) {
     return -2;
   }
   this->get_info = thread(run_client_to_simulator, &this->commandsToSim, socket_client);
-  //close the socket in the end of the program!!
-  //close(socket_client);
   return 0;
 }
 /**
