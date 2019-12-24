@@ -6,5 +6,5 @@ CXX_FLAGS = -pthread -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/ori294/Interpreter-Flight-Simulator-language/ex3/. -I/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands -I/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions 
 

@@ -11,6 +11,7 @@
 #include "SymbolTableValue.h"
 #include "Expressions/Expression.h"
 #include "Expressions/ExpressionKinds.h"
+#include "Interpreter.h"
 
 
 class SimulatorManager {

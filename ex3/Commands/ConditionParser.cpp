@@ -11,7 +11,6 @@
  * @return a new boolean type expression.
  */
 Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
-/*
   auto iterator = commands->begin();
   Expression* left = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
   iterator++;
@@ -28,7 +27,6 @@ Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
     delete right;
   }
   return condition;
-*/
 }
 
 /**

@@ -34,6 +34,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/."/>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands"/>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -57,6 +60,9 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/."/>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands"/>
+					<Add directory="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -87,6 +93,12 @@
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/Command.h">
 			<Option target="ex3"/>
 		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConditionParser.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConditionParser.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/ConnectCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
@@ -105,10 +117,31 @@
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/DefineVarCommand.h">
 			<Option target="ex3"/>
 		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/FunctionCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/FunctionCommand.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/IfCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/IfCommand.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/LoopCommand.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/LoopCommand.h">
+			<Option target="ex3"/>
+		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.cpp">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/OpenServerCommand.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.cpp">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Commands/SingleCommands.h">
@@ -127,6 +160,12 @@
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/ExpressionKinds.h">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Interpreter.cpp">
+			<Option target="ex3"/>
+		</Unit>
+		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Expressions/Interpreter.h">
 			<Option target="ex3"/>
 		</Unit>
 		<Unit filename="/home/ori294/Interpreter-Flight-Simulator-language/ex3/Lexer.cpp">

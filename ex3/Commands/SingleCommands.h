@@ -6,6 +6,8 @@
 #define EX3_COMMANDS_SINGLECOMMANDS_H_
 #include "Command.h"
 #include "../SimulatorManager.h"
+#include "Expressions/Expression.h"
+#include "Expressions/Interpreter.h"
 #include <chrono>
 #include <unistd.h>
 #include <iostream>
@@ -21,12 +23,7 @@ class SleepCommand: public Command {
 
   int get_num_of_arg() override {return 1;}
 
-  int execute(std::list<std::string> comList) override {
-    //Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin())
-    //int sleepDuration = (tempEx->calculate());
-    //sleep(sleepDuration/1000);
-    return 1;
-  }
+  int execute(std::list<std::string> comList) override;
 };
 
 class NullCommand: public Command {
