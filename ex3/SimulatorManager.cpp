@@ -98,4 +98,11 @@ bool SimulatorManager::check_end() {
 
 void SimulatorManager::finish() {
   this->is_end = true;
+}
+/**
+ * get_interpreter
+ * @return pointer to interpreter
+ */
+Interpreter *SimulatorManager::get_interpreter() {
+  return this->interpreter;
 };

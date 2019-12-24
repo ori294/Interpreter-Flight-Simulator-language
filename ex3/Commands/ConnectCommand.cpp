@@ -30,8 +30,10 @@ int connectControlClient::execute(list<string> list_of_strings) {
   std::strcpy(ip, (_ip_).c_str());
   const char *my_ip = ip;
   it++;
-  char port[(*it).length()]; //copy to array for strtok function
-  std::strcpy(port, (*it).c_str());
+  string my_port = to_string(SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(
+      *it)->calculate());
+  char port[(my_port).length()]; //copy to array for strtok function
+  std::strcpy(port, (my_port).c_str());
   int _port = atoi(port);
   //check if the iterator move by value or reference!!!
   socket_client = socket(AF_INET, SOCK_STREAM, 0);

@@ -11,6 +11,7 @@
 #include <stack>
 #include <queue>
 #include <bits/stdc++.h>
+#include <SimulatorManager.h>
 
 
 using namespace std;
@@ -32,6 +33,7 @@ class Interpreter {
   bool isWeakOperand(string op, stack<string> operators);
   void setVariables(string str);
   Expression *interpret(string str);
+  Expression *change_var_to_value(string s);
 };
 
 #endif //EX3_EXPRESSIONS_INTERPRETER_H_
