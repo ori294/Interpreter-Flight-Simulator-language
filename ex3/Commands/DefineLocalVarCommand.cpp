@@ -12,6 +12,20 @@
  */
 int DefineLocalVarCommand::execute(list<string> list_of_strings) {
 
+  auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
+  list<string>::iterator iterator = list_of_strings.begin();
+  string name_var = *iterator;
+  iterator++;
+  iterator++;
+
+  //Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
+
+  //localMap->insert({name_var, tempEX->calculate()});
+  //if (left != nullptr) {
+  //  delete left;
+  //}
+
+  /*
   auto symbolMap = SimulatorManager::getInstance()->getSymbolMap();
   auto localMap = SimulatorManager::getInstance()->getLocalSymbolMap();
   list<string>::iterator it = list_of_strings.begin();
@@ -27,4 +41,5 @@ int DefineLocalVarCommand::execute(list<string> list_of_strings) {
     localMap->insert({name_var, stof(*it)});
   }
   return 0;
+   */
 }
