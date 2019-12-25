@@ -16,7 +16,6 @@ int PrintCommand::execute(std::list<std::string> comList) {
   } else {
     Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin());
     std::cout << tempEx->calculate() << std::endl;
-
     if (tempEx != nullptr) {
       delete tempEx;
     }
