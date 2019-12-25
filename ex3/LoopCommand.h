@@ -6,7 +6,7 @@
 #define EX3_COMMANDS_LOOPCOMMAND_H_
 
 #include "Command.h"
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 #include "ConditionParser.h"
 
  class LoopCommand: public ConditionParser {

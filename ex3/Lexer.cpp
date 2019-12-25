@@ -2,6 +2,7 @@
 // Created by ori294 on 12/10/19.
 //
 
+#define MAX_LENGTH 1024
 #include "Lexer.h"
 
 /**
@@ -22,11 +23,12 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     std::string line;
     std::getline(readFile, line);
     line = removeTabs(line);
+    line = ltrim(line);
 
     if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))
       && !std::regex_search(line, std::regex("sim")) && !std::regex_search(line, std::regex("="))) {
       std::cout << "found a func" << std::endl;
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("funcdef");
 
@@ -45,7 +47,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     }
     //Handle var declarations
     else if (std::regex_search(line, std::regex("var"))) {
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
       //strtok for delimiters - first time
@@ -66,11 +68,11 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       }
       //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
     } else if (std::regex_search(line, std::regex(" = "))){
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
       int equalPos = 0;
-      int j = 0;
+      unsigned int j = 0;
       for (; j < line.length(); j++) { //find the position of '='
         if (char_array[j] == '=') {
           equalPos = j;
@@ -88,7 +90,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
       //handle while statements
     } else if (std::regex_search(line, std::regex("while "))) {
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("while");
 
@@ -106,7 +108,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       }
       //handle if statements
     } else if (std::regex_search(line, std::regex("if "))) {
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("if");
 
@@ -130,7 +132,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       std::string text = line.substr(6, line.length());
       strList.push_back(removeBrackets(text));
     } else {
-      char char_array[line.length()]; //copy to array for strtok function
+      char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, removeSpaces(line).c_str());
       char *token = strtok(char_array, " ,(,)");
       if (token != nullptr) {
@@ -175,5 +177,13 @@ std::string Lexer::removeSpaces(std::string str) {
 std::string Lexer::removeBrackets(std::string str) {
   str.erase(remove(str.begin(), str.end(), ')'), str.end());
   str.erase(remove(str.begin(), str.end(), '('), str.end());
+  return str;
+}
+
+std::string& Lexer::ltrim(std::string &str)
+{
+  auto it2 = std::find_if( str.begin() ,str.end() ,[](char ch){
+    return !std::isspace<char>(ch, std::locale::classic());});
+  str.erase( str.begin() , it2);
   return str;
 }

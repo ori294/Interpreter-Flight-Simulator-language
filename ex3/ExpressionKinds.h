@@ -15,7 +15,7 @@ using namespace std;
 //Value class
 class Value : virtual public Expression {
  private:
-  double value;
+  double exValue;
 
  public:
   Value(double value);
@@ -50,8 +50,8 @@ class Variable : virtual public Expression {
 //BinaryOperator class
 class BinaryOperator : virtual public Expression {
  protected:
-  Expression *left;
-  Expression *right;
+  Expression *leftEx;
+  Expression *rightEx;
 
  public:
   BinaryOperator(Expression &left, Expression &right);
@@ -99,8 +99,8 @@ class Div : virtual public BinaryOperator {
 //Boolean class
 class BooleanOperator : virtual public Expression {
  protected:
-  Expression *left;
-  Expression *right;
+  Expression *leftEx;
+  Expression *rightEx;
   std::string Condition;
 
  public:
@@ -113,7 +113,7 @@ class BooleanOperator : virtual public Expression {
 //UnaryOperator class
 class UnaryOperator : virtual public Expression {
  protected:
-  Expression *expression;
+  Expression *expressionA;
 
  public:
   UnaryOperator(Expression &expression);

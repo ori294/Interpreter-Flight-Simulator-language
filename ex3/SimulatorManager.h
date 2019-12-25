@@ -7,10 +7,10 @@
 #include "Parser.h"
 #include <iostream>
 #include <map>
-#include "Commands/ConditionParser.h"
+#include "ConditionParser.h"
 #include "SymbolTableValue.h"
-#include "Expressions/Expression.h"
-#include "Expressions/ExpressionKinds.h"
+#include "Expression.h"
+#include "ExpressionKinds.h"
 #include "Interpreter.h"
 
 
@@ -21,7 +21,7 @@ class SimulatorManager {
   class OpenServerCommand *server;
   class connectControlClient *client;
   static SimulatorManager *instance;
-  class Parser *parser;
+  Parser *parser;
   std::map<std::string, SymbolTableValue *> symbolTable;
   std::map<std::string, float> localSymbolTable;
   bool is_end = false;
@@ -52,7 +52,9 @@ class SimulatorManager {
 
   ~SimulatorManager() {
     //Delete the parser
-    delete this->parser;
+    if (parser != nullptr){
+      delete parser;
+    }
     //Before closing the runner - delete symbols in symbol table.
     auto iter = symbolTable.begin();
     while (iter != symbolTable.end()) {

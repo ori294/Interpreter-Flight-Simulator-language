@@ -20,16 +20,13 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       }
     }
 
-
     auto mapIterator = commandMap.find(*listIterator); //find the right command
     if (mapIterator != commandMap.end()) {
       cout << "found " << *listIterator << endl;
       tempCommand = mapIterator->second; //save the command
         listIterator++;
-        cout << "number of arguments: " << tempCommand->get_num_of_arg() << " for " << mapIterator->first  << endl;
       for (int i = 0; i < tempCommand->get_num_of_arg(); i++) { //get the arguments for the command
         tempList.emplace_back(*listIterator);
-        cout << "argumnet " << i+1 << " " << *listIterator << endl;
         listIterator++;
       }
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
@@ -37,7 +34,6 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
 
     } else if (*listIterator == "while" || *listIterator == "if") {
       std::string loopType = *listIterator;
-      cout << "Found while of if case: " << endl;
       listIterator++;
       while (*listIterator != "{") {
         tempList.emplace_back(*listIterator);
@@ -48,29 +44,18 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       int numberOfLeftBrackets = 1;
       int numberOfRightBrackets = 0;
       while (numberOfLeftBrackets > numberOfRightBrackets) {
-        cout << "emplacing " << *listIterator << endl;
 
         if (*listIterator == "}") {
           numberOfRightBrackets++;
-          cout << "found right bracket" << endl;
           tempList.emplace_back(*listIterator);
         } else if (*listIterator == "{"){
           numberOfLeftBrackets++;
-          cout << "found left bracket" << endl;
           tempList.emplace_back(*listIterator);
         } else {
           tempList.emplace_back(*listIterator);
         }
         listIterator++;
       }
-
-      cout << "debug while and if commands:" << endl;
-      auto iterate = tempList.begin();
-      while (iterate != tempList.end()) {
-        cout << *iterate << ";";
-        iterate++;
-      }
-      cout << endl;
 
       if (loopType == "while") {
         LoopCommand* loop_command = new LoopCommand(&tempList);
@@ -82,12 +67,10 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
         return std::pair<Command*,std::list<std::string>>(if_command, tempList);
       }
     }
-    cout << "null command: " << *listIterator << endl;
-    NullCommand* null_command;
-    listIterator++;
-    return std::pair<Command*,std::list<std::string>>(null_command, std::list<std::string>());
   }
-
+  NullCommand* null_command;
+  listIterator++;
+  return std::pair<Command*,std::list<std::string>>(null_command, std::list<std::string>());
 }
 
 int Parser::DefineFunction(std::list<std::string>::iterator iter) {
@@ -104,15 +87,12 @@ int Parser::DefineFunction(std::list<std::string>::iterator iter) {
   int numberOfLeftBrackets = 1;
   int numberOfRightBrackets = 0;
   while (numberOfLeftBrackets > numberOfRightBrackets) {
-    cout << "emplacing " << *iter << endl;
 
     if (*iter == "}") {
       numberOfRightBrackets++;
-      cout << "found right bracket" << endl;
       tempList.emplace_back(*iter);
     } else if (*iter == "{"){
       numberOfLeftBrackets++;
-      cout << "found left bracket" << endl;
       tempList.emplace_back(*iter);
     } else {
       tempList.emplace_back(*iter);

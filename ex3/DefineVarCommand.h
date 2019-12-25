@@ -6,7 +6,7 @@
 #define EX3_COMMANDS_DEFINEVARCOMMAND_H_
 
 #include "Command.h"
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 
 using namespace std;
 class DefineVarCommand : public Command {

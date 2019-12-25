@@ -7,8 +7,8 @@
 
 #include "SymbolTableValue.h"
 #include "Command.h"
-#include "Expressions/Interpreter.h"
-#include "../SimulatorManager.h"
+#include "Interpreter.h"
+#include "SimulatorManager.h"
 #include "ExpressionKinds.h"
 #include "Expression.h"
 

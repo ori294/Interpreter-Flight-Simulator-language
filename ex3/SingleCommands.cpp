@@ -12,7 +12,7 @@
 int PrintCommand::execute(std::list<std::string> comList) {
 
   if (std::regex_search(*comList.begin(), std::regex("[\"]"))) {
-    std::cout << *comList.begin() << std::endl;
+    std::cout << removeQuotes(*comList.begin()) << std::endl;
   } else {
     Expression* tempEx = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*comList.begin());
     std::cout << tempEx->calculate() << std::endl;
@@ -20,6 +20,16 @@ int PrintCommand::execute(std::list<std::string> comList) {
       delete tempEx;
     }
   }
+  return 1;
+}
+
+/**
+ * removeSpaces: Get a string and remove all quotes from it
+ * @return the trimmed string
+ */
+std::string PrintCommand::removeQuotes(std::string str) {
+  str.erase(remove(str.begin(), str.end(), '\"'), str.end());
+  return str;
 }
 
 /**
@@ -38,3 +48,4 @@ int SleepCommand::execute(std::list<std::string> comList) {
 
   return 1;
 }
+

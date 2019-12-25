@@ -21,6 +21,7 @@ int FunctionCommand::execute(std::list<std::string> vars) {
     auto tempPair = parser->getNextCommand();
     if (tempPair.first != nullptr && tempPair.first->get_num_of_arg() != -1) {
       if (*(tempPair.second.begin()) == this->funcVariable) {
+        cout << "func with var" << endl;
         tempPair.first->execute(vars);
       } else {
         tempPair.first->execute(tempPair.second);
@@ -28,6 +29,7 @@ int FunctionCommand::execute(std::list<std::string> vars) {
     }
     sleep(1);
   }
+  return 1;
 }
 
 int FunctionCommand::get_num_of_arg() {return 1;}

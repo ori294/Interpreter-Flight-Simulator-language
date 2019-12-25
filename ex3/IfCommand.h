@@ -6,7 +6,7 @@
 #define EX3_COMMANDS_IFCOMMAND_H_
 
 #include "Command.h"
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 #include "ConditionParser.h"
 
 class IfCommand : public  ConditionParser {

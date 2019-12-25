@@ -5,17 +5,17 @@
 #ifndef EX3__PARSER_H_
 #define EX3__PARSER_H_
 #include <unordered_map>
-#include "Commands/Command.h"
-#include "Commands/SingleCommands.h"
-#include "Commands/OpenServerCommand.h"
-#include "Commands/ConnectCommand.h"
-#include "Commands/VarAssignCommand.h"
-#include "Commands/DefineVarCommand.h"
-#include "Commands/DefineLocalVarCommand.h"
-#include "Commands/LoopCommand.h"
-#include "Commands/IfCommand.h"
-#include "Commands/FunctionCommand.h"
-#include "Commands/ConditionParser.h"
+#include "Command.h"
+#include "SingleCommands.h"
+#include "OpenServerCommand.h"
+#include "ConnectCommand.h"
+#include "VarAssignCommand.h"
+#include "DefineVarCommand.h"
+#include "DefineLocalVarCommand.h"
+#include "LoopCommand.h"
+#include "IfCommand.h"
+#include "FunctionCommand.h"
+#include "ConditionParser.h"
 
 class Parser {
  protected:

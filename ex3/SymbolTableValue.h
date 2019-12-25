@@ -4,7 +4,7 @@
 
 #ifndef EX3__SYMBOLTABLEVALUE_H_
 #define EX3__SYMBOLTABLEVALUE_H_
-#include "Expressions/ExpressionKinds.h"
+#include "ExpressionKinds.h"
 
 /**
  * SymbolTable value - holds the data needed in one object.

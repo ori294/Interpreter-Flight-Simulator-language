@@ -20,6 +20,7 @@
 class Lexer {
   std::list<std::string> strList;
  public:
+  std::string & ltrim(std::string &str);
   std::string removeBrackets(std::string str);
   std::string removeTabs(std::string str);
   std::string removeSpaces(std::string str);
