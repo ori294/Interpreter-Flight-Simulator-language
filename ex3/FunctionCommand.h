@@ -6,7 +6,7 @@
 #define EX3_COMMANDS_FUNCTIONCOMMAND_H_
 
 #include "Command.h"
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 
 class FunctionCommand : public Command {
  private:

@@ -26,10 +26,10 @@ void SimulatorManager::runSimulator() {
   }
   //make finish the threads and close socket
   finish();
-  close(this->server->client_socket);
-  close(this->client->socket_client);
-  this->server->get_info.join();
-  this->client->get_info.join();
+  //close(this->server->client_socket);
+  //close(this->client->socket_client);
+  //this->server->get_info.join();
+  //this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.
@@ -57,7 +57,7 @@ SimulatorManager *SimulatorManager::getInstance() {
     instance = new SimulatorManager();
   }
   return instance;
-};
+}
 /**
  * Simulator manager CTOR.
  */
@@ -94,7 +94,7 @@ connectControlClient *SimulatorManager::get_client() {
 }
 bool SimulatorManager::check_end() {
   return this->is_end;
-};
+}
 
 void SimulatorManager::finish() {
   this->is_end = true;
@@ -105,4 +105,4 @@ void SimulatorManager::finish() {
  */
 Interpreter *SimulatorManager::get_interpreter() {
   return this->interpreter;
-};
+}

@@ -5,9 +5,9 @@
 #ifndef EX3_COMMANDS_SINGLECOMMANDS_H_
 #define EX3_COMMANDS_SINGLECOMMANDS_H_
 #include "Command.h"
-#include "../SimulatorManager.h"
-#include "Expressions/Expression.h"
-#include "Expressions/Interpreter.h"
+#include "SimulatorManager.h"
+#include "Expression.h"
+#include "Interpreter.h"
 #include <chrono>
 #include <unistd.h>
 #include <iostream>
@@ -17,6 +17,7 @@
 class PrintCommand: public Command {
   int get_num_of_arg() override {return 1;}
   int execute(std::list<std::string> comList) override;
+  std::string removeQuotes(std::string str);
 };
 
 class SleepCommand: public Command {
@@ -29,9 +30,13 @@ class SleepCommand: public Command {
 class NullCommand: public Command {
   int get_num_of_arg() override {return -1;}
   int execute(std::list<std::string> comList) override {
-    //do nothing
+    comList.size();
+    return -1;
   }
 };
+
+
+
 
 
 #endif //EX3_COMMANDS_SINGLECOMMANDS_H_

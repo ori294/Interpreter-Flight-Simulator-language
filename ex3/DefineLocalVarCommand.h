@@ -5,7 +5,7 @@
 #ifndef EX3_COMMANDS_DEFINELOCALVARCOMMAND_H_
 #define EX3_COMMANDS_DEFINELOCALVARCOMMAND_H_
 #include "Command.h"
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 
 class DefineLocalVarCommand: public Command {
  public:

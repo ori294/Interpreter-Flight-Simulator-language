@@ -18,9 +18,9 @@ Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
   iterator++;
   double rightVal = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator)->calculate();
 
-  Expression* condition = new BooleanOperator(new Value(leftVal), conSymbol, new Value(rightVal));
+  Expression* cond = new BooleanOperator(new Value(leftVal), conSymbol, new Value(rightVal));
 
-  return condition;
+  return cond;
 }
 
 /**

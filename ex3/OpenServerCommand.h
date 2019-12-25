@@ -14,7 +14,7 @@
 #include <thread>
 #include <map>
 #include <cstring>
-#include "../SimulatorManager.h"
+#include "SimulatorManager.h"
 #include <mutex>
 #include <chrono>
 
