@@ -12,20 +12,14 @@
  */
 Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
   auto iterator = commands->begin();
-  Expression* left = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
+  double leftVal = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator)->calculate();
   iterator++;
   std::string conSymbol = *iterator;
   iterator++;
-  Expression* right = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator);
+  double rightVal = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator)->calculate();
 
-  Expression* condition = new BooleanOperator(left, conSymbol, right);
+  Expression* condition = new BooleanOperator(new Value(leftVal), conSymbol, new Value(rightVal));
 
-  if (left != nullptr) {
-    delete left;
-  }
-  if (right != nullptr) {
-    delete right;
-  }
   return condition;
 }
 
