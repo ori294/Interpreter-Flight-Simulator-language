@@ -68,6 +68,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       }
       //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
     } else if (std::regex_search(line, std::regex(" = "))){
+      line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
 
@@ -80,8 +81,8 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
         }
       }
       //cut the string into two sides of the assigment.
-      std::string leftSide = line.substr(0, equalPos-1);
-      std::string rightSide = line.substr(equalPos+1, line.length());
+      std::string leftSide = line.substr(0, equalPos);
+      std::string rightSide = line.substr(equalPos+1, line.length()-equalPos);
 
       //expressions of the format: x = y will turn into "= x y"
       strList.push_back("=");
@@ -90,13 +91,15 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
       //handle while statements
     } else if (std::regex_search(line, std::regex("while "))) {
+      line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("while");
 
       int equalPos = 0;
       std::string condition;
-      unsigned int j = 6;
+      unsigned int j = 5;
+      unsigned offSet = 5;
       for (; j < line.length(); j++) { //find the position of '='
         if (char_array[j] == '<' || char_array[j] == '=' || char_array[j] == '>' || char_array[j] == '!') {
           equalPos = j;
@@ -104,13 +107,15 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
           if (char_array[j+1] == '=') {
             condition += "=";
+            equalPos++;
+            offSet++;
             j++;
           }
           break;
         }
       }
       //cut the string into two sides of the assigment.
-      std::string leftSide = line.substr(6, equalPos-7);
+      std::string leftSide = line.substr(5, equalPos-offSet);
       std::string rightSide = line.substr(equalPos+1, line.length()- equalPos - 2);
 
       //expressions of the format: x = y will turn into "= x y"
@@ -121,13 +126,15 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
       //handle if statements
     } else if (std::regex_search(line, std::regex("if "))) {
+      line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("if");
 
       int equalPos = 0;
       std::string condition;
-      unsigned int j = 3;
+      unsigned int j = 2;
+      unsigned offSet = 2;
       for (; j < line.length(); j++) { //find the position of '='
         if (char_array[j] == '<' || char_array[j] == '=' || char_array[j] == '>' || char_array[j] == '!') {
           equalPos = j;
@@ -135,13 +142,15 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
 
           if (char_array[j+1] == '=') {
             condition += "=";
+            equalPos++;
+            offSet++;
             j++;
           }
           break;
         }
       }
       //cut the string into two sides of the assigment.
-      std::string leftSide = line.substr(3, equalPos-4);
+      std::string leftSide = line.substr(2, equalPos-offSet);
       std::string rightSide = line.substr(equalPos+1, line.length()- equalPos - 2);
 
       //expressions of the format: x = y will turn into "= x y"
