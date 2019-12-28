@@ -34,11 +34,11 @@ Variable& Variable::operator -= (double x) {
   this->setVarValue(this->getValue() - x);
   return *this;
 }
-Variable& Variable::operator ++ (int dummy) {
+Variable& Variable::operator ++ (int) {
   this->setVarValue(this->getValue() + 1);
   return *this;
 }
-Variable& Variable::operator -- (int dummy) {
+Variable& Variable::operator -- (int) {
   this->setVarValue(this->getValue() - 1);
   return *this;
 }

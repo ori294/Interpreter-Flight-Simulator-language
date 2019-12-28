@@ -5,6 +5,7 @@
 
 #include <mutex>
 #include "SimulatorManager.h"
+#define MAX_LENGTH 256
 
 std::mutex mutex_lock;
 
@@ -26,13 +27,13 @@ int connectControlClient::execute(list<string> list_of_strings) {
   SimulatorManager::getInstance()->set_client(this);
   list<string>::iterator it = list_of_strings.begin();
   string _ip_ = removeSpaces(*list_of_strings.begin());
-  char ip[(_ip_).length()]; //copy to array for strtok function
+  char ip[MAX_LENGTH]; //copy to array for strtok function
   std::strcpy(ip, (_ip_).c_str());
   const char *my_ip = ip;
   it++;
   string my_port = to_string(SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(
       *it)->calculate());
-  char port[(my_port).length()]; //copy to array for strtok function
+  char port[MAX_LENGTH]; //copy to array for strtok function
   std::strcpy(port, (my_port).c_str());
   int _port = atoi(port);
   //check if the iterator move by value or reference!!!
