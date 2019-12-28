@@ -94,36 +94,62 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       std::strcpy(char_array, line.c_str());
       strList.push_back("while");
 
-      //strtok for delimiters - first time
-      char *token = strtok(char_array, " ");
-      if (token != nullptr) {
-        //strList.push_back(token);
-      }
-      //strtok loop = keep cutting string until strtok gives null
-      while (token != nullptr) {
-        token = strtok(nullptr, " ");
-        if (token != nullptr) {
-          strList.push_back(removeSpaces(token));
+      int equalPos = 0;
+      std::string condition;
+      unsigned int j = 6;
+      for (; j < line.length(); j++) { //find the position of '='
+        if (char_array[j] == '<' || char_array[j] == '=' || char_array[j] == '>' || char_array[j] == '!') {
+          equalPos = j;
+          condition = char_array[j];
+
+          if (char_array[j+1] == '=') {
+            condition += "=";
+            j++;
+          }
+          break;
         }
       }
+      //cut the string into two sides of the assigment.
+      std::string leftSide = line.substr(6, equalPos-7);
+      std::string rightSide = line.substr(equalPos+1, line.length()- equalPos - 2);
+
+      //expressions of the format: x = y will turn into "= x y"
+      strList.push_back(removeSpaces(leftSide));
+      strList.push_back(condition);
+      strList.push_back(removeSpaces(rightSide));
+      strList.push_back("{");
+
       //handle if statements
     } else if (std::regex_search(line, std::regex("if "))) {
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("if");
 
-      //strtok for delimiters - first time
-      char *token = strtok(char_array, " ");
-      if (token != nullptr) {
-        //strList.push_back(token);
-      }
-      //strtok loop = keep cutting string until strtok gives null
-      while (token != nullptr) {
-        token = strtok(nullptr, " ");
-        if (token != nullptr) {
-          strList.push_back(removeSpaces(token));
+      int equalPos = 0;
+      std::string condition;
+      unsigned int j = 3;
+      for (; j < line.length(); j++) { //find the position of '='
+        if (char_array[j] == '<' || char_array[j] == '=' || char_array[j] == '>' || char_array[j] == '!') {
+          equalPos = j;
+          condition = char_array[j];
+
+          if (char_array[j+1] == '=') {
+            condition += "=";
+            j++;
+          }
+          break;
         }
       }
+      //cut the string into two sides of the assigment.
+      std::string leftSide = line.substr(3, equalPos-4);
+      std::string rightSide = line.substr(equalPos+1, line.length()- equalPos - 2);
+
+      //expressions of the format: x = y will turn into "= x y"
+      strList.push_back(removeSpaces(leftSide));
+      strList.push_back(condition);
+      strList.push_back(removeSpaces(rightSide));
+      strList.push_back("{");
+
       //handles single scope closer
     } else if (std::regex_search(line, std::regex("\\}"))) {
       strList.push_back("}");
