@@ -25,6 +25,9 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     line = removeTabs(line);
     line = ltrim(line);
 
+    /*
+     * this case is when
+     */
     if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))
       && !std::regex_search(line, std::regex("sim")) && !std::regex_search(line, std::regex("="))) {
       std::cout << "found a func" << std::endl;
@@ -86,7 +89,8 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
           }
       }
       //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
-    } else if (std::regex_search(line, std::regex(" = "))){
+    } else if (std::regex_search(line, std::regex("="))  && !std::regex_search(line, std::regex("while"))
+              &&  !std::regex_search(line, std::regex("if"))){
       line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
@@ -186,6 +190,7 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       std::string text = line.substr(6, line.length());
       strList.push_back(removeBrackets(text));
     } else if (std::regex_search(line, std::regex("Print"))) {
+      strList.push_back("Print");
       std::string text = removeSpaces(line.substr(6, line.length()));
       strList.push_back(removeBrackets(text));
     } else {
