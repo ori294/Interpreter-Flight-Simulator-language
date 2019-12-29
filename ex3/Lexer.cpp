@@ -55,16 +55,35 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       if (token != nullptr) {
         if (std::regex_search(line, std::regex("sim"))) {
           strList.push_back("simvar");
+          while (token != nullptr) {
+            token = strtok(nullptr, " ,(,)");
+            if (token != nullptr) {
+              strList.push_back(token);
+            }
+          }
         } else {
           strList.push_back("var");
-        }
-      }
-      //strtok loop = keep cutting string until strtok gives null
-      while (token != nullptr) {
-        token = strtok(nullptr, " ,(,)");
-        if (token != nullptr) {
-          strList.push_back(token);
-        }
+          line = removeSpaces(line.substr(4, line.length()));
+          char char_array[MAX_LENGTH]; //copy to array for strtok function
+          std::strcpy(char_array, line.c_str());
+          std::cout << line << std::endl;
+          int equalPos = 0;
+          unsigned int j = 0;
+          for (; j < line.length(); j++) { //find the position of '='
+            if (char_array[j] == '=') {
+              equalPos = j;
+              break;
+            }
+          }
+          //cut the string into two sides of the assigment.
+          std::string leftSide = line.substr(0, equalPos);
+          std::string rightSide = line.substr(equalPos+1, line.length());
+
+          //expressions of the format: x = y will turn into "= x y"
+          strList.push_back(removeSpaces(leftSide));
+          strList.push_back("=");
+          strList.push_back(removeSpaces(rightSide));
+          }
       }
       //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
     } else if (std::regex_search(line, std::regex(" = "))){
@@ -162,9 +181,12 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       //handles single scope closer
     } else if (std::regex_search(line, std::regex("\\}"))) {
       strList.push_back("}");
-    } else if (std::regex_search(line, std::regex("Print"))) {
+    } else if (std::regex_search(line, std::regex("Print")) && std::regex_search(line, std::regex("\""))) {
       strList.push_back("Print");
       std::string text = line.substr(6, line.length());
+      strList.push_back(removeBrackets(text));
+    } else if (std::regex_search(line, std::regex("Print"))) {
+      std::string text = removeSpaces(line.substr(6, line.length()));
       strList.push_back(removeBrackets(text));
     } else {
       char char_array[MAX_LENGTH]; //copy to array for strtok function
