@@ -9,6 +9,9 @@
 #include "SimulatorManager.h"
 #include "ConditionParser.h"
 
+/**
+ * LoopCommand: for method documentation please refer to .cpp
+ */
  class LoopCommand: public ConditionParser {
 
   int execute(std::list<std::string> L);
@@ -16,7 +19,7 @@
 
  public:
   LoopCommand(std::list<std::string>* L);
-  //~LoopCommand(); //Delete father
+   //destructor is left as default.
 };
 
 #endif //EX3_COMMANDS_LOOPCOMMAND_H_

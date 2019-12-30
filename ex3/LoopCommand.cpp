@@ -10,7 +10,6 @@
  */
 int LoopCommand::execute(std::list<std::string> commands) {
   while (isConditionSatisfied()) {
-    cout << "execute conditional code:" << endl;
     ConditionParser::execute(std::list<std::string>(commands));
     ConditionParser::startOver(4);
   }
@@ -19,10 +18,9 @@ int LoopCommand::execute(std::list<std::string> commands) {
 
 /**
  * CTOR: Init local symbol table.
- * it copies the symbol tables from the main loop of the code.
  */
 LoopCommand::LoopCommand(std::list<std::string>* commands) : ConditionParser(commands) {
-  //do nothing
+  //the construction happens only in the father (ConditionParser).
 }
 
 /**

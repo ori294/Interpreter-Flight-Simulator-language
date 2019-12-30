@@ -12,7 +12,6 @@
 int IfCommand::execute(std::list<std::string> commands) {
   if (isConditionSatisfied()) {
     ConditionParser::startOver(4);
-    cout << "execute conditional code:" << endl;
     ConditionParser::execute(std::list<std::string>(commands));
   }
   return 0;
@@ -20,10 +19,9 @@ int IfCommand::execute(std::list<std::string> commands) {
 
 /**
  * CTOR: Init local symbol table.
- * it copies the symbol tables from the main loop of the code.
  */
 IfCommand::IfCommand(std::list<std::string>* commands) : ConditionParser(commands) {
-  //do nothing
+  //the construction happens only in the father (ConditionParser).
 }
 
 /**

@@ -24,12 +24,12 @@ void SimulatorManager::runSimulator() {
     }
     sleep(1);
   }
-  //make finish the threads and close socket
+  //declare as finished, join the threads and close socket.
   finish();
-  //close(this->server->client_socket);
-  //close(this->client->socket_client);
-  //this->server->get_info.join();
-  //this->client->get_info.join();
+  close(this->server->client_socket);
+  close(this->client->socket_client);
+  this->server->get_info.join();
+  this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.
@@ -86,16 +86,23 @@ OpenServerCommand *SimulatorManager::get_server() {
   return this->server;
 }
 /**
- * geter client
+ * getter client
  * @return pointer to client
  */
 connectControlClient *SimulatorManager::get_client() {
   return this->client;
 }
+/**
+ * check_end: check whether the code is finished.
+ * @return boolean type
+ */
 bool SimulatorManager::check_end() {
   return this->is_end;
 }
 
+/**
+ * finish: change inner-state to "finished".
+ */
 void SimulatorManager::finish() {
   this->is_end = true;
 }

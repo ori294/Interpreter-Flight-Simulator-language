@@ -12,10 +12,13 @@
  */
 Expression* ConditionParser::updateCondition(std::list<std::string>* commands) {
   auto iterator = commands->begin();
+  //get left value
   double leftVal = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator)->calculate();
   iterator++;
+  //get condition symbol(==,<=, etc...)
   std::string conSymbol = *iterator;
   iterator++;
+  //get right value
   double rightVal = SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(*iterator)->calculate();
 
   Expression* cond = new BooleanOperator(new Value(leftVal), conSymbol, new Value(rightVal));
@@ -79,12 +82,6 @@ void ConditionParser::startOver(int i) {
  * condition parser DTOR.
  */
 ConditionParser::~ConditionParser() {
-  //Before deleting the parser - delete the map in the parser;
-  auto iter = LoopSymbolTable.begin();
-  while (iter != LoopSymbolTable.end()) {
-    delete iter->second;
-  }
-
   delete this->parser;
   delete this->condition;
 }

@@ -13,6 +13,7 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
     Command* tempCommand;
     std::list<std::string> tempList;
 
+    //Check if the next command is function definition.
     if (*listIterator == "funcdef") {
       int steps = DefineFunction(listIterator);
       for (int i = 0; i < steps; i++) {
@@ -20,6 +21,8 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       }
     }
 
+
+   //checking for matches in the commands map (that holds the known supported commands.
     auto mapIterator = commandMap.find(*listIterator); //find the right command
     if (mapIterator != commandMap.end()) {
       cout << "found " << *listIterator << endl;
@@ -32,6 +35,7 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       std::pair<Command*,std::list<std::string>> tempPair(tempCommand,tempList);
       return tempPair;
 
+      //handles while and if loops: creating sub-list with the inside scope commands.
     } else if (*listIterator == "while" || *listIterator == "if") {
       std::string loopType = *listIterator;
       listIterator++;
@@ -41,6 +45,8 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       }
       tempList.emplace_back(*listIterator);
       listIterator++;
+
+      //keep track of the number of brackets in order to support nested loops and ifs.
       int numberOfLeftBrackets = 1;
       int numberOfRightBrackets = 0;
       while (numberOfLeftBrackets > numberOfRightBrackets) {
@@ -57,6 +63,7 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
         listIterator++;
       }
 
+      //create loop command, or if command.
       if (loopType == "while") {
         LoopCommand* loop_command = new LoopCommand(&tempList);
         conditionalCommands.emplace_back(loop_command);
@@ -68,22 +75,32 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
       }
     }
   }
+
+  //default: if there's no such command, return a null command, that's how we know were done reading the code.
   NullCommand* null_command;
   listIterator++;
   return std::pair<Command*,std::list<std::string>>(null_command, std::list<std::string>());
 }
 
+/**
+ * DefineFunction: define new function and add to the parser command's map.
+ * @param iter iterator, pointing to the start of the function.
+ * @return an integer the indicates how many steps the parser needs to stride.
+ */
 int Parser::DefineFunction(std::list<std::string>::iterator iter) {
   std::list<std::string> tempList;
-  int steps = 0;
+  int steps = 0; //keeps track of the iterator strides.
   iter++; steps++;
   std::string funcName = *iter;
+
   while (*iter != "{") {
     tempList.emplace_back(*iter);
     iter++; steps++;
   }
   tempList.emplace_back(*iter);
   iter++; steps++;
+
+  //keep track of the number of brackets in order to support nested loops and ifs inside the function.
   int numberOfLeftBrackets = 1;
   int numberOfRightBrackets = 0;
   while (numberOfLeftBrackets > numberOfRightBrackets) {
@@ -100,7 +117,7 @@ int Parser::DefineFunction(std::list<std::string>::iterator iter) {
     iter++; steps++;
   }
   FunctionCommand* function_command = new FunctionCommand(tempList);
-  commandMap.insert({funcName, function_command});
+  commandMap.insert({funcName, function_command}); //this function will now be recognized as valid command.
   return steps;
 }
 

@@ -7,6 +7,9 @@
 #include "Command.h"
 #include "SimulatorManager.h"
 
+/**
+ * DefineLocalVarCommand: for method documentation please refer to .cpp
+ */
 class DefineLocalVarCommand: public Command {
  public:
   int execute(std::list<std::string> list_of_strings) override;

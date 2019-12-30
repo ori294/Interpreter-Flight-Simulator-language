@@ -12,17 +12,18 @@
 #include "ExpressionKinds.h"
 #include "Expression.h"
 
+/**
+ * ConditionParser: for method documentation please refer to .cpp
+ */
 class ConditionParser: public Command {
 
  protected:
-  int listLength;
+  int listLength; //command list length
 
  private:
   Expression* condition;
   class Parser* parser;
   Expression* updateCondition(std::list<std::string>* L);
-  std::map<std::string, SymbolTableValue*> LoopSymbolTable;
-  std::map<std::string, float> LoopLocalSymbolTable;
 
  public:
   explicit ConditionParser(std::list<std::string>* strList);
