@@ -43,13 +43,26 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
 
 void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data) {
   char buffer[500] = {0};
-  int data = read(client_socket, buffer, 500);
-  split_and_update_data(buffer, map_data);
-  while (!SimulatorManager::getInstance()->check_end()) {
+  string all;
+  string rest;
+  string part2;
+  string send;
+  char *to_send;
+  int data;
+  do {
     data = read(client_socket, buffer, 500);
-    if(data == -1){}
-    split_and_update_data(buffer, map_data);
-  }
+    if (data == -1) {}
+    all = buffer;
+    part2 = all.substr(0, all.find('\n') - 1);
+    cout << "part2 =" + part2 << endl;
+    send = rest + part2;
+    to_send = &send[0];
+    cout << "to_send =" << endl;
+    cout << to_send << endl;
+    rest = all.substr(all.find('\n') + 1);
+    cout << "rest= " + rest << endl;
+    split_and_update_data(to_send, map_data);
+  } while (!SimulatorManager::getInstance()->check_end());
 }
 
 /**
