@@ -5,6 +5,7 @@
 
 #include <mutex>
 #include "SimulatorManager.h"
+#define MAX_LENGTH 256
 
 std::mutex mutex_lock;
 
@@ -19,6 +20,8 @@ std::string connectControlClient::removeSpaces(std::string str) {
 }
 
 /**
+ * create client socket and connect to the simulator as a client
+ * sending to another thread. in that thread the client send commands to the simulator
  * @param list_of_strings
  * @return 0
  */
@@ -26,13 +29,13 @@ int connectControlClient::execute(list<string> list_of_strings) {
   SimulatorManager::getInstance()->set_client(this);
   list<string>::iterator it = list_of_strings.begin();
   string _ip_ = removeSpaces(*list_of_strings.begin());
-  char ip[(_ip_).length()]; //copy to array for strtok function
+  char ip[MAX_LENGTH]; //copy to array for strtok function
   std::strcpy(ip, (_ip_).c_str());
   const char *my_ip = ip;
   it++;
   string my_port = to_string(SimulatorManager::getInstance()->get_interpreter()->change_var_to_value(
       *it)->calculate());
-  char port[(my_port).length()]; //copy to array for strtok function
+  char port[MAX_LENGTH]; //copy to array for strtok function
   std::strcpy(port, (my_port).c_str());
   int _port = atoi(port);
   //check if the iterator move by value or reference!!!
@@ -83,5 +86,8 @@ void connectControlClient::add_commands_to_queue(string s) {
   this->commandsToSim.push(s);
   mutex_lock.unlock();
 }
-
+/**
+ *
+ * @return number of arg
+ */
 int connectControlClient::get_num_of_arg() { return 2; }

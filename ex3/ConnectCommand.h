@@ -20,6 +20,11 @@
 
 using namespace std;
 
+/**
+ * connectControlClient ,actually is command of open connection between client and simulator(server)
+ * we save this command as a client ,and send orders to the simulator by other thread
+ * we handle member thread ,for get access in the manager (to make thread.join)
+ */
 class connectControlClient : public Command {
  private:
   queue<string> commandsToSim;

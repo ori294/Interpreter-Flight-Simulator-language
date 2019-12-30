@@ -12,7 +12,7 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
   parser = new Parser(strList);
 }
 /**
- * run the simulator.
+ * run the simulator and make command by command.
  */
 void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
@@ -35,7 +35,7 @@ void SimulatorManager::runSimulator() {
  * update the symbol table from outside the manager.
  * @param VarName Variable name
  * @param bindDirection will be true if and only if the bind direction is right.
- * @param simAddress the adress in the simulator.
+ * @param simAddress the address in the simulator.
  */
 void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirection, std::string simAddress) {
   Expression *expression = new Value(0);
@@ -99,7 +99,6 @@ connectControlClient *SimulatorManager::get_client() {
 bool SimulatorManager::check_end() {
   return this->is_end;
 }
-
 /**
  * finish: change inner-state to "finished".
  */

@@ -6,7 +6,7 @@
 int main() {
   
   Lexer lexer;
-  std::string fileName = "fly.txt";
+  std::string fileName = "test.txt";
   std::list<std::string> lexedList = lexer.readFile(fileName);
   auto iter = lexedList.begin();
 
