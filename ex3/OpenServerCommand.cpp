@@ -14,6 +14,9 @@ std::string OpenServerCommand::removeSpaces(std::string str) {
   return str;
 }
 
+/**
+ * split the buffer by "," and update every vlue in the map by the value we got now from the simulator
+ */
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
   char *tokens;
   int indicator = 0;

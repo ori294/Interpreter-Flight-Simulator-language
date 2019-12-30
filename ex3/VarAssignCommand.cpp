@@ -3,7 +3,11 @@
 //
 
 #include "VarAssignCommand.h"
-
+/**
+ * make msg to the client and add the msg by the method "add_commands_to_queue"
+ * @param list_of_strings arg of this command
+ * @return 0
+ */
 int VarAssignCommand::execute(std::list<std::string> list_of_strings) {
   auto localMap = SimulatorManager::getInstance()->getSymbolMap();
   auto iter1 = localMap->find(*(list_of_strings.begin()));
