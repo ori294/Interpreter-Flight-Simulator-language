@@ -20,6 +20,8 @@ std::string connectControlClient::removeSpaces(std::string str) {
 }
 
 /**
+ * create client socket and connect to the simulator as a client
+ * sending to another thread. in that thread the client send commands to the simulator
  * @param list_of_strings
  * @return 0
  */
@@ -84,5 +86,8 @@ void connectControlClient::add_commands_to_queue(string s) {
   this->commandsToSim.push(s);
   mutex_lock.unlock();
 }
-
+/**
+ *
+ * @return number of arg
+ */
 int connectControlClient::get_num_of_arg() { return 2; }

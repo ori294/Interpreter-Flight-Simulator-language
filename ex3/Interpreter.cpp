@@ -6,7 +6,7 @@
 #include "Interpreter.h"
 
 /**
- * get string and chenge the variable name to his value for every var from local map and SymbolMap
+ * get string and change the variable name to his value for every var from local map and SymbolMap
  * @param check_exp
  * @return exp
  */
@@ -46,7 +46,10 @@ Expression *Interpreter::change_var_to_value(string check_exp) {
   Expression *exp = interpret(str);
   return exp;
 }
-
+/**
+ * not in used in this program
+ * @param str
+ */
 void Interpreter::setVariables(string str) {
   string s = str;
   string delimiter = ";";
@@ -65,13 +68,15 @@ void Interpreter::setVariables(string str) {
   }
 }
 
-/*
+/**
  * interpret: a Shunting-yard algorithm for converting string into expression.
  * rules:
  * read the next ocject in the formula:
  * put vars and numbers in a queue
  * using stack and queue in order to change the order of the string to RPN,
  * a Reverse Polish Notation: https://en.wikipedia.org/wiki/Reverse_Polish_notation
+ * @param str -- the Expression as string
+ * @return exp as Expression
  */
 Expression *Interpreter::interpret(string str) {
   vector<string> splitStr = splitToArray(str);   //split the string to vector of strings
@@ -109,7 +114,11 @@ void Interpreter::addOrNot(string checkStr) {
   }
   throw ("illegal variable assignment!"); //bad input trow exception
 }
-
+/**
+ * splitToArray is method that spilt the string to vector of strings ,every node is operand/operator
+ * @param str the exp as string
+ * @return vector of string
+ */
 vector<string> Interpreter::splitToArray(string str) {
   vector<string> exp;
   size_t positionStart = 0;
@@ -175,7 +184,12 @@ vector<string> Interpreter::splitToArray(string str) {
   return exp;
 }
 
-/* this method is boolean method , return if the operator weaker than the top operator in the stack*/
+/**
+ * this method is boolean method , return if the operator weaker than the top operator in the stack
+ * @param op --the operator
+ * @param operators
+ * @return true or flase about the weaknce
+ */
 bool Interpreter::isWeakOperand(string op, stack<string> operators) {
   char o = op[0];
   bool YorN = false;
@@ -220,7 +234,11 @@ bool Interpreter::isWeakOperand(string op, stack<string> operators) {
   return YorN;
 }
 
-/*return the postfix presentation of the string we got in the main. the method work by the algorithm ShuntingYard*/
+/**
+ *  the method work by the algorithm ShuntingYard return the postfix presentation of the string we got
+ * @param splitStr  vector of stirng
+ * @return return the postfix presentation of the string we got
+ */
 queue<string> Interpreter::ShuntingYard(vector<string> splitStr) {
   queue<string> VarAndOperator;
   stack<string> operators;
@@ -276,7 +294,11 @@ queue<string> Interpreter::ShuntingYard(vector<string> splitStr) {
   }
   return VarAndOperator; //return queue
 }
-
+/**
+ * make the calculate of the postfix presentation and return the exp
+ * @param expression - string queue
+ * @return exp
+ */
 Expression *Interpreter::shuntingCalculate(queue<string> expression) { //make the Expression
   stack<Expression *> final;
   regex re("(\\+|-)?[[:digit:]]+([.][[:digit:]]+)?");
@@ -358,15 +380,19 @@ Expression *Interpreter::shuntingCalculate(queue<string> expression) { //make th
   return final.top();
 }
 
-/*
+/**
  * isDouble: given a string, check if it's a double.
+ * @param s --number as str
+ * @return true or false
  */
 bool Interpreter::isDouble(string s) {
   return std::regex_match(s, std::regex("[0-9.]+"));
 }
 
-/*
+/**
  * isNegativeDouble: given a string, check if it's a negative double.
+ * @param s --number as str
+ * @return true or false
  */
 bool Interpreter::isNegativeDouble(string s) {
   return std::regex_match(s, std::regex("[-0-9.]+"));

@@ -12,7 +12,7 @@ void SimulatorManager::setStringList(std::list<std::string> strList) {
   parser = new Parser(strList);
 }
 /**
- * run the simulator.
+ * run the simulator and make command by command.
  */
 void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
@@ -26,16 +26,16 @@ void SimulatorManager::runSimulator() {
   }
   //make finish the threads and close socket
   finish();
-  //close(this->server->client_socket);
-  //close(this->client->socket_client);
-  //this->server->get_info.join();
-  //this->client->get_info.join();
+  close(this->server->client_socket);
+  close(this->client->socket_client);
+  this->server->get_info.join();
+  this->client->get_info.join();
 }
 /**
  * update the symbol table from outside the manager.
  * @param VarName Variable name
  * @param bindDirection will be true if and only if the bind direction is right.
- * @param simAddress the adress in the simulator.
+ * @param simAddress the address in the simulator.
  */
 void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirection, std::string simAddress) {
   Expression *expression = new Value(0);
@@ -86,7 +86,7 @@ OpenServerCommand *SimulatorManager::get_server() {
   return this->server;
 }
 /**
- * geter client
+ * getter client
  * @return pointer to client
  */
 connectControlClient *SimulatorManager::get_client() {
@@ -95,7 +95,9 @@ connectControlClient *SimulatorManager::get_client() {
 bool SimulatorManager::check_end() {
   return this->is_end;
 }
-
+/**
+ * change the boolean member to make the treads close
+ */
 void SimulatorManager::finish() {
   this->is_end = true;
 }
