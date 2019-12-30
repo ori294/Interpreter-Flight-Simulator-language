@@ -25,9 +25,9 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     line = removeTabs(line);
     line = ltrim(line);
 
-    /*
-     * this case is when
-     */
+   /**
+    * Lexer case: Function Define
+    */
     if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))
       && !std::regex_search(line, std::regex("sim")) && !std::regex_search(line, std::regex("="))) {
       std::cout << "found a func" << std::endl;
@@ -48,7 +48,9 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
         }
       }
     }
-    //Handle var declarations
+    /**
+    * Lexer case: Variable Define
+    */
     else if (std::regex_search(line, std::regex("var"))) {
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
@@ -88,8 +90,11 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
           strList.push_back(removeSpaces(rightSide));
           }
       }
-      //Handle variable assignments, this case doesn't handle var x = y, the var case handles it
-    } else if (std::regex_search(line, std::regex("="))  && !std::regex_search(line, std::regex("while"))
+    }
+    /**
+    * Lexer case: X Equals Y command, and it's not a loop command.
+    */
+    else if (std::regex_search(line, std::regex("="))  && !std::regex_search(line, std::regex("while"))
               &&  !std::regex_search(line, std::regex("if"))){
       line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
@@ -113,7 +118,11 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       strList.push_back(removeSpaces(rightSide));
 
       //handle while statements
-    } else if (std::regex_search(line, std::regex("while "))) {
+    }
+    /**
+    * Lexer case: While loop.
+    */
+    else if (std::regex_search(line, std::regex("while "))) {
       line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
@@ -148,7 +157,11 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       strList.push_back("{");
 
       //handle if statements
-    } else if (std::regex_search(line, std::regex("if "))) {
+    }
+    /**
+    * Lexer case: If Command.
+    */
+    else if (std::regex_search(line, std::regex("if "))) {
       line = removeSpaces(line);
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
@@ -183,17 +196,33 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
       strList.push_back("{");
 
       //handles single scope closer
-    } else if (std::regex_search(line, std::regex("\\}"))) {
+    }
+    /**
+    * Lexer case: End of while/If/Function bracket.
+    */
+    else if (std::regex_search(line, std::regex("\\}"))) {
       strList.push_back("}");
-    } else if (std::regex_search(line, std::regex("Print")) && std::regex_search(line, std::regex("\""))) {
+    }
+    /**
+    * Lexer case: Print string command.
+    */
+    else if (std::regex_search(line, std::regex("Print")) && std::regex_search(line, std::regex("\""))) {
       strList.push_back("Print");
       std::string text = line.substr(6, line.length());
       strList.push_back(removeBrackets(text));
-    } else if (std::regex_search(line, std::regex("Print"))) {
+    }
+    /**
+    * Lexer case: Print Expression or Variable command.
+    */
+    else if (std::regex_search(line, std::regex("Print"))) {
       strList.push_back("Print");
       std::string text = removeSpaces(line.substr(6, line.length()));
       strList.push_back(removeBrackets(text));
-    } else {
+    }
+    /**
+    * Lexer case: Default (mainly sleep command or other single variable commands like connect client).
+    */
+    else {
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, removeSpaces(line).c_str());
       char *token = strtok(char_array, " ,(,)");
@@ -242,6 +271,10 @@ std::string Lexer::removeBrackets(std::string str) {
   return str;
 }
 
+/**
+ * ltrim: trim a string (from it's left side) from spaces.
+ * @return the trimmed string
+ */
 std::string& Lexer::ltrim(std::string &str)
 {
   auto it2 = std::find_if( str.begin() ,str.end() ,[](char ch){

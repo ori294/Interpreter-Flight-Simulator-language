@@ -24,7 +24,7 @@ void SimulatorManager::runSimulator() {
     }
     sleep(1);
   }
-  //make finish the threads and close socket
+  //declare as finished, join the threads and close socket.
   finish();
   close(this->server->client_socket);
   close(this->client->socket_client);
@@ -92,11 +92,15 @@ OpenServerCommand *SimulatorManager::get_server() {
 connectControlClient *SimulatorManager::get_client() {
   return this->client;
 }
+/**
+ * check_end: check whether the code is finished.
+ * @return boolean type
+ */
 bool SimulatorManager::check_end() {
   return this->is_end;
 }
 /**
- * change the boolean member to make the treads close
+ * finish: change inner-state to "finished".
  */
 void SimulatorManager::finish() {
   this->is_end = true;

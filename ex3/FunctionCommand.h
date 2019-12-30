@@ -8,6 +8,9 @@
 #include "Command.h"
 #include "SimulatorManager.h"
 
+/**
+ * FunctionCommand: for method documentation please refer to .cpp
+ */
 class FunctionCommand : public Command {
  private:
   std::list<std::string> commandList;

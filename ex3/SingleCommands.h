@@ -14,12 +14,18 @@
 #include <thread>
 #include <string>
 
+/**
+ * PrintCommand: prints something (string, variable or expression).
+ */
 class PrintCommand: public Command {
   int get_num_of_arg() override {return 1;}
   int execute(std::list<std::string> comList) override;
   std::string removeQuotes(std::string str);
 };
 
+/**
+ * SleepCommand: set sleep for the threads.
+ */
 class SleepCommand: public Command {
 
   int get_num_of_arg() override {return 1;}
@@ -27,6 +33,9 @@ class SleepCommand: public Command {
   int execute(std::list<std::string> comList) override;
 };
 
+/**
+ * NullCommand: an empty command that indicates that we're done executing the code.
+ */
 class NullCommand: public Command {
   int get_num_of_arg() override {return -1;}
   int execute(std::list<std::string> comList) override {

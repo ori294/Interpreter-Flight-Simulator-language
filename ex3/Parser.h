@@ -17,6 +17,7 @@
 #include "FunctionCommand.h"
 #include "ConditionParser.h"
 
+
 class Parser {
  protected:
   std::list<Command*> conditionalCommands;
