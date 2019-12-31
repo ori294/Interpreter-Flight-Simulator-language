@@ -15,9 +15,9 @@ This program was developed by Gadi Didi and Ori Levy, CS students from Bar-Ilan 
 
 ## Features
 
-1. Connect to the simulator as a client:
+1. Connect to the simulator as a client, and send instructions to the simulator.
 
-2. Connect the simulator as client:
+2. Connect the simulator as client, and get real live data from your flight.
 
 3. Interpret code and translate it into flight insructions.
 
@@ -30,7 +30,7 @@ This program was developed by Gadi Didi and Ori Levy, CS students from Bar-Ilan 
 
 ## Setup and execute
 
-1. Insert the file generic_small.xml into the following path:
+1. Insert the file generic_small.xml (can be found inside the repository) into the following path:
     ```bash
     [FlightGear installation path]/‫‪data/protocol
     ```
@@ -54,4 +54,9 @@ You can choose IP and Port as desired, but you should keep LocalHost IP if you'r
 5. The program will wait for you to open the FlightGear simulator and start a flight.
 
 6. Look at the simulator and enjoy your flight.
+
+## Comments
+
+1. Please find the file: "fly_with_func" in the repository as an example to a valid script, you can go ahead and execute it.
+
 
