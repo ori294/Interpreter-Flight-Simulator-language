@@ -18,21 +18,40 @@ std::string OpenServerCommand::removeSpaces(std::string str) {
  * split the buffer by "," and update every vlue in the map by the value we got now from the simulator
  */
 void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string, string>> *map_data) {
-  char *tokens;
-  int indicator = 0;
-  tokens = strtok(buffer, ",");
-  SimulatorManager::getInstance()->mutex_lock3.try_lock();
-  (*map_data)[indicator].second = tokens;
-  while (indicator < 36) {
-    indicator++;
-    tokens = strtok(nullptr, ",");
-    if (indicator == 35) {
-      string number = removeSpaces(tokens);
-      (*map_data)[indicator].second = number;
-      return;
+  string all = buffer;
+  string good_part = all;
+  int count = 0;
+  std::string::iterator it;
+  for (it = all.begin(); it != all.end(); ++it) {
+    if (*it == ',') {
+      count++;
     }
-    (*map_data)[indicator].second = tokens;
+    if (*it == '\n') {
+      break;
+    }
   }
+  if (count < 35) {
+    good_part = (all.substr(all.find('\n') + 1, all.find('\n')) + ",");
+  } else {
+    good_part = (all.substr(0, all.find('\n')) + ",");
+  }
+  int ind = 0;
+  std::string delimiter = ",";
+  auto start = 0U;
+  auto end = good_part.find(delimiter);
+  std::string token;
+  SimulatorManager::getInstance()->mutex_lock3.try_lock();
+  while (end != std::string::npos) {
+    if(ind == 36){
+      break;
+    }
+    token = good_part.substr(start, end - start);
+    (*map_data)[ind].second = token;
+    start = end + delimiter.length();
+    end = good_part.find(delimiter, start);
+    ind++;
+  }
+  //cout << "rpm in map =" + (*map_data)[35].second << endl;
   SimulatorManager::getInstance()->mutex_lock3.unlock();
 }
 
@@ -42,26 +61,13 @@ void OpenServerCommand::split_and_update_data(char *buffer, map<int, pair<string
  */
 
 void OpenServerCommand::get_data_from_air_plane(int client_socket, map<int, pair<string, string>> *map_data) {
-  char buffer[500] = {0};
-  string all;
-  string rest;
-  string part2;
-  string send;
-  char *to_send;
+  char buffer[1024] = {0};
   int data;
   do {
-    data = read(client_socket, buffer, 500);
+    data = read(client_socket, buffer, 1024);
     if (data == -1) {}
-    all = buffer;
-    part2 = all.substr(0, all.find('\n') - 1);
-    cout << "part2 =" + part2 << endl;
-    send = rest + part2;
-    to_send = &send[0];
-    cout << "to_send =" << endl;
-    cout << to_send << endl;
-    rest = all.substr(all.find('\n') + 1);
-    cout << "rest= " + rest << endl;
-    split_and_update_data(to_send, map_data);
+    split_and_update_data(buffer, map_data);
+    std::fill(std::begin(buffer), std::end(buffer), 0);
   } while (!SimulatorManager::getInstance()->check_end());
 }
 
