@@ -18,11 +18,8 @@ void SimulatorManager::runSimulator() {
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
     if (tempPair.first != nullptr && tempPair.first->get_num_of_arg() != -1) {
-      std::cout << "Executing the next command! " << endl;
       tempPair.first->execute(tempPair.second);
-      std::cout << "finished the command! " << endl;
     }
-    sleep(1);
   }
   //declare as finished, join the threads and close socket.
   finish();
@@ -41,7 +38,6 @@ void SimulatorManager::update_symbol_table(std::string VarName, bool bindDirecti
   Expression *expression = new Value(0);
   SymbolTableValue *sym = new SymbolTableValue(expression, simAddress, bindDirection);
   symbolTable.insert({VarName, sym});
-  cout<<"successes"<<endl;
 }
 
 /**

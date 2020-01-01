@@ -40,7 +40,6 @@ double ConditionParser::isConditionSatisfied() {
  * @return integer, -1 for error
  */
 int ConditionParser::execute(std::list<std::string> commands) {
-  cout << "executing conditional command..." << endl;
   startOver(4);
   while (!parser->isEnded()) {
     auto tempPair = parser->getNextCommand();

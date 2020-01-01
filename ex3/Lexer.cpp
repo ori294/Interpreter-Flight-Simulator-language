@@ -30,7 +30,6 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
     */
     if (std::regex_search(line, std::regex("var")) && std::regex_search(line, std::regex("()"))
       && !std::regex_search(line, std::regex("sim")) && !std::regex_search(line, std::regex("="))) {
-      std::cout << "found a func" << std::endl;
       char char_array[MAX_LENGTH]; //copy to array for strtok function
       std::strcpy(char_array, line.c_str());
       strList.push_back("funcdef");
@@ -71,7 +70,6 @@ std::list<std::string> Lexer::readFile(std::string fileName) {
           line = removeSpaces(line.substr(4, line.length()));
           char char_array[MAX_LENGTH]; //copy to array for strtok function
           std::strcpy(char_array, line.c_str());
-          std::cout << line << std::endl;
           int equalPos = 0;
           unsigned int j = 0;
           for (; j < line.length(); j++) { //find the position of '='

@@ -21,7 +21,6 @@ int DefineVarCommand::execute(list<string> list_of_strings) {
   it++;
   it++;
   path = removeSpaces(*it);
-  cout << path << endl;
   SimulatorManager::getInstance()->update_symbol_table(name_var, arrow, path);
   return 0;
 }
