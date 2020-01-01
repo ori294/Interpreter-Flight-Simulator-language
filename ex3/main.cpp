@@ -3,10 +3,10 @@
 #include "Lexer.h"
 #include "SimulatorManager.h"
 
-int main() {
-  
+int main(int argc, char *argv[]) {
+
   Lexer lexer;
-  std::string fileName = "test.txt";
+  std::string fileName = argv[1];
   std::list<std::string> lexedList = lexer.readFile(fileName);
   auto iter = lexedList.begin();
 
