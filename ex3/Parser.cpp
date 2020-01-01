@@ -25,7 +25,6 @@ std::pair<Command*,std::list<std::string>> Parser::getNextCommand() {
    //checking for matches in the commands map (that holds the known supported commands.
     auto mapIterator = commandMap.find(*listIterator); //find the right command
     if (mapIterator != commandMap.end()) {
-      cout << "found " << *listIterator << endl;
       tempCommand = mapIterator->second; //save the command
         listIterator++;
       for (int i = 0; i < tempCommand->get_num_of_arg(); i++) { //get the arguments for the command

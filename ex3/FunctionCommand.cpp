@@ -25,19 +25,30 @@ FunctionCommand::FunctionCommand(std::list<std::string> comms) {
  * @return integer, the length of the argument list.
  */
 int FunctionCommand::execute(std::list<std::string> vars) {
+
+  int var_is_double_flag = 0;
+  auto map = SimulatorManager::getInstance()->getLocalSymbolMap();
+  if (std::regex_search(*vars.begin(), std::regex("[0-9.]+"))) {
+    double value = stod(*vars.begin());
+    map->insert({this->funcVariable, value});
+    var_is_double_flag = 1;
+  }
+
+
   this->parser->startOver(4); //start over + 4 steps (get to the 4th string)
   while (!this->parser->isEnded()) {
     auto tempPair = parser->getNextCommand();
     //check if we got a valid command and not null.
     if (tempPair.first != nullptr && tempPair.first->get_num_of_arg() != -1) {
-      if (*(tempPair.second.begin()) == this->funcVariable) {
-        tempPair.first->execute(vars);
-      } else {
-        tempPair.first->execute(tempPair.second);
-      }
+      tempPair.first->execute(tempPair.second);
     }
-    sleep(1);
   }
+
+  if (var_is_double_flag) {
+    map->erase(this->funcVariable);
+  }
+
+
   return 1;
 }
 
