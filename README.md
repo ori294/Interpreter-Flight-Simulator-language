@@ -2,62 +2,85 @@
 Interpreter for a flight simulator coding language, made with CPP. 
 GitHub repository link: [Here](https://github.com/ori294/Interpreter-Flight-Simulator-language)
 
-## General Description
+## Prerequisites
 
-This program interprets a programming language that was created in order to control "[_FlightGear_]" (https://www.flightgear.org/) flight simulator. 
-The program connects to the flight simulator both as client and server.
-The client will send the simulator instructions that were coded in the script. That allows us to control our flight vessel with code.
-The server will get live data about the flight. 
+1. [Install git](https://git-scm.com/download/) on your machine
+2. [Sign up](http://www.github.com) to github
 
-## Collaborators
+## Install
 
-This program was developed by Gadi Didi and Ori Levy, CS students from Bar-Ilan university, Israel.
-
-
-## Features
-
-1. Connect to the simulator as a client, and send instructions to the simulator.
-
-2. Connect the simulator as client, and get real live data from your flight.
-
-3. Interpret code and translate it into flight insructions.
-
-4. Interpret arithmetic expressions (Divide, Multiply, Plus, Minus) using Shunting-Yard algorithm.
-
-5. Function definition and usage of functions are supported. 
-
-6. Nested loops and if statements are supported.
-
-
-## Setup and execute
-
-1. Insert the file generic_small.xml (can be found inside the repository) into the following path:
-    ```bash
-    [FlightGear installation path]/‫‪data/protocol
-    ```
-
-2. Start with adding the following lines into the additional setting in FlightGear:
+1. Clone the project on your machine:
 
     ```bash
-    --generic=socket,out,10,127.0.0.1,5400,tcp,generic_small
-    --telnet=socket,in,10,127.0.0.1,5402,tcp
+    git clone https://github.com/ori294/Interpreter-Flight-Simulator-language.git
     ```
-You can choose IP and Port as desired, but you should keep LocalHost IP if you're running both the program and the simulator on the same PC.
 
-3. Complie the program code:
+2. Check the status of your project - you may be asked to provide credentials.
 
     ```bash
-    g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out
+    git status
     ```
 
-4. Run a.out with the relative path of the code you want to execute as the first argument (Should be in txt file).
+## Develop
 
-5. The program will wait for you to open the FlightGear simulator and start a flight.
+1. Start with pulling the most recent updates to your local project. Do it everytime someone says he upload new changes:
 
-6. Look at the simulator and enjoy your flight.
+    ```bash
+    git pull origin master
+    ```
 
-## Comments
+2. Git works with a main branch called `master` and many sub branches which you can open. So, before you start making changes - create a local branch on your machine:
 
-1. Please find the file: "fly_with_func" in the repository as an example to a valid script, you can go ahead and execute it.
+    ```bash
+    git checkout -b <branch_name>
+    ```
 
+3. Check you are in working on your current branch and **not on `master`**. This command should print on which branch are you working in (make sure it is the *branch_name* you set). This command will also display which changes you've set.
 
+    ```bash
+    git status
+    ```
+
+4. When you feel ready, commit your changes to your local branch run:
+
+    ```bash
+    git checkout . ; git commit -m "add a short description for what you've done"
+    ```
+
+5. Now that you finished commiting your changes on your **local** branch, upload your branch with the changes to github.
+
+    ```bash
+    git push origin <branch_name>
+    ```
+
+6. Open new pull request
+   1. Go to the project's [_branches_](https://github.com/ori294/Interpreter-Flight-Simulator-language/branches) tab on github, and click **_New pull request_**
+   2. Next click **_Creat pull request_**
+   3. Now, if you feel ready to add your changes to the project, and if everything can be merged (none of us tried to change the same file at the same time) click **_Merge pull request_**
+
+7. That's it! Now all you need to do is branch back to `master` and pull your edits and changes. Run these two commands one after another:
+
+    ```bash
+    git checkout master
+    git pull origin master
+    ```
+
+* In some cases you will not be able to merge your changes - please refer to the next section: **Merging other people's changes**
+
+You are now ready to start your new branch and run through all again (from 1 to 7).
+
+### Merging other people's changes
+
+It is possible some of us are working on the same files. If one pushed changes to `master`, after we started working on the files (in a seperate branch) - **github** will tell us we need to merge changes.
+
+Merging changes is done as follows:
+
+1. First, add any changes you have:
+
+    ```bash
+    git checkout . ; git commit -m "add a short description for what you've done"
+    ```
+
+2. Next, pull latest changes from master: `git pull origin master`
+3. Rebase your local branch with `master`: `git rebase master`
+4. That's it, now all we need to do is push our branch again to github. Github will detect it can merge our branch: `git push origin <branch_name>`
